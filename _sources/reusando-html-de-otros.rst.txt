@@ -323,7 +323,7 @@ un video que muestra como:
 
 .. raw:: html
 
-    <video controls src="../videos/cew/7/create-folder-upload-images.mp4"></video>
+    <video controls src="./videos/cew/7/create-folder-upload-images.mp4"></video>
 
 
 Actividades propuestas:
