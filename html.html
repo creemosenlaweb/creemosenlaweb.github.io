@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>HTML &#8212; documentación de Creemos en la Web - 1.0.0</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="HTML atributos y meta datos" href="html-atributos-y-metadatos.html" />
+    <link rel="prev" title="Introducción" href="introduccion.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="html">
+<h1>HTML<a class="headerlink" href="#html" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Crear paginas web involucra normalmente 3 &#8220;lenguajes&#8221; (formas que tenemos los humanos de decirle a una computadora que queremos que haga).</p>
+<p>El único necesario es el que vamos a cubrir en esta sección: HTML</p>
+<p>HTML permite describir el contenido de una pagina web que un programa especial
+llamado normalmente navegador web interpreta y muestra en la pantalla.</p>
+<p>El contenido de un archivo HTML es texto con un formato especial, pero que podemos
+inspeccionar y editar con cualquier editor de texto.</p>
+<p>Normalmente cuando la gente quiere crear un documento de texto que tenga cierto
+formato usa un programa como Microsoft Word, Google Docs o Libre Office Writer,
+en estos programas le indicamos con acciones al editor que partes del texto tienen
+que formato, algo como lo siguiente:</p>
+<div class="figure align-center">
+<img alt="_images/01-editor-visual.gif" src="_images/01-editor-visual.gif" />
+</div>
+<p>Para indicarle al editor que una linea es un titulo, la seleccionamos, demarcando
+los limites y luego le indicamos que queremos que se muestre como un titulo.</p>
+<p>Los párrafos simplemente los separamos con saltos de linea, si queremos texto
+en negrita o itálica, al igual que con el titulo, seleccionamos e indicamos que
+formato queremos para la selección.</p>
+<p>HTML es un lenguaje que inicialmente fue pensado para escribir en editores de
+texto y luego evoluciono para ser generado por programas, que toman datos de
+una base de datos y generan como salida texto en formato HTML.</p>
+<p>Si bien existen algunos editores visuales para HTML, normalmente este se edita
+a mano con editores de texto, y eso es lo que vamos a hacer.</p>
+<div class="section" id="la-pagina-mas-simple-del-mundo">
+<h2>La pagina mas simple del mundo<a class="headerlink" href="#la-pagina-mas-simple-del-mundo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Escribí lo siguiente en la barra de dirección de tu navegador:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, hola mundo
+</pre></div>
+</div>
+<p>Felicitaciones! acabas de crear tu primera pagina web!</p>
+<p>Normalmente lo que escribimos en la barra de direcciones del navegador es la
+ubicación de la pagina web, la primera parte (http: o https:) le indica al
+navegador que lo que sigue es la ubicación de la pagina que queremos ver y que
+la puede solicitar usando el &#8220;protocolo&#8221; <a class="footnote-reference" href="#id2" id="id1">[1]</a> HTTP (Protocolo de Transferencia
+de Hiper Texto), lo que sigue es la dirección de la pagina, similar a la
+ubicación de un archivo en tu computadora, pero empezando con la pagina web que
+contiene la pagina.</p>
+<p>En este caso le decimos que le vamos a indicar la pagina directamente, y que
+esta en formato HTML, luego escribimos el contenido de la misma.</p>
+<p>Si bien no es una forma ideal de crear paginas web, a veces es útil para tareas
+especificas, por ejemplo:</p>
+<p>Selector de colores:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Calendario:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Bloc de notas:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">body</span> <span class="na">contenteditable</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;max-width:60rem;margin:0 auto;padding:4rem;&quot;</span><span class="p">&gt;</span>bloc de notas
+</pre></div>
+</div>
+<p>No te preocupes por la parte <cite>style=&#8221;max-width:60rem;margin:0 auto;padding:4rem;&#8221;</cite> eso es el segundo lenguaje que vamos a ver en la próxima sección.</p>
+</div>
+<div class="section" id="nuestra-primera-pagina-web">
+<h2>Nuestra primera pagina web<a class="headerlink" href="#nuestra-primera-pagina-web" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Nuestra primera pagina web va a intentar replicar el ejemplo de Google Docs que
+vimos mas arriba, con esta pagina vamos a cubrir los principales elementos de
+HTML.</p>
+<p>Empezamos creando un nuevo proyecto en Thimble, si tenes dudas de como hacerlo
+revisa la sección anterior que contiene una introducción a Thimble.</p>
+<p>El nuevo proyecto comienza con un contenido por defecto:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Made with Thimble<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to Thimble<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+          Make something <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>amazing<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> with the web!
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Lo vamos a borrar y escribir el siguiente texto:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un título
+
+Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica
+
+Esto es otro párrafo
+
+Una lista no ordenada:
+
+Manzana
+Durazno
+Banana
+
+Una lista ordenada:
+
+Uno
+Dos
+Tres
+</pre></div>
+</div>
+<p>El resultado debería ser similar al siguiente:</p>
+<div class="figure">
+<img alt="_images/02-plain-text.png" src="_images/02-plain-text.png" />
+</div>
+<p>Si la vista previa no se actualiza automáticamente podes hacer click en el
+botón de refrescar vista previa.</p>
+<p>Como podemos ver la vista previa muestra todo el texto junto y sin formato, algo así:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">título</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">párrafo</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">palabra</span> <span class="n">es</span> <span class="n">en</span> <span class="n">negrita</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">en</span> <span class="n">itálica</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">otro</span> <span class="n">párrafo</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">no</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Manzana</span> <span class="n">Durazno</span> <span class="n">Banana</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Uno</span> <span class="n">Dos</span> <span class="n">Tres</span>
+</pre></div>
+</div>
+<p>Sin formato es esperable ya que no le indicamos ninguno, pero porque todo junto?</p>
+<p>Porque HTML &#8220;junta&#8221; todos los espacios y saltos de lineas a un solo espacio, si queremos especificar algo distinto lo tenemos que hacer explícitamente.</p>
+<p>Esto nos va a permitir estructurar el documento con claridad y estructura sabiendo
+que el navegador no va a reflejar nuestros espacios y saltos de linea en el documento final.</p>
+<p>Ya tenemos el contenido de nuestra primera pagina web, es un avance! pero no
+es muy diferente a un documento de texto, como agregamos el formato?</p>
+<p>En el ejemplo de Google Docs mas arriba para indicar el formato de las
+distintas partes lo que hacíamos era indicar el principio y el fin de la
+sección a la que le queriamos aplicar formato con el mouse y luego
+seleccionamos una operación en el menú para indicarle que tipo de formato
+queremos.</p>
+<p>En HTML es casi igual, salvo que no tenemos mouse ni menú :)</p>
+<p>Como HTML es un formato de texto, tenemos que trabajar con lo que tenemos,
+pero la forma es muy parecida, primero indicamos el principio y final de una
+sección a la que le queremos aplicar una operación y luego le indicamos cual es
+esa operación.</p>
+<p>En HTML el indicador para el inicio de una sección es &lt;&gt; y el indicador de fin es &lt;/&gt;</p>
+<p>Pero eso no funciona porque todavía tenemos que indicar que operación aplicar al texto entre &lt;&gt; y &lt;/&gt;, para eso escribimos la operación entre el &lt; y el &gt;.</p>
+<p>Empecemos con el titulo, si notas en la animación de Google Docs, la operación se llama <strong>Heading 1</strong>, es medio largo para escribir todo eso cada vez que queremos un titulo de nivel 1, así que lo acortamos a <cite>h1</cite>.</p>
+<p>Cambiemos</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un título
+</pre></div>
+</div>
+<p>Por</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado debería verse algo así:</p>
+<div class="figure">
+<img alt="_images/03-h1.png" src="_images/03-h1.png" />
+</div>
+<p>Tenemos el titulo!</p>
+<p>Y ese es el primer <strong>tag</strong> (etiqueta en inglés) que aprendimos:</p>
+<dl class="docutils">
+<dt>h1</dt>
+<dd>Formatea el texto delimitado como un titulo de nivel 1</dd>
+</dl>
+<p>Si digo titulo de nivel 1 podemos imaginarnos que hay mas niveles, es como
+el indice de un libro, las secciones tienen sub secciones y cada sección tiene
+un titulo de un nivel mas alto.</p>
+<p>En HTML tenemos 6 niveles: h1, h2, h3, h4, h5, h6.</p>
+<p>Continuemos.</p>
+<p>La siguiente linea dice:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica
+</pre></div>
+</div>
+<p>Como le indicamos que es un párrafo? como con el titulo, lo rodeamos de una etiqueta de apertura y una de cierre y le indicamos que es un párrafo, pero de nuevo, escribir párrafo en español o ingles por cada párrafo es bastante largo así que lo vamos a abreviar a <strong>p</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado debería verse similar al siguiente:</p>
+<div class="figure">
+<img alt="_images/04-p.png" src="_images/04-p.png" />
+</div>
+<p>Notaras que ahora el primer párrafo tiene espacio con respecto al titulo y al
+resto del texto, ahora hacemos lo mismo con los siguientes párrafos:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es otro párrafo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  Una lista no ordenada:
+
+Manzana
+Durazno
+Banana
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+Una lista ordenada:
+
+Uno
+Dos
+Tres
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Como veras los saltos de linea y los espacios no afectan el formato final.</p>
+<div class="figure">
+<img alt="_images/05-p.png" src="_images/05-p.png" />
+</div>
+<p>Tenemos el titulo y los párrafos, ya casi que podemos escribir un cuento en HTML :)</p>
+<p>Pero un poco mas de formato no vendría mal, sigamos con negrita e itálica.</p>
+<p>No hay nada de magia, es igual a las anteriores, rodeamos la sección que queremos
+formatear y le indicamos que formato queremos aplicarle.</p>
+<p>A ver si te podes imaginar que identificador lleva negrita (<strong>b</strong> old en ingles)
+e itálica (<strong>i</strong> talic en ingles)?</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, la siguiente en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>itálica<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado debería verse algo así:</p>
+<div class="figure">
+<img alt="_images/06-bi.png" src="_images/06-bi.png" />
+</div>
+<p>Como podes ver en el párrafo, podemos tener tags/etiquetas dentro de otros tags/etiquetas, en este caso tenemos tags negrita e itálica dentro del tag de párrafo.</p>
+<p>Ya casi estamos!</p>
+<p>Solo faltan las listas, en este caso tenemos que indicar dos cosas distintas con tags:</p>
+<ol class="arabic">
+<li><p class="first">Que queremos una lista</p>
+<blockquote>
+<div><ul class="simple">
+<li>Ordenada: Numerada</li>
+<li>No Ordenada: Sin Numeración</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Cuales son los elementos de la lista</p>
+</li>
+</ol>
+<p>Empecemos con la lista no ordenada, en ingles <strong>u</strong> nordered <strong>l</strong> ist, ya te podes imaginar como se identifica el tag:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+Manzana
+Durazno
+Banana
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pero esto no es suficiente, todavía le tenemos que decir cuales son los elementos de la lista (<strong>l</strong> ist <strong>i</strong> tem en ingles):</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Manzana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Durazno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>De nuevo tenemos tags dentro de otro tag, en este caso el tag <strong>li</strong> (list
+item) dentro del tag <strong>ul</strong> (unordered list)</p>
+<p>Para la lista ordenada es igual, pero en lugar de indicar que queremos una lista
+no ordenada, le indicamos que queremos una ordenada (<strong>o</strong> rdered <strong>l</strong> list en ingles)</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Uno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Dos<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tres<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El código completo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, la siguiente en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>itálica<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es otro párrafo<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  Una lista no ordenada:
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Manzana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Durazno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Una lista ordenada:<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Uno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Dos<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tres<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Que debería verse similar a esto:</p>
+<div class="figure">
+<img alt="_images/07-lists.png" src="_images/07-lists.png" />
+</div>
+<p>Y con esto replicamos el documento de Google Docs y sabemos un poco mas cual es
+el contenido de los archivos .doc, .odt y similares, solo que esos están en
+formato binario (unos y ceros) ya que las computadoras los prefieren en lugar
+del formato texto, que preferimos los humanos :)</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Un protocolo es un acuerdo entre dos o mas partes que establece la forma en la que se van a comunicar, en este caso establece como un navegador solicita un documento HTML y como el otro se lo envía.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">HTML</a><ul>
+<li><a class="reference internal" href="#la-pagina-mas-simple-del-mundo">La pagina mas simple del mundo</a></li>
+<li><a class="reference internal" href="#nuestra-primera-pagina-web">Nuestra primera pagina web</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduccion.html" title="capítulo anterior">Introducción</a></li>
+      <li>Next: <a href="html-atributos-y-metadatos.html" title="próximo capítulo">HTML atributos y meta datos</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/html.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Lara Garbero Tais, Mariano Guerra.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/html.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
