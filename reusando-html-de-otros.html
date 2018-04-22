@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reusando HTML (de otros) &#8212; documentación de Creemos en la Web - 1.0.0</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Reusando estilo (de otros)" href="reusando-estilo-de-otros.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reusando-html-de-otros">
+<h1>Reusando HTML (de otros)<a class="headerlink" href="#reusando-html-de-otros" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección anterior vimos como reusar estilo creado por otras personas.</p>
+<p>Como vimos, muchas paginas comparten distintos componentes y yendo un nivel
+mas arriba, muchas paginas tienen incluso una estructura similar, por ejemplo
+blogs, paginas principales de un diario, de un producto, o de un sitio de ventas
+online.</p>
+<p>Si bien no hay una forma simple de reusar HTML sin acudir a funcionalidades mas
+avanzadas que requieran programar, existe lo que usualmente se llaman
+templates (plantillas), que son paginas completas o secciones grandes de paginas para copiar
+y modificar el contenido de manera de no empezar de cero.</p>
+<p>En esta sección vamos a explorar algunos de esos templates, en este caso, los
+disponibles en la pagina del proyecto bootstrap: <a class="reference external" href="https://getbootstrap.com/docs/4.1/examples/">https://getbootstrap.com/docs/4.1/examples/</a></p>
+<div class="section" id="cover">
+<h2>Cover<a class="headerlink" href="#cover" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Probemos uno de los ejemplos llamado <em>Cover</em>, copia y pega el siguiente HTML en
+un proyecto thimble nuevo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Titulo de Pagina<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cover-container d-flex w-100 h-100 p-3 mx-auto flex-column&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;masthead mb-auto&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inner&quot;</span><span class="p">&gt;</span>
+                  <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;masthead-brand&quot;</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav nav-masthead justify-content-center&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link active&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Principal<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav-link&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Link 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">main</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;main&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inner cover&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;cover-heading&quot;</span><span class="p">&gt;</span>Título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lead&quot;</span><span class="p">&gt;</span>Descripción.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lead&quot;</span><span class="p">&gt;</span>
+                  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-lg btn-secondary&quot;</span><span class="p">&gt;</span>Acción Principal<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">footer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mastfoot mt-auto&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;inner&quot;</span><span class="p">&gt;</span>
+                  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Template &quot;Cover&quot; para <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://getbootstrap.com/&quot;</span><span class="p">&gt;</span>Bootstrap<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>, por <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://twitter.com/mdo&quot;</span><span class="p">&gt;</span>@mdo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y el siguiente CSS en el archivo style.css del proyecto:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/*</span>
+<span class="c">* Globals</span>
+<span class="c">*/</span>
+
+<span class="c">/* Links */</span>
+<span class="nt">a</span><span class="o">,</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">focus</span><span class="o">,</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Custom default button */</span>
+<span class="p">.</span><span class="nc">btn-secondary</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">btn-secondary</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">btn-secondary</span><span class="p">:</span><span class="nd">focus</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+  <span class="k">text-shadow</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="c">/* Prevent inheritance from `body` */</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mf">.05</span><span class="kt">rem</span> <span class="kc">solid</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/*</span>
+<span class="c">* Base structure</span>
+<span class="c">*/</span>
+
+<span class="nt">html</span><span class="o">,</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="bp">-ms-</span><span class="n">flexbox</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">text-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mf">.05</span><span class="kt">rem</span> <span class="mf">.1</span><span class="kt">rem</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
+  <span class="k">box-shadow</span><span class="p">:</span> <span class="kc">inset</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">rem</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">cover-container</span> <span class="p">{</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">42</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/*</span>
+<span class="c">* Header</span>
+<span class="c">*/</span>
+<span class="p">.</span><span class="nc">masthead</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">masthead-brand</span> <span class="p">{</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">.</span><span class="nc">nav-link</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mf">.25</span><span class="kt">rem</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="kc">transparent</span><span class="p">;</span>
+  <span class="k">border-bottom</span><span class="p">:</span> <span class="mf">.25</span><span class="kt">rem</span> <span class="kc">solid</span> <span class="kc">transparent</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">.</span><span class="nc">nav-link</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span>
+<span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">.</span><span class="nc">nav-link</span><span class="p">:</span><span class="nd">focus</span> <span class="p">{</span>
+  <span class="k">border-bottom-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">.25</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">.</span><span class="nc">nav-link</span> <span class="o">+</span> <span class="p">.</span><span class="nc">nav-link</span> <span class="p">{</span>
+  <span class="k">margin-left</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">.</span><span class="nc">active</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+  <span class="k">border-bottom-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">48em</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">masthead-brand</span> <span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nc">nav-masthead</span> <span class="p">{</span>
+        <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c">/*</span>
+<span class="c">* Cover</span>
+<span class="c">*/</span>
+<span class="p">.</span><span class="nc">cover</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">cover</span> <span class="p">.</span><span class="nc">btn-lg</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mf">.75</span><span class="kt">rem</span> <span class="mf">1.25</span><span class="kt">rem</span><span class="p">;</span>
+  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">700</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/*</span>
+<span class="c">* Footer</span>
+<span class="c">*/</span>
+<span class="p">.</span><span class="nc">mastfoot</span> <span class="p">{</span>
+  <span class="k">color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mf">.5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Debería verse algo así:</p>
+<div class="figure">
+<img alt="_images/01-cover.png" src="_images/01-cover.png" />
+</div>
+<p>Una vez publicado:</p>
+<div class="figure">
+<img alt="_images/02-cover-preview.png" src="_images/02-cover-preview.png" />
+</div>
+<p>Actividades propuestas:</p>
+<ol class="arabic simple">
+<li>Intenta cambiar el contenido para presentar un proyecto o producto que te interese.</li>
+<li>Intenta cambiarlo para que sea fondo claro con contenido oscuro.<ul>
+<li>Agregando estilo al final de style.css</li>
+<li>Cambiando el estilo existente en style.css</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="header-y-footer">
+<h2>Header y Footer<a class="headerlink" href="#header-y-footer" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Otro ejemplo muestra como tener una barra de navegación en la parte superior y
+un pie de pagina en la parte inferior con el contenido en el centro, copia y
+pega el siguiente HTML en un proyecto thimble nuevo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Título de Pagina<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar navbar-expand-md navbar-dark fixed-top bg-dark&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-brand&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">main</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;main&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-5&quot;</span><span class="p">&gt;</span>Título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;lead&quot;</span><span class="p">&gt;</span>Descripción.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">footer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;footer&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>Esta sección se suele llamar &quot;footer&quot; (pie de pagina).<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El contenido del archivo style.css del proyecto:</p>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* Sticky footer styles</span>
+<span class="c">-------------------------------------------------- */</span>
+<span class="nt">html</span> <span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+  <span class="k">min-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="c">/* Margin bottom by footer height */</span>
+  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">footer</span> <span class="p">{</span>
+  <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+  <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+  <span class="c">/* Set the fixed height of the footer here */</span>
+  <span class="k">height</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">line-height</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* Vertically center the text there */</span>
+  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f5f5f5</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* Custom page CSS</span>
+<span class="c">-------------------------------------------------- */</span>
+<span class="c">/* Not required for template or sticky footer method. */</span>
+
+<span class="nt">body</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">footer</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Debería verse algo así:</p>
+<div class="figure">
+<img alt="_images/03-nav-footer.png" src="_images/03-nav-footer.png" />
+</div>
+<p>Una vez publicado:</p>
+<div class="figure">
+<img alt="_images/04-nav-footer-preview.png" src="_images/04-nav-footer-preview.png" />
+</div>
+<p>Actividades propuestas:</p>
+<ol class="arabic simple">
+<li>Intenta cambiar el contenido para presentar un proyecto o producto que te interese.</li>
+<li>Intenta cambiarlo para que sea fondo claro con contenido oscuro.<ul>
+<li>Agregando estilo al final de style.css</li>
+<li>Cambiando el estilo existente en style.css</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="pagina-principal">
+<h2>Pagina Principal<a class="headerlink" href="#pagina-principal" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta pagina es bastante mas larga así que vamos a probar una forma nueva.</p>
+<p>Podes ver el resultado visitando <a class="reference external" href="https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/">https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/</a></p>
+<p>En la pagina principal hace click derecho en cada imagen y selecciona la opción
+&#8220;Descargar imagen como...&#8221; o similar.</p>
+<p>Descarga todas las imágenes.</p>
+<p>Hace click en la pagina y presiona las teclas Ctrl y &#8220;u&#8221; a la vez, esto debería
+abrirte una ventana nueva con el HTML la pagina. Otra forma de hacerlo en algunos
+navegadores es haciendo click derecho con el mouse sobre la pagina y seleccionando
+la opción &#8220;Ver Código&#8221; o similar.</p>
+<p>Copia el HTML en un proyecto nuevo de thimble.</p>
+<p>Visita la dirección: <a class="reference external" href="https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/style.css">https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/style.css</a></p>
+<p>Copia el CSS en el archivo style.css del proyecto.</p>
+<p>Agrega las imágenes que descargaste a un nuevo directorio llamado <cite>img</cite>,
+un video que muestra como:</p>
+<video controls src="../videos/cew/7/create-folder-upload-images.mp4"></video><p>Actividades propuestas:</p>
+<ol class="arabic simple">
+<li>Intenta cambiar el contenido para presentar un proyecto o producto que te interese.</li>
+<li>Intenta cambiarlo las imágenes<ul>
+<li>Manteniendo los nombres de las imágenes existentes (subiendo nuevas imágenes con nombres existentes)</li>
+<li>Cambiando el nombre de las imágenes en el HTML (subiendo nuevas imágenes con nombres nuevos)</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Reusando HTML (de otros)</a><ul>
+<li><a class="reference internal" href="#cover">Cover</a></li>
+<li><a class="reference internal" href="#header-y-footer">Header y Footer</a></li>
+<li><a class="reference internal" href="#pagina-principal">Pagina Principal</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="reusando-estilo-de-otros.html" title="capítulo anterior">Reusando estilo (de otros)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/reusando-html-de-otros.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Lara Garbero Tais, Mariano Guerra.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/reusando-html-de-otros.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
