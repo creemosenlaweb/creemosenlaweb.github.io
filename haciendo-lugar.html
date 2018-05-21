@@ -1,0 +1,244 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Haciendo Lugar &#8212; documentación de Creemos en la Web - 1.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Colores" href="colores.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="haciendo-lugar">
+<h1>Haciendo Lugar<a class="headerlink" href="#haciendo-lugar" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección anterior vimos como indicar que queremos mas espacio entre el
+borde y otros elementos (margin/margen), en el borde (border) o entre el borde
+y el contenido interno (padding/relleno).</p>
+<p>Cuando yo era joven y el pasto era mas verde, las paginas web se hacían
+asumiendo una o dos resoluciones de pantalla, ya que los navegadores solo
+funcionaban en PCs y todas las PCs tenían una resolución casi estándar (800
+pixeles de ancho por 600 de alto).</p>
+<p>En esas épocas mas simples la unidad que se usaba para indicar
+espacio/distancia eran los pixeles, una unidad absoluta que se refiere a cada
+puntito de la pantalla que puede mostrar un color.</p>
+<p>Como todas las pantallas tenían cantidades similares de pixeles horizontales y
+verticales, la cosa funcionaba bastante bien para todos.</p>
+<p>No hace falta que les cuente que hoy la web se accede de una cantidad
+impresionante de dispositivos y resoluciones.</p>
+<p>Para poder escribir estilo que se adapte a la resolución de cada dispositivo
+usamos otras unidades, llamadas relativas, ya que son relativas a algo presente
+en la pagina, las mas usadas son relativas al ancho del elemento que contiene
+nuestro tag o al ancho de una letra en el texto.</p>
+<div class="section" id="pixeles">
+<h2>Pixeles<a class="headerlink" href="#pixeles" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta es la unidad mas común, un pixel es un punto en la pantalla, el cual puede
+mostrar un color, la cantidad horizontal y vertical de pixeles en una pantalla
+se llama resolución, por ejemplo, una pantalla de una laptop puede tener 1280
+pixeles de ancho por 800 de alto, lo que se escribe abreviado 1280x800.</p>
+<p>cuando especificamos el estilo de un tag y le decimos que su borde, margen o
+relleno es de 15px (15 pixeles), le estamos diciendo que queremos 15 puntos de
+espacio, pero no sabemos cuantos pixeles tiene la pantalla en total, asi que
+eso puede ser bastante para la pantalla de un celular básico que puede tener
+una resolución de 320x240 o muy poco para la pantalla de una computadora de
+escritorio avanzada que pueden tener 3840x2160 (mas de 10 veces mas resolución!).</p>
+<p>Idealmente vamos a usar esta unidad muy poco, yo lo uso solo para especificar
+el ancho de los bordes y muchas veces no debería :)</p>
+</div>
+<div class="section" id="em">
+<h2>em<a class="headerlink" href="#em" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta es la unidad mas usada y la mas recomendada, su nombre según tengo
+entendido viene de lejos, 1em es el alto en pixeles de la letra M mayúscula, si
+nombramos la letra M «eme» en ingles es «em».</p>
+<p>el alto de que M mayúscula? de la M si estuviera en el tag en el que estamos
+actualmente, osea que esta unidad es relativa al tamaño de texto del tag en el
+que nos encontramos, el cual lo puede haber establecido cualquiera de los tags
+padres, o ninguno, siendo asi el estándar de 16px.</p>
+</div>
+<div class="section" id="rem">
+<h2>rem<a class="headerlink" href="#rem" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Pero que pasa si no sabemos que estilos se aplicaron a tags padres y queremos
+estar mas seguros del tamaño que vamos a obtener? para eso existe la unidad
+rem, que es el alto de la letra M según el tamaño de texto definido en la base
+del documento (el tag &lt;body&gt;), de no estar definido va a ser también 16px.</p>
+<p>Su nombre viene de «root em» (em de la raíz).</p>
+<p>Esto nos permite saber que no importa que tamaños de fuente se hayan redefinido
+hasta nuestro tag, su tamaño va a ser siempre fijo relativo al tamaño base del
+texto del documento.</p>
+</div>
+<div class="section" id="porcentajes">
+<h2>Porcentajes<a class="headerlink" href="#porcentajes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Otra unidad útil, pero usada normalmente cuando estamos definiendo tamaños de
+la estructura de nuestro documento como ancho de columnas es el porcentaje %.</p>
+<p>El porcentaje se refiere al ancho del tag que contiene al tag actual, si
+decimos que el ancho de nuestro tag es 50%, este ocupara la mitad del tag
+padre, si decimos que el margen horizontal es de 5%, el padding horizontal es
+del 2.5%, entonces nos queda 75% para el contenido:</p>
+<p>5% margen izquierdo + 2.5% padding izquierdo + 2.5% padding derecho + 5% margen derecho = 15%</p>
+</div>
+<div class="section" id="ejemplos-que-no-se-entiende-nada">
+<h2>Ejemplos que no se entiende nada!<a class="headerlink" href="#ejemplos-que-no-se-entiende-nada" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las unidades de espacio se entienden mas usandolas y a puro prueba y error, la
+recomendación es usar em y rem siempre que se pueda, porcentajes cuando estamos
+definiendo posicionamiento de cosas en la pagina y pixeles si tenes una buena
+razón.</p>
+<p>El div azul que contiene a todos los otros divs establece el tamaño de la
+fuente a 16 pixeles:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 16px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5em;  background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5em<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5rem; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5rem<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50px; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>50px<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%;  background-color: red; color: white;&quot;</span><span class="p">&gt;</span>50%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div style="font-size: 16px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
+    <div style="width: 5em;  background-color: red; color: white; margin: 1em 0;">5em</div>
+    <div style="width: 5rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
+    <div style="width: 50px; background-color: red; color: white; margin: 1em 0;">50px</div>
+    <div style="width: 50%;  background-color: red; color: white;">50%</div>
+</div><p>El div azul que contiene a todos los otros divs establece el tamaño de la
+fuente, notar que los divs interiores tienen el mismo estilo que los de arriba:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 32px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5em;  background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5em<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5rem; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5rem<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50px; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>50px<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%;  background-color: red; color: white;&quot;</span><span class="p">&gt;</span>50%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div style="font-size: 32px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
+    <div style="width: 5em;  background-color: red; color: white; margin: 1em 0;">5em</div>
+    <div style="width: 5rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
+    <div style="width: 50px; background-color: red; color: white; margin: 1em 0;">50px</div>
+    <div style="width: 50%;  background-color: red; color: white;">50%</div>
+</div><p>El primer div tiene un ancho de 5em, como el div padre establece el tamaño de
+la fuente a distintos valores en los dos ejemplos, el ancho resultante es
+distinto.</p>
+<p>El segundo div tiene un ancho de 5rem, como ambos están en el mismo documento
+raíz, tienen el mismo ancho, aun cuando el texto interior cambia, ya que
+«hereda» el tamaño del div padre.</p>
+<p>El tercero esta en pixeles, así que va a ser igual, el cuarto esta en
+porcentaje, y ya que ambos divs padres tienen el mismo ancho, su ancho es
+igual.</p>
+<p>Probemos algo un poco distinto:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 32px; width: 50%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5em;  font-size: 1rem; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5em<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 5rem; font-size: 1rem; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>5rem<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50px; font-size: 1rem; background-color: red; color: white; margin: 1em 0;&quot;</span><span class="p">&gt;</span>50px<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 50%;  font-size: 1rem; background-color: red; color: white;&quot;</span><span class="p">&gt;</span>50%<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div style="font-size: 32px; width: 50%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
+    <div style="width: 5em;  font-size: 1rem; background-color: red; color: white; margin: 1em 0;">5em</div>
+    <div style="width: 5rem; font-size: 1rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
+    <div style="width: 50px; font-size: 1rem; background-color: red; color: white; margin: 1em 0;">50px</div>
+    <div style="width: 50%;  font-size: 1rem; background-color: red; color: white;">50%</div>
+</div><p>El div padre ahora ocupa el 50% del ancho de la pagina, por lo que el ancho del
+ultimo div hijo debería ser la mitad de los anteriores, para «estandarizar» em
+y rem, seteo el tamaño de fuente de los divs hijos a 1rem.</p>
+<p>Como no se en que pantalla estas viendo esto no te puedo decir mucho sobre que
+ancho van a tener, lo único que se, es que como la fuente de ambos tiene 1rem
+de tamaño, el ancho de los dos debería ser el mismo.</p>
+<p>Si el tamaño de la fuente del documento resulta ser 10px, entonces el tercer
+div tendrá el mismo ancho.</p>
+<p>Como siempre, no hace falta que se entienda todo ahora, solo saber las unidades
+mas usadas, las recomendadas y mas o menos como se comportan, el resto es
+prueba y error.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Tabla de Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Haciendo Lugar</a><ul>
+<li><a class="reference internal" href="#pixeles">Pixeles</a></li>
+<li><a class="reference internal" href="#em">em</a></li>
+<li><a class="reference internal" href="#rem">rem</a></li>
+<li><a class="reference internal" href="#porcentajes">Porcentajes</a></li>
+<li><a class="reference internal" href="#ejemplos-que-no-se-entiende-nada">Ejemplos que no se entiende nada!</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="colores.html" title="capítulo anterior">Colores</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Esta página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/haciendo-lugar.rst.txt"
+            rel="nofollow">Mostrar el código</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Ir a" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Lara Garbero Tais, Mariano Guerra.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/haciendo-lugar.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

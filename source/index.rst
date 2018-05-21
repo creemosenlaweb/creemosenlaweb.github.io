@@ -18,4 +18,5 @@ Creemos en la Web
    reusando-estilo-de-otros
    reusando-html-de-otros
    colores
+   haciendo-lugar
 
