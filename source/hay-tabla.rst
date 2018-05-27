@@ -82,7 +82,7 @@ Cabecera
 ........
 
 En la tabla anterior, como sabemos que significa cada columna? para eso
-necesitamos una cabecera, esto se hace con el tab `thead` (table head, cabecera
+necesitamos una cabecera, esto se hace con el tag `thead` (table head, cabecera
 de tabla)
 
 * Tabla
@@ -974,6 +974,25 @@ Si queremos que una celda ocupe mas de una columna, tenemos que usar el
 atributo `colspan` (extensión de columnas) e indicarle cuantas columnas
 queremos que ocupe, por defecto cada celda tiene un `colspan` de 1.
 
+.. code-block:: html
+
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td colspan=3>1.1</td>
+        </tr>
+        <tr>
+          <td>2.1</td>
+          <td colspan=2>2.2</td>
+        </tr>
+        <tr>
+          <td>3.1</td>
+          <td>3.2</td>
+          <td>3.3</td>
+        </tr>
+      </tbody>
+    </table>
+
 .. raw:: html
 
     <table class="table table-bordered">
@@ -993,24 +1012,6 @@ queremos que ocupe, por defecto cada celda tiene un `colspan` de 1.
       </tbody>
     </table>
 
-.. code-block:: html
-
-    <table class="table table-bordered">
-      <tbody>
-        <tr>
-          <td colspan=3>1.1</td>
-        </tr>
-        <tr>
-          <td>2.1</td>
-          <td colspan=2>2.2</td>
-        </tr>
-        <tr>
-          <td>3.1</td>
-          <td>3.2</td>
-          <td>3.3</td>
-        </tr>
-      </tbody>
-    </table>
 
 Esto lo podemos usar en la cabecera para crear cabeceras multinivel:
 
