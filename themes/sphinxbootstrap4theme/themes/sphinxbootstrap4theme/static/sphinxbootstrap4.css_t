@@ -1,0 +1,263 @@
+.main {
+    width: {{ theme_main_width }};
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+Base styles
+*/
+
+.related.breadcrumb{
+    background-color: transparent;
+}
+
+.figure {
+    margin: 7px 0px 7px 0px;
+}
+
+a.headerlink{
+  margin-left: 0.5em;
+  opacity: 0.5;
+}
+
+img{
+  max-width: 100%;
+}
+
+a.headerlink:hover{
+  opacity: 1;
+}
+
+/*
+Document Class styles
+*/
+div.documentwrapper{
+    padding: 0px 25px 0px 50px;
+}
+
+/*
+Sidebar styles
+*/
+
+#searchbox {
+    margin: 40px 20px 10px 20px;
+}
+
+div.sphinxsidebar {
+    margin-left: 0px;
+    padding: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper {
+    display: block;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 1;
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper h3,
+div.sphinxsidebar > div.sphinxsidebarwrapper h4 {
+    font-size: 1.3em;
+    margin-left: 10px;
+    padding: 12px 0px 3px 10px;
+    border-bottom: 1px solid rgb(236, 238, 239);
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper p.topless {
+    padding: 1em 0px .5em 1.5em;
+}
+
+div.sphinxsidebarwrapper > div.sidebartoctree ul {
+    padding: .1em 0 0 1em;
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper a.reference {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    padding: .1em .5em;
+}
+
+div.sphinxsidebar > div.sphinxsidebarwrapper a.reference.current {
+    color: #fff;
+    cursor: default;
+    background-color: #0275d8;
+}
+
+/* sidebar tree minus icon  */
+div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow:not(.collapsed) {
+    border-bottom: .3em solid rgba(0, 0, 0, .4);
+    width: 1em;
+    height: 0;
+    margin: .6em 0 0 0;
+    position: absolute;
+    z-index: 10;
+    right: .3em;
+}
+
+/* sidebar tree arrow icon */
+div.sphinxsidebarwrapper > div.sidebartoctree > ul a.arrow.collapsed {
+    border: .5em solid transparent ;
+    border-top: .5em solid rgba(0, 0, 0, .4);
+    width: 0;
+    height: 0;
+    margin: .5em 0 0 0;
+    position: absolute;
+    z-index: 10;
+    right: .3em;
+}
+
+/*
+Footer styles
+*/
+
+.footer {
+    border-top: 1px solid rgb(236, 238, 239);
+	color: rgb(85, 89, 92);
+	padding: 10px 10px 10px 10px;
+	margin-top: 20px;
+}
+
+.copyright {
+    padding-top: 8px;
+}
+
+/*
+Admonition Styles
+*/
+.admonition-title {
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+p.admonition-title > div.icon {
+    width:26px;
+    height:26px;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:13px;
+    top: 7px;
+    margin-right: 5px;
+}
+
+div.alert-info > p.admonition-title > div.icon {
+    background:rgb(49, 112, 143);
+
+}
+div.alert-info > p.admonition-title > div.icon > div.question-mark:before {
+    color: rgb(217, 237, 247);
+    content: "?";
+    font-size: 25px;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
+
+div.alert-success > p.admonition-title > div.icon {
+    background:rgb(60, 118, 61);
+}
+
+div.alert-success > p.admonition-title > div.icon > div.check-mark:before  {
+    content: "";
+    border: solid rgb(223, 240, 216);
+    border-width: 4px 4px 0px 0px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    left: 5px;
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    top: 6px;
+}
+
+div.alert-warning > p.admonition-title > div.icon {
+    background:rgb(138, 109, 59);
+}
+
+div.alert-warning > p.admonition-title > div.icon > div.information-mark {
+    width:6px;
+    height:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    background:rgb(252, 248, 227);
+    left: 10px;
+    position: absolute;
+    top: 3px;
+}
+div.alert-warning > p.admonition-title > div.icon > div.information-mark:before {
+    content: "";
+    border: solid rgb(252, 248, 227);
+    border-width: 2px 4px 2px 0px;
+    font-size: 25px;
+    position: absolute;
+    left: -1px;
+    top: 8px;
+    padding: 1px;
+    height: 12px;
+}
+
+div.alert-warning > p.admonition-title > div.icon > div.information-mark:after {
+    content: "";
+    border: solid rgb(252, 248, 227);
+    border-width: 0px 0px 2px 0px;
+    font-size: 25px;
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    padding: 1px;
+    height: 12px;
+}
+
+div.alert-danger > p.admonition-title > div.icon {
+    background:rgb(169, 68, 66);
+
+}
+div.alert-danger > p.admonition-title > div.icon > div.exclamation-mark:before {
+    color: rgb(242, 222, 222);
+    content: "!";
+    font-size: 25px;
+    position: absolute;
+    left: 9px;
+    top: -5px;
+}
+
+/*
+Code-block style
+*/
+
+.highlight {
+    background-color: rgb(249, 249, 249);
+    border: solid 1px rgb(236, 238, 239);
+    margin: 10px 0px 10px 0px;
+}
+
+.highlight > pre {
+    margin: 16px 16px 16px 16px;
+}
+
+/*
+Blockquote
+*/
+blockquote {
+   padding-left: 1em;
+}
+
+@media (max-width: 47.9em) {
+  .main {
+      width: 100%;
+  }
+  div.documentwrapper{
+    padding: 0px 5px 0px 5px;
+  }
+}

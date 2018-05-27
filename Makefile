@@ -23,3 +23,6 @@ html:
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	rm -rf _images _sources _static
 	mv build/html/* .
+
+serve:
+	python3 -m http.server
