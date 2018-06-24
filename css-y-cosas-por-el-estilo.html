@@ -77,7 +77,7 @@ contenido que definamos con HTML.</p>
 <div class="section" id="apagando-las-luces">
 <h2>Apagando las luces<a class="headerlink" href="#apagando-las-luces" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Vamos a empezar cambiando un poco de color, que pasa si queremos hacer una
-pagina «invertida»? donde el fondo es oscuro y el texto claro.</p>
+pagina &quot;invertida&quot;? donde el fondo es oscuro y el texto claro.</p>
 <p>Creemos un proyecto nuevo con el siguiente contenido:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -134,7 +134,7 @@ pagina «invertida»? donde el fondo es oscuro y el texto claro.</p>
 </pre></div>
 </div>
 <p>El contenido del atributo style es uno o mas pares de valores, cada par separado
-por <strong>;</strong>, cada par a su lado izquierdo tiene la «llave» y del lado derecho el «valor».</p>
+por <strong>;</strong>, cada par a su lado izquierdo tiene la &quot;llave&quot; y del lado derecho el &quot;valor&quot;.</p>
 <p>Este concepto de pares llave valor se va a repetir mucho en el mundo informático
 así que si prestas atención lo vas a ver en muchos lados, para empezar, ya los
 conocés de los atributos de los tags :)</p>
@@ -161,12 +161,12 @@ fondo en ingles) tiene el valor negro (black).</p>
 <div class="figure">
 <img alt="_images/02-color.png" src="_images/02-color.png" />
 </div>
-<p>Si sos como yo, ya estarás pensando: «Esto va a llevar un buen tiempo y mucha repetición!».</p>
+<p>Si sos como yo, ya estarás pensando: &quot;Esto va a llevar un buen tiempo y mucha repetición!&quot;.</p>
 <p>Si, eso pensé yo.</p>
 <p>Pero quizás notaste que la palabra <strong>negrita</strong> y la palabra <em>itálica</em> ahora
 también tienen color blanco.</p>
 <p>Esto no es un accidente, cuando un valor se define en CSS para un tag, los tags
-descendientes «heredan» ese valor si tiene sentido, el color de fondo y el
+descendientes &quot;heredan&quot; ese valor si tiene sentido, el color de fondo y el
 color del texto por suerte son unos de ellos.</p>
 <p>Ahora bien, donde podríamos poner el color de texto para hacer el menor esfuerzo posible?</p>
 <p>En el mismo lugar que definimos el color de fondo.</p>
@@ -226,14 +226,14 @@ texto rojo.</p>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Eso fue bastante repetitivo…</p>
+<p>Eso fue bastante repetitivo...</p>
 </div>
 <div class="section" id="gustos-especificos-cambiantes">
 <h2>Gustos específicos, cambiantes<a class="headerlink" href="#gustos-especificos-cambiantes" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En este momento se nos ocurre que quizás seria mejor si el texto fuera azul en
 lugar de rojo.</p>
 <p>La idea de tener que cambiar el color en cada lugar nos hace pensar que quizás
-el rojo esta bien después de todo…</p>
+el rojo esta bien después de todo...</p>
 <p>Pero como siempre en el mundo de la web, si algo es repetitivo y tedioso,
 seguro hay una forma de automatizar lo repetitivo.</p>
 <p>En este caso lo que nos serviría es indicar todos los tags que comparten un
@@ -244,11 +244,11 @@ comunes.</p>
 <strong>class</strong> nos permite definir una lista de palabras separadas por espacios que
 describen a que clases pertenece ese tag.</p>
 <p>Llamemos a nuestra clase de tags con fondo claro y texto colorido <strong>llamativo</strong>.</p>
-<p>Edita el ejemplo, todos los elementos con <cite>style=»background-color: white; color: red;»</cite> ahora tienen que contener el atributo <strong>class</strong> con el valor <strong>llamativo</strong>, ejemplo del primero:</p>
+<p>Edita el ejemplo, todos los elementos con <cite>style=&quot;background-color: white; color: red;&quot;</cite> ahora tienen que contener el atributo <strong>class</strong> con el valor <strong>llamativo</strong>, ejemplo del primero:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">b</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;llamativo&quot;</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Luego de hacer todos los cambios podemos observar que … no paso nada.</p>
+<p>Luego de hacer todos los cambios podemos observar que ... no paso nada.</p>
 <p>Porque las clases son cosas que usamos nosotros para agrupar tags, ahora
 tenemos que de alguna forma decirle al navegador que queremos que todos los
 tags con clase <strong>llamativo</strong> tengan fondo blanco y texto azul.</p>
@@ -311,7 +311,7 @@ o una pagina con cuentos o historias.</p>
 <p>Imaginemos que con el tiempo tu pagina web crece y tiene 10 documentos distintos,
 todos con el mismo estilo en la cabecera.</p>
 <p>Y un día decidís cambiar el estilo de tu pagina, querés algo mas claro.</p>
-<p>Ahí es cuando dándote cuenta que vas a tener que hacer cambios en 10 documentos, el estilo oscuro actual no es tan mala idea después de todo…</p>
+<p>Ahí es cuando dándote cuenta que vas a tener que hacer cambios en 10 documentos, el estilo oscuro actual no es tan mala idea después de todo...</p>
 <p>A menos que haya otra forma de evitar la repetición.</p>
 <p>Por suerte la hay, y quizás ya la notaste al ver en tus proyectos de Thimble un
 archivo con un nombre familiar que todavía no mencionamos.</p>
@@ -376,7 +376,7 @@ en el tag style para el tag body, y en el archivo style.css para el tag body. en
 <p>Pero sin embargo los tags con clase <strong>llamativo</strong> son azules, como decide el
 navegador que el azul le gana al negro? Porque el atributo class es mas
 especifico que el tag body.</p>
-<p>De esta manera podemos hacer definiciones generales «a grandes rasgos» al
+<p>De esta manera podemos hacer definiciones generales &quot;a grandes rasgos&quot; al
 principio de nuestras hojas de estilo e irlas refinando mas abajo,
 redefiniendolas para casos mas particulares e incluso en otras hojas de estilo
 especificas para ciertos documentos.</p>

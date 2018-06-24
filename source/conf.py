@@ -21,7 +21,6 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.abspath('..'), 'themes', 'sphinxbootstrap4theme'))
 
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
