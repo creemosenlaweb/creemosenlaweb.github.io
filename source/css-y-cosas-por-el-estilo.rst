@@ -22,7 +22,7 @@ Creemos un proyecto nuevo con el siguiente contenido:
 	<!doctype html>
 	<html>
 	  <head>
-		<meta chartset="utf-8">
+		<meta charset="utf-8">
 		<title>Mi Pagina</title>
 	  </head>
 
@@ -155,7 +155,7 @@ Intentemos lo:
 	<!doctype html>
 	<html>
 	  <head>
-		<meta chartset="utf-8">
+		<meta charset="utf-8">
 		<title>Mi Pagina</title>
 	  </head>
 
@@ -242,7 +242,7 @@ Este va a ser el principio del documento:
 	<!doctype html>
 	<html>
 	  <head>
-		<meta chartset="utf-8">
+		<meta charset="utf-8">
 		<title>Mi Pagina</title>
 		<style>
 		.llamativo{
@@ -436,7 +436,7 @@ El principio de nuestro documento queda así:
 	<!doctype html>
 	<html>
 	  <head>
-		<meta chartset="utf-8">
+		<meta charset="utf-8">
 		<title>Mi Pagina</title>
 		<link href="style.css" rel="stylesheet">
 	  </head>
