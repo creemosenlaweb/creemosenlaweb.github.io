@@ -28,7 +28,7 @@ pagina básica:
 	<!doctype html>
 	<html>
 	  <head>
-		<meta chartset="utf-8">
+		<meta charset="utf-8">
 		<title>Mi Pagina</title>
 	  </head>
 

@@ -13,7 +13,7 @@ un formato que no queremos, y el otro solo funciona con listas.
 Como podemos hacer para definir una selección para aplicarle atributos pero que
 en si no signifique nada?
 
-Para eso hay un tag llamado **span** que en ingles significa algo así como
+Para eso hay un tag llamado `span <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/span>`_ que en ingles significa algo así como
 tramo, palmo, lapso o mas detallado: la extensión completa de algo de punta a
 punta; la cantidad de espacio que cubre algo.
 
@@ -55,8 +55,8 @@ Para eso usamos una de dos formas de darle mas "espacio" a un tag, una es el
 espacio "interno" (entre el borde y el contenido) y otro es el espacio
 "externo" (entre el borde y sus vecinos).
 
-El espacio interno en ingles se llama `padding` (se traduce "relleno"), el
-espacio externo en ingles se llama `margin` (se traduce "margen").
+El espacio interno en ingles se llama `padding <https://developer.mozilla.org/es/docs/Web/CSS/padding>`_ (se traduce "relleno"), el
+espacio externo en ingles se llama `margin <https://developer.mozilla.org/es/docs/Web/CSS/margin>`_ (se traduce "margen").
 
 Estos dos atributos los vas a usar mucho en el día a día y como se usan mucho
 hay formas abreviadas y mas especificas de usarlos, empecemos con la abreviada
@@ -146,7 +146,7 @@ que pasa si queremos agregar un borde con relleno a los primeros 3 párrafos?
 Agregar borde a cada párrafo no sirve, porque lo que queremos es "rodear" los
 3 párrafos con un borde y el tag `span` solo sirve para rodear texto.
 
-Obviamente este problema se resuelve con un nuevo tag, se llama `div` y cumple
+Obviamente este problema se resuelve con un nuevo tag, se llama `div <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/div>`_ y cumple
 la misma función que `span` pero se diferencia en que dentro de el puede haber
 otros tags.
 
