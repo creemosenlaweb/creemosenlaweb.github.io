@@ -90,7 +90,7 @@ conocés de los atributos de los tags :)
 Los pares llave/valor en CSS sirven para especificar distintas propiedades del
 tag en el que están definidos.
 
-En este caso le estamos diciendo que el color de fondo (background significa
+En este caso le estamos diciendo que el color de fondo `background-color <https://developer.mozilla.org/es/docs/Web/CSS/background-color>`_ (background significa
 fondo en ingles) tiene el valor negro (black).
 
 El resultado, si bien es lo que queremos, nos agrega un nuevo desafío:
@@ -106,7 +106,7 @@ Ahora tenemos que hacer que el texto sea un color claro, empezamos con el titulo
 		<h1 style="color: white;">Esto es un título</h1>
 
 Para definir el color del contenido de un tag (no el fondo), usamos la llave
-**color** (que por suerte no tenemos que traducir :)
+`color <https://developer.mozilla.org/es/docs/Web/CSS/color>`_ (que por suerte no tenemos que traducir :)
 
 Continuamos con el primer párrafo:
 
@@ -214,7 +214,7 @@ comunes.
 Es como si los tags pertenecieran a una misma clase.
 
 Y resulta que todos los tags pueden tener un atributo para eso, el atributo
-**class** nos permite definir una lista de palabras separadas por espacios que
+`class <https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/class>`_ nos permite definir una lista de palabras separadas por espacios que
 describen a que clases pertenece ese tag.
 
 Llamemos a nuestra clase de tags con fondo claro y texto colorido **llamativo**.
@@ -231,7 +231,7 @@ Porque las clases son cosas que usamos nosotros para agrupar tags, ahora
 tenemos que de alguna forma decirle al navegador que queremos que todos los
 tags con clase **llamativo** tengan fondo blanco y texto azul.
 
-Para eso vamos a aprender un tag nuevo, el tag style, este tag normalmente va en
+Para eso vamos a aprender un tag nuevo, el tag `style <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/style>`_, este tag normalmente va en
 la cabecera (porque no define contenido del documento) y nos permite
 centralizar en un lugar las definiciones de estilo.
 
@@ -354,7 +354,7 @@ Después del tag *style* en la cabecera podemos ver como de pronto el estilo
 contenido en ese archivo se aplica al documento!
 
 Antes de ver que sucedió y donde esta nuestro fondo negro veamos los dos
-atributos del tag link:
+atributos del tag `link <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/link>`_:
 
 href
 	Atributo que indica la ubicación del archivo de estilo a cargar, ya lo conocíamos del tag *a*
@@ -442,7 +442,7 @@ El principio de nuestro documento queda así:
 	  </head>
 
 Ya observaras uno de los beneficios de separar contenido de presentación:
-cambiamos completamente el aspecto de la pagina sin tocar si contenido.
+cambiamos completamente el aspecto de la pagina sin tocar su contenido.
 
 El proyecto quedo así:
 
