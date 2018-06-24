@@ -1,7 +1,7 @@
     <div class="row related" role="navigation" aria-label="related navigation">
        <div class="col-md-8">
         <ol class="related breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}">{{ project|e }}</a></li>
             {%- for parent in parents %}
                 <li class="breadcrumb-item"><a href="{{ parent.link|e }}"
                        {% if loop.last %}

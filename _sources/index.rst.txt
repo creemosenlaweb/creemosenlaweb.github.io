@@ -8,7 +8,6 @@ Creemos en la Web
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    introduccion
    html
