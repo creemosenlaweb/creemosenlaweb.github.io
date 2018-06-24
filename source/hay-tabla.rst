@@ -72,17 +72,17 @@ Que se ve algo así:
       </tr>
     </table>
 
-Como vemos en el código, el tag `table` indica que vamos a usar una tabla, si
-solo vamos a mostrar datos el tag que indica el cuerpo `tbody` (table body,
-cuerpo de tabla) es opcional, luego tenemos el tag que indica una fila `tr`
+Como vemos en el código, el tag `table <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/table>`_ indica que vamos a usar una tabla, si
+solo vamos a mostrar datos el tag que indica el cuerpo `tbody <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/tbody>`_ (table body,
+cuerpo de tabla) es opcional, luego tenemos el tag que indica una fila `tr <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/tr>`_
 (table row: fila de tabla), dentro del tenemos el tag para una celda de datos
-`td` (table cell data: celda de datos de tabla), uno por cada celda.
+`td <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/td>`_ (table cell data: celda de datos de tabla), uno por cada celda.
 
 Cabecera
 ........
 
 En la tabla anterior, como sabemos que significa cada columna? para eso
-necesitamos una cabecera, esto se hace con el tag `thead` (table head, cabecera
+necesitamos una cabecera, esto se hace con el tag `thead <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/thead>`_ (table head, cabecera
 de tabla)
 
 * Tabla
@@ -166,7 +166,7 @@ Lo hacemos para poder tambien indicar la cabecera con el tag `thead` (table
 head, cabecera de tabla).
 
 El cuerpo ya lo vimos antes, la cabecera es muy similar, solo que en lugar de
-usar el tag `td` para las columnas usamos el tag `th` (table cell header, celda
+usar el tag `td` para las columnas usamos el tag `th <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/th>`_ (table cell header, celda
 de cabecera de tabla)
 
 Pie de Tabla
@@ -278,7 +278,7 @@ presentando valores que se puedan sumarizar.
     </table>
 
 
-Como podemos ver, el pie de tabla se define con el tag `tfoot` (table footer,
+Como podemos ver, el pie de tabla se define con el tag `tfoot <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/tfoot>`_ (table footer,
 pie de tabla), dentro usamos los mismos tags que en el cuerpo.
 
 Un poco de estilo
@@ -842,7 +842,7 @@ Subtítulo
 ---------
 
 Es útil indicar que datos se están mostrando en la tabla, para eso hay un tag
-llamado `caption` que puede ser usado para tal fin.
+llamado `caption <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/caption>`_ que puede ser usado para tal fin.
 
 .. code-block:: html
 
@@ -1089,4 +1089,4 @@ Esto lo podemos usar en la cabecera para crear cabeceras multinivel:
      </tbody>
    </table>
 
-Quizás notaste que use rowspan (extensión de fila) para "unir" las dos celdas de población verticalmente, también use el css vertical-align (alineación vertical) para que el texto este en el medio verticalmente.
+Quizás notaste que use rowspan (extensión de fila) para "unir" las dos celdas de población verticalmente, también use el css `vertical-align <https://developer.mozilla.org/es/docs/Web/CSS/vertical-align>`_ (alineación vertical) para que el texto este en el medio verticalmente.

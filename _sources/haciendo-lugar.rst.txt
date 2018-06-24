@@ -39,7 +39,7 @@ mostrar un color, la cantidad horizontal y vertical de pixeles en una pantalla
 se llama resolución, por ejemplo, una pantalla de una laptop puede tener 1280
 pixeles de ancho por 800 de alto, lo que se escribe abreviado 1280x800.
 
-cuando especificamos el estilo de un tag y le decimos que su borde, margen o
+Cuando especificamos el estilo de un tag y le decimos que su borde, margen o
 relleno es de 15px (15 pixeles), le estamos diciendo que queremos 15 puntos de
 espacio, pero no sabemos cuantos pixeles tiene la pantalla en total, asi que
 eso puede ser bastante para la pantalla de un celular básico que puede tener

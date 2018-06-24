@@ -21,13 +21,13 @@ Usando colores
 Los siguientes son algunos de los atributos CSS que requieren colores, todos
 soportan todas las representaciones que vamos a explorar a continuación.
 
-* color
-* background-color
-* border-color
-* outline-color
-* text-decoration-color
-* text-emphasis-color
-* text-shadow
+* `color <https://developer.mozilla.org/es/docs/Web/CSS/color>`_
+* `background-color <https://developer.mozilla.org/es/docs/Web/CSS/background-color>`_
+* `border-color <https://developer.mozilla.org/es/docs/Web/CSS/border-color>`_
+* `outline-color <https://developer.mozilla.org/es/docs/Web/CSS/outline-color>`_
+* `text-decoration-color <https://developer.mozilla.org/es/docs/Web/CSS/text-decoration-color>`_
+* `text-emphasis-color <https://developer.mozilla.org/es/docs/Web/CSS/text-emphasis-color>`_
+* `text-shadow <https://developer.mozilla.org/es/docs/Web/CSS/text-shadow>`_
 
 Un ejemplo que algunos de los atributos listados:
 
