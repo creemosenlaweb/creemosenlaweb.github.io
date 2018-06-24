@@ -22,3 +22,4 @@ Creemos en la Web
    hay-tabla
    filas-columnas
    herramientas-desarrollador
+   mas-componentes
