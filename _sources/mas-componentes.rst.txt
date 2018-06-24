@@ -72,7 +72,7 @@ Breadcrumbs (migas de pan)
 Botones
 -------
 
-Estandar
+Estándar
 ........
 
 .. code-block:: html
@@ -431,7 +431,7 @@ Sin bordes
       <li class="list-group-item">Vestibulum at eros</li>
     </ul>
 
-Clases utiles
+Clases útiles
 .............
 
 .. code-block:: html
@@ -598,7 +598,7 @@ Cartas
 .. code-block:: html
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo de imagen">
+      <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo de imagen">
       <div class="card-body">
         <h5 class="card-title">Título</h5>
         <p class="card-text">Contenido principal.</p>
@@ -609,7 +609,7 @@ Cartas
 .. raw:: html
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo de imagen">
+      <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo de imagen">
       <div class="card-body">
         <h5 class="card-title">Título</h5>
         <p class="card-text">Contenido principal.</p>
@@ -696,7 +696,7 @@ Cambalache
 .. code-block:: html
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Text alternativo">
+      <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Text alternativo">
       <div class="card-body">
         <h5 class="card-title">Título</h5>
         <p class="card-text">Contenido principal</p>
@@ -715,7 +715,7 @@ Cambalache
 .. raw:: html
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Text alternativo">
+      <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Text alternativo">
       <div class="card-body">
         <h5 class="card-title">Título</h5>
         <p class="card-text">Contenido principal</p>
@@ -1258,7 +1258,7 @@ Grupo de cartas
 
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1268,7 +1268,7 @@ Grupo de cartas
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1278,7 +1278,7 @@ Grupo de cartas
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1293,7 +1293,7 @@ Grupo de cartas
 
     <div class="card-group">
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1303,7 +1303,7 @@ Grupo de cartas
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1313,7 +1313,7 @@ Grupo de cartas
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1331,7 +1331,7 @@ Card deck
 
     <div class="card-deck">
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1341,7 +1341,7 @@ Card deck
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1351,7 +1351,7 @@ Card deck
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1366,7 +1366,7 @@ Card deck
 
     <div class="card-deck">
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1376,7 +1376,7 @@ Card deck
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
@@ -1386,7 +1386,7 @@ Card deck
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="../galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
+        <img class="card-img-top" src="galleries/cew/500-500-1.jpeg" alt="Texto alternativo">
         <div class="card-body">
           <h5 class="card-title">Título</h5>
           <p class="card-text">Contenido.</p>
