@@ -67,7 +67,7 @@ cabeza.
 
     <html>
         <head>
-            <meta chartset="utf-8">
+            <meta charset="utf-8">
             <title>Mi Pagina</title>
         </head>
 
@@ -87,7 +87,7 @@ podemos ser buenas personas e indicarselo explícitamente.
     <!doctype html>
     <html>
         <head>
-            <meta chartset="utf-8">
+            <meta charset="utf-8">
             <title>Mi Pagina</title>
         </head>
 
@@ -165,7 +165,7 @@ Ahora pongamos todo junto en una pagina:
     <!doctype html>
     <html>
         <head>
-            <meta chartset="utf-8">
+            <meta charset="utf-8">
             <title>Mi Pagina</title>
         </head>
 
