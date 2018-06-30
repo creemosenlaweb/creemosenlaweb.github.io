@@ -25,7 +25,7 @@ Entonces empecemos cargando la librería aframe:
 
 .. raw:: html
 
-    <script src="/jslibs/aframe-0.8.0.min.js"></script>
+    <script src="jslibs/aframe-0.8.0.min.js"></script>
 
 Y luego creamos nuestra escena:
 
