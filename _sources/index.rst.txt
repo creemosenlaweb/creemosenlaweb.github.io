@@ -22,3 +22,5 @@ Creemos en la Web
    filas-columnas
    herramientas-desarrollador
    mas-componentes
+   dibujando-en-2d
+   dibujando-en-3d
