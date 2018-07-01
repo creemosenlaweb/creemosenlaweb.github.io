@@ -1,0 +1,296 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Audio y Video &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Dibujando Formas en 3D" href="dibujando-en-3d.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Audio y Video</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="dibujando-en-3d.html" title="Previous Chapter: Dibujando Formas en 3D" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Dibujando For...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="audio-y-video">
+<h1>Audio y Video<a class="headerlink" href="#audio-y-video" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Incluir un video o audio seria algo tan simple como un tag y la ubicación del
+archivo.</p>
+<p>Por cuestiones históricas hay muchos formatos de audio y video y las
+organizaciones que desarrollan los navegadores mas usados (Microsoft: Internet
+Explorer 11 y Microsoft Edge, Apple: Safari, Google: Chrome, Mozilla: Firefox)
+tienen distintos objetivos e intereses que hacen que soporten algunos formatos
+y otros no.</p>
+<div class="section" id="video">
+<h2>Video<a class="headerlink" href="#video" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Empecemos con un ejemplo que según esta <a class="reference external" href="https://caniuse.com/#feat=webm">tabla de compatibilidad para el formato webm</a>, no va a andar en IE 11 y Safari.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video src="/cew_files/12/example.webm" type="video/webm" controls></video><p>Viendo la <a class="reference external" href="https://caniuse.com/#feat=mpeg4">tabla de compatibilidad para el formato mp4</a> vemos que podemos hacerlo funcionar en mas versiones pero no necesariamente todas.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video src="/cew_files/12/example.mp4" type="video/mp4" controls></video><p>Que pasa si queremos hacerlo funcionar en la mayor cantidad de plataformas
+posibles priorizando formatos mas livianos y con mejor calidad?</p>
+<p>Podemos especificar los videos en orden de preferencia, el navegador va a
+intentar en orden del primero al ultimo cargarlos, cuando encuentre uno que
+sirve lo va a usar.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video controls>
+    <source src="/cew_files/12/example.webm" type="video/webm">
+    <source src="/cew_files/12/example.mp4" type="video/mp4">
+</video><p>Otro formato que suele usarse es ogv, acá la <a class="reference external" href="https://caniuse.com/#feat=ogv">tabla de compatibilidad del formato ogv</a>.</p>
+<div class="section" id="vista-previa">
+<h3>Vista Previa<a class="headerlink" href="#vista-previa" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Cuando la pagina carga y el video esta en pausa el navegador va a elegir una
+vista previa automáticamente, si queremos tener mas control sobre la imagen
+mostrada podemos especificarsela explícitamente con el atributo <cite>poster</cite>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">poster</span><span class="o">=</span><span class="s">&quot;/cew_files/12/poster.png&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video controls poster="/cew_files/12/poster.png">
+    <source src="/cew_files/12/example.webm" type="video/webm">
+    <source src="/cew_files/12/example.mp4" type="video/mp4">
+</video></div>
+<div class="section" id="subtitulos">
+<h3>Subtítulos<a class="headerlink" href="#subtitulos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ya sea por cuestiones de accesibilidad o para traducir o explicar el contenido
+del video, podemos agregar subtítulos a un video usando el tag <cite>track</cite>.</p>
+<p>El formato del archivo es bastante simple:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WEBVTT</span>
+
+<span class="mi">00</span><span class="p">:</span><span class="mf">01.000</span> <span class="o">--&gt;</span> <span class="mi">00</span><span class="p">:</span><span class="mf">04.000</span>
+<span class="n">Primer</span> <span class="n">mensaje</span><span class="p">,</span> <span class="k">del</span> <span class="n">segundo</span> <span class="mi">1</span> <span class="n">al</span> <span class="mi">4</span>
+
+<span class="mi">00</span><span class="p">:</span><span class="mf">05.000</span> <span class="o">--&gt;</span> <span class="mi">00</span><span class="p">:</span><span class="mf">08.000</span>
+<span class="n">Segundo</span> <span class="n">mensaje</span><span class="p">,</span> <span class="k">del</span> <span class="n">segundo</span> <span class="mi">5</span> <span class="n">al</span> <span class="mi">8</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Empieza con <cite>WEBVTT</cite> en la primera linea, un salto de linea y luego
+tantas veces como sea necesario:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Tiempo</span> <span class="n">comienzo</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="n">Tiempo</span> <span class="n">fin</span><span class="p">]</span>
+<span class="n">Texto</span> <span class="k">del</span> <span class="n">subtítulo</span>
+</pre></div>
+</div>
+<p>Podemos tener mas de un tag track para agregar subtitulos en distintos idiomas
+y marcar uno por defecto, aca un ejemplo con subtítulos en Español:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">poster</span><span class="o">=</span><span class="s">&quot;/cew_files/12/poster.png&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">track</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/subtitulo.vtt&quot;</span>
+        <span class="na">label</span><span class="o">=</span><span class="s">&quot;Subtitulos en Español&quot;</span>
+        <span class="na">kind</span><span class="o">=</span><span class="s">&quot;captions&quot;</span>
+        <span class="na">srclang</span><span class="o">=</span><span class="s">&quot;es&quot;</span>
+        <span class="na">default</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video controls poster="/cew_files/12/poster.png">
+    <source src="/cew_files/12/example.webm" type="video/webm">
+    <source src="/cew_files/12/example.mp4" type="video/mp4">
+
+    <track src="/cew_files/12/subtitulo.vtt"
+        label="Subtitulos en Español"
+        kind="captions"
+        srclang="es"
+        default>
+</video></div>
+<div class="section" id="fragmentos">
+<h3>Fragmentos<a class="headerlink" href="#fragmentos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Que pasa si tenemos un video bastante largo pero solo queremos mostrar un fragmento?</p>
+<p>Para eso podemos especificarle el principio y/o final del fragmento que nos
+interesa.</p>
+<p>Notar que al momento de escribir esto es una característica bastante nueva, (ver <a class="reference external" href="https://caniuse.com/#feat=media-fragments">tabla de compatibilidad de media fragments</a> al momento de leer esto para
+ver si sigue siendo nueva y poco soportada).</p>
+<p>Podemos indicarle el comienzo (segundo 10) y que reproduzca hasta el final:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Indicar solo el final, que reproduzca del principio y reproduzca hasta el segundo 20:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="p">,</span><span class="mi">20</span>
+</pre></div>
+</div>
+<p>O el principio y el final, que arranque en el segundo 10 y reproduzca hasta el segundo 20:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span>
+</pre></div>
+</div>
+<p>Veamoslo en nuestro video, que reproduzca desde el segundo 3 al 8 (puede que
+no funcione en tu navegador).</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp4#t=3,8&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span> <span class="na">controls</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<video src="/cew_files/12/example.mp4#t=3,8" type="video/mp4" controls></video></div>
+<div class="section" id="embebiendo">
+<h3>Embebiendo<a class="headerlink" href="#embebiendo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Y que pasa si quiero poner en mi pagina un video que esta en una pagina de
+videos como youtube?</p>
+<p>Para eso podemos <em>embeber</em> (embed en ingles) el contenido en nuestra pagina.</p>
+<p>Si miras el video de los ejemplos de arriba, podrás ver que si vamos a share y
+luego seleccionamos embed, youtube nos da un HTML que podemos incluir en
+nuestra pagina para incluir el video directamente desde youtube.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/XM3eaJPB2Cc&quot;</span>
+    <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+    <span class="na">allow</span><span class="o">=</span><span class="s">&quot;autoplay; encrypted-media&quot;</span>
+    <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/XM3eaJPB2Cc"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen></iframe><p>Podemos ver un video de youtube embebido que muestra un video de como embeber
+un video de youtube :)</p>
+<p>El dialogo en youtube nos permite configurar algunos parametros que cambian el
+HTML que nos muestra, en el resultado de arriba vemos que podemos modificar el
+ancho, alto, si tiene borde, si hace auto play y si permite ponerlo en pantalla
+completa.</p>
+</div>
+</div>
+<div class="section" id="audio">
+<h2>Audio<a class="headerlink" href="#audio" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como con video, hay muchos formatos de audio y cada navegador soporta un subset
+distinto, dado que hay mas formato de audio en uso listo las tablas de
+compatibilidad primero:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://caniuse.com/#feat=wav">wav</a></li>
+<li><a class="reference external" href="https://caniuse.com/#feat=mp3">mp3</a></li>
+<li><a class="reference external" href="https://caniuse.com/#feat=ogg-vorbis">ogg</a></li>
+<li><a class="reference external" href="https://caniuse.com/#feat=aac">aac</a></li>
+<li><a class="reference external" href="https://caniuse.com/#feat=opus">opus</a></li>
+<li><a class="reference external" href="https://caniuse.com/#feat=flac">flac</a></li>
+</ul>
+<p>La canción que vamos a usar de ejemplo es <a class="reference external" href="https://www.tribeofnoise.com/Solstar">Rough Patches de Solstar</a>.</p>
+<p>Empezamos con un audio en formato ogg:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.ogg&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<audio controls src="/cew_files/12/example.ogg"></audio><p>Como veras el HTML es bastante similar al tag video.</p>
+<p>Si no funciona o si tenes un mp3:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<audio controls src="/cew_files/12/example.mp3"></audio><p>Pero si viste las tablas de compatibilidad y queres soportar la mayor cantidad
+de navegadores, al igual que con el tag video se puede incluir mas de un
+archivo.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.ogg&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/ogg&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/cew_files/12/example.mp3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;audio/mpeg&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<audio controls>
+    <source src="/cew_files/12/example.ogg" type="audio/ogg"/>
+    <source src="/cew_files/12/example.mp3" type="audio/mpeg"/>
+</audio><div class="section" id="id1">
+<h3>Embebiendo<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como con videos, hay paginas web que brindan audios y nos permiten embeberlos,
+en este caso uno de los mas usados es soundcloud, al igual que en youtube, si
+hacemos click en share y luego en embed, nos da un fragmento de HTML que podemos
+incluir en nuestra pagina:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span>
+    <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+    <span class="na">height</span><span class="o">=</span><span class="s">&quot;300&quot;</span>
+    <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span>
+    <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span>
+    <span class="na">allow</span><span class="o">=</span><span class="s">&quot;autoplay&quot;</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/72505324&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<iframe
+    width="100%"
+    height="300"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/72505324&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+</iframe><p>Aca hay un video de como obtener el HTML:</p>
+<video controls>
+    <source src="/cew_files/12/embed_soundcloud.webm" type="video/webm">
+    <source src="/cew_files/12/embed_soundcloud.mp4" type="video/mp4">
+</video></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
