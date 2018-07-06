@@ -20,7 +20,7 @@ Acá hay un ejemplo de como usarlo:
 
 .. raw:: HTML
 
-    <video src="/cew_files/13/whootstrap.mp4" style="width: 100%; margin: 2em 0" controls></video>
+    <video src="cew_files/13/whootstrap.mp4" style="width: 100%; margin: 2em 0" controls></video>
 
 
 Guardamos el texto del CSS en un archivo y lo incluimos en nuestro proyecto, aca hay un ejemplo: https://thimbleprojects.org/marianoguerra/512478/
