@@ -26,3 +26,4 @@ Creemos en la Web
    dibujando-en-3d
    audio-y-video
    recursos-online
+   un-poco-de-logica-a-la-vista

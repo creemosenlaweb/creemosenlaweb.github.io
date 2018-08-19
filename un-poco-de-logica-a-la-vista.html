@@ -1,0 +1,527 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Un poco de lógica a la vista &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Recursos online" href="recursos-online.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Un poco de lógica a la vista</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="recursos-online.html" title="Previous Chapter: Recursos online" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Recursos online
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="un-poco-de-logica-a-la-vista">
+<h1>Un poco de lógica a la vista<a class="headerlink" href="#un-poco-de-logica-a-la-vista" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Hasta el momento las paginas que creamos carecen de interactividad, el
+contenido se muestra, pero no responde a ninguna acción de nuestra parte.</p>
+<p>También sucede que son estáticas, todo el contenido de la pagina esta en el
+HTML, no hay forma de usar el mismo HTML para mostrar información que varíe en
+el tiempo o según contexto.</p>
+<p>Para agregar dinamicidad y que la pagina muestre contenido distinto según el
+contexto vamos a hacer uso de una herramienta llamada plantillas (template en
+ingles) o también vistas (view en ingles).</p>
+<p>Estas plantillas nos permiten describir el HTML con &quot;huecos&quot; indicando donde
+van los datos que necesitamos, pero los datos provienen de otro lugar, la
+plantilla toma los datos y los reemplaza en los &quot;huecos&quot;.</p>
+<p>Esto nos permite también ahorrarnos trabajo cuando tenemos que mostrar muchos
+datos que tienen la misma estructura, definimos la plantilla para un elemento y
+le indicamos a la plantilla que lo muestre tantas veces como elementos haya en
+una lista.</p>
+<p>Para agregar interactividad, es decir, que la pagina reaccione a acciones del
+usuario, vamos a usar un nuevo lenguaje llamado javascript, que nos permite
+indicar rutinas que modifican los datos en respuesta a acciones iniciadas por
+el usuario. Nuestras plantillas son notificadas de los cambios en los datos y
+actualizan su contenido.</p>
+<div class="section" id="contemos">
+<h2>Contemos<a class="headerlink" href="#contemos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El primer ejemplo va a empezar simple, nuestro dato va a ser un numero, que
+indica cuantas veces se apretó un botón, es decir, un contador.</p>
+<p>Cuando el usuario hace click en el botón, incrementamos en 1 el contador.</p>
+<p>Empecemos con el HTML que ya conocemos:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Que resulta en:</p>
+<div>
+    <p>Contador: <span>0</span></p>
+    <button>Incrementar</button>
+</div><p>Lo único nuevo es el tag <cite>button</cite> que no habíamos visto hasta ahora porque
+no sirve de mucho si no sabemos como hacerlo interactivo.</p>
+<p>Muy linda aplicación, pero notaras que si hacemos click en el botón no pasa nada...</p>
+<p>Es porque no le indicamos dos cosas:</p>
+<ul class="simple">
+<li>Que sucede cuando se hace click en el botón</li>
+<li>De donde saca el valor del contador y donde lo muestra</li>
+</ul>
+<p>Para lo primero necesitamos indicarle al botón &quot;cuando esto sucede, hace esto otro&quot;,
+Para lo segundo necesitamos indicarle:</p>
+<ul class="simple">
+<li>El estado inicial de nuestros datos<ul>
+<li>En este caso, un contador inicialmente en cero</li>
+</ul>
+</li>
+<li>Donde mostrar ese contador en nuestro HTML</li>
+</ul>
+<p>Para eso vamos a usar un proyecto llamado <a class="reference external" href="https://vuejs.org/">vuejs</a>, que
+nos permite hacer esto y mucho mas.</p>
+<p>Primero tenemos que incluir vuejs en nuestra pagina, así su funcionalidad esta
+disponible, esto lo hacemos con un tag <cite>script</cite> dentro del <cite>head</cite> de nuestra pagina:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script><p>Lo segundo que necesitamos hacer, es indicarle a vuejs, que parte de nuestro HTML
+es su responsabilidad, ya que podemos tener distintas partes de la pagina manejadas
+por distintas aplicaciones. Esto se lo indicamos agregando un identificador al tag
+raíz de nuestra aplicación e indicando ese identificador cuando inicializamos la
+aplicación.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- nuestra aplicación va acá --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Luego necesitamos inicializar nuestra app, para esto le indicamos cual es su
+estado inicial y cual es el id de la raíz del HTML de nuestra app.</p>
+<p>Esta parte va a requerir bastante explicación ya que vamos a usar un nuevo
+lenguaje que quizás hayas oído mencionar: javascript.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#mi-app-1&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="mi">0</span><span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El tag <cite>script</cite> te parecerá conocido ya que lo usamos para incluir aplicaciones
+de otros, como vuejs o a-frame en capítulos anteriores. Ahora vamos a escribir
+nuestros propios programas. Empezando con uno corto.</p>
+<p>Al incluir vue.min.js lo que hicimos fue cargar un archivo con código
+javascript adentro, que lo que hace es registrar un identificador llamado <cite>Vue</cite>
+en nuestra pagina.</p>
+<p>Este identificador es lo que se llama un <cite>constructor</cite>, un constructor es una
+función especial que al invocarla con la instrucción <cite>new</cite> nos devuelve un nuevo
+<cite>objecto</cite>. No te preocupes, son muchos conceptos que vamos a ir explorando en
+breve, pero por ahora sabe que para crear una nueva app usando vuejs, tenemos
+que crear un nuevo objeto de tipo <cite>Vue</cite>, el cual esta disponible porque incluimos
+el script <cite>vue.min.js</cite>.</p>
+<p>El <cite>constructor</cite> <cite>Vue</cite> necesita información para crear una aplicación,
+mínimamente necesita saber:</p>
+<ul class="simple">
+<li>Cual es el id del tag raíz donde la app va a correr</li>
+</ul>
+<p>En nuestro caso el id es mi-app-1, como hay muchas formas de indicar el tag
+raíz, para que vue sepa que es un id le ponemos # al principio.</p>
+<ul class="simple">
+<li>Cual es el estado inicial de nuestra aplicación</li>
+</ul>
+<p>En nuestro caso un solo campo, llamado <cite>count</cite> inicializado a <cite>0</cite>.</p>
+<p>No te preocupes por ahora con los detalles de javascript, para las siguientes
+apps vas a poder copiar el código y solo cambiar el id y los datos iniciales.</p>
+<p>Ok, inicializamos nuestra app, pero el HTML esta vacío, como le decimos &quot;mostrá el valor de <cite>count</cite> acá&quot;?</p>
+<p>Como habrás visto hasta ahora, cuando un programador necesita decirle algo a
+una computadora, en lugar de usar un formato existente, inventa un lenguaje
+nuevo, hasta ahora aprendimos HTML, CSS y javascript, todos con formatos
+distintos, con nuestro lenguaje de plantillas no iba a ser la excepción, pero
+por suerte es bastante simple.</p>
+<p>También vale la pena aclarar que con estos 4 lenguajes (HTML, CSS, javascript y
+un lenguaje de plantillas) es suficiente para hacer cualquier tipo de
+aplicación como las que usas día a día en internet.</p>
+<p>Para indicar los &quot;huecos&quot; donde van los datos, usamos el siguiente formato:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{count}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Como veras dentro del tag <cite>span</cite> escribimos <cite>{{count}}</cite> lo que significa &quot;pone el valor del campo <cite>count</cite> acá&quot;.</p>
+<p>El resultado es:</p>
+<div id="mi-app-1">
+    <p>Contador: <span>{{count}}</span></p>
+    <button>Incrementar</button>
+</div><script>
+  new Vue({
+    el: '#mi-app-1',
+    data: {count: 0}
+  });
+</script><p>Un avance, pero el botón aun no hace nada...</p>
+<p>Lo que le queremos indicar es &quot;cuando el usuario haga click, hace esto&quot;,
+lo cual se logra agregando un atributo especial al botón, especial porque
+lo entiende vuejs, ese atributo se llama <cite>&#64;click</cite>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{count}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;count = count + 1&quot;</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div id="mi-app-2">
+  <p>Contador: <span>{{count}}</span></p>
+  <button v-on:click="count = count + 1">Incrementar</button>
+</div>
+<script>
+  new Vue({
+    el: '#mi-app-2',
+    data: {count: 0}
+  })
+</script><p>La magia esta acá:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;count = count + 1&quot;</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Le decimos &quot;cuando el usuario haga click en este botón, corre el código
+<cite>count = count + 1</cite>, es decir, el nuevo valor de count es igual al viejo valor de
+count mas 1.</p>
+<p>Probalo haciendo click, debería incrementarse.</p>
+</div>
+<div class="section" id="una-lista-de-tareas">
+<h2>Una Lista (de tareas)<a class="headerlink" href="#una-lista-de-tareas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hasta ahora mostramos un valor y agregamos interactividad a nuestra pagina,
+pero de la introducción aun falta una cosa: evitar repetición.</p>
+<p>Eso vamos a ver ahora haciendo una aplicación para listar tareas.</p>
+<p>Como siempre necesitamos tener un tag raíz para nuestra aplicación, un estado
+inicial, mostrar los datos y agregar interactividad.</p>
+<p>Nuestro estado inicial va a ser una lista con 0 o mas datos de tipo texto
+indicando la tarea a realizar, empecemos con un par de tareas iniciales así
+podemos practicar repetición antes de agregar interactividad:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">tareas</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">&#39;Conquistar el mundo&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Abolir el patriarcado&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Comprar pan&#39;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Nuestro estado inicial contiene un campo llamado <cite>tareas</cite> que es una lista de
+tres valores, los tres son de tipo texto (otro tipo que vimos es el tipo
+numérico para el contador)</p>
+<p>Ahora con nuestra lista de tareas inicializada, podemos mostrarla en la pantalla,
+si fuéramos a hacerlo a la vieja usanza, haríamos algo así:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Conquistar el mundo<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Abolir el patriarcado<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Comprar pan<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Que se vería así:</p>
+<ul>
+    <li>Conquistar el mundo</li>
+    <li>Abolir el patriarcado</li>
+    <li>Comprar pan</li>
+</ul><p>Pero obviamente esto no nos sirve, queremos listar las tareas de nuestra lista
+de datos, con lo que aprendimos hasta ahora podríamos intentar:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pero esto no funciona porque no tenemos una sola tarea, sino muchas, y el
+identificador tarea no esta definido, tenemos el identificador tareas, sin embargo, estamos bastante cerca..., para repetir un fragmento de HTML cuyo contenido
+se encuentra en una lista tenemos que indicarle a vue algo así como &quot;para cada tarea en la lista de tareas, mostrá este HTML&quot;, veamos como se hace:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;tarea in tareas&quot;</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Lo que resulta en:</p>
+<div id="todo-app-1">
+    <ul>
+        <li v-for="tarea in tareas">{{tarea}}</li>
+    </ul>
+</div>
+<script>
+  new Vue({
+    el: '#todo-app-1',
+    data: {
+        tareas: [
+            'Conquistar el mundo',
+            'Abolir el patriarcado',
+            'Comprar pan'
+        ]
+    }
+  })
+</script><p>Si entendés un poco de ingles veras que nuestra idea &quot;para cada tarea en la
+lista de tareas, mostrá este HTML&quot; se traduce bastante similar.</p>
+<p>Usamos el atributo <cite>v-for</cite> (la v es de vue, <cite>v-for</cite> es un atributo que vue
+entiende, como <cite>&#64;click</cite> antes), dentro del valor del atributo le decimos,
+&quot;tarea in tareas&quot;, lo cual completo <cite>v-for=&quot;tarea in tareas&quot;</cite> leído de corrido
+casi se lee &quot;for tarea in tareas&quot; que se traduce &quot;para tarea en tareas&quot;.</p>
+<p>El tag con el atributo <cite>v-for</cite> y sus tags hijos se van a repetir tantas veces
+como elementos haya en la lista <cite>tareas</cite>, en nuestro caso 3 veces.</p>
+<div class="section" id="agregando-nuevas-tareas">
+<h3>Agregando nuevas tareas<a class="headerlink" href="#agregando-nuevas-tareas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como agregamos nuevas tareas a nuestra lista? para eso vamos a necesitar un
+lugar donde podamos escribir la descripción de la nueva tarea y un botón para
+agregar la tarea a la lista.</p>
+<p>El campo de texto lo creamos con el tag <cite>input</cite>, el botón como ya vimos antes,
+con el tag <cite>button</cite>, probemos un poco el HTML:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<input>
+<button>Crear nueva tarea</button><p>Muy bonito pero eso no hace nada, como &quot;conecto&quot; el contenido del tag <cite>input</cite>
+a un campo en mis datos?</p>
+<p>primero necesitamos crear un nuevo campo en nuestros datos iniciales para
+el contenido de la tarea a agregar, luego necesitamos indicarle al tag <cite>input</cite>
+que su contenido es el valor del campo, llamemoslo <cite>tituloNuevo</cite>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;tarea in tareas&quot;</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">tituloNuevo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="nx">tareas</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">&#39;Conquistar el mundo&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Abolir el patriarcado&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Comprar pan&#39;</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Probemos:</p>
+<div id="todo-app-2">
+  <input v-model="tituloNuevo">
+  <button v-on:click="tareas.push(tituloNuevo); tituloNuevo = '';">Crear nueva tarea</button>
+
+  <ul>
+    <li v-for="tarea in tareas">{{tarea}}</li>
+  </ul>
+</div>
+<script>
+  new Vue({
+    el: '#todo-app-2',
+    data: {
+        tituloNuevo: '',
+        tareas: [
+            'Conquistar el mundo',
+            'Abolir el patriarcado',
+            'Comprar pan'
+        ]
+    }
+  })
+</script><p>Vamos por partes:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Agregamos el atributo <cite>v-model</cite> para indicarle a vue &quot;el contenido de este tag
+esta conectado al valor de <cite>tituloNuevo</cite> en nuestros datos.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Nuestro viejo amigo <cite>&#64;click</cite> en el botón hace dos cosas, primero agrega un
+elemento al final de la lista <cite>tareas</cite>, usando el método <cite>push</cite>, que agrega un
+elemento al final de la lista que esta antes del punto, el elemento a agregar
+se lo indicamos entre paréntesis, en este caso queremos agregar el valor
+contenido en <cite>tituloNuevo</cite>.</p>
+<p>Pero eso no es todo, también queremos limpiar el contenido del tag <cite>input</cite> así
+el usuario puede escribir una tarea nueva sin tener que borrar el contenido
+que ya se agrego a la lista.</p>
+<p>Para eso necesitamos indicar una instrucción nueva, y como ya tenemos una, necesitamos separarla, en javascript las instrucciones se separan con punto y coma.</p>
+<p>La segunda instrucción actualiza el valor de <cite>tituloNuevo</cite> a el texto vacío,
+indicado con dos comillas juntas <cite>''</cite>.</p>
+</div>
+<div class="section" id="borrando-tareas">
+<h3>Borrando tareas<a class="headerlink" href="#borrando-tareas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Agregar tareas sin poderlas eliminar no suena a una buena experiencia de
+usuario, necesitamos poder borrar tareas, para eso al lado de cada tarea vamos
+a agregar un botón que al ser clickeado va a borrar dicha tarea.</p>
+<p>Pero para poder borrar la tarea necesitamos saber su posición en la lista
+para poder decir &quot;borra el elemento numero 2 de la lista <cite>tareas</cite>&quot;, para
+eso vamos a hacer uso de una variación del atributo <cite>v-for</cite> que nos permite
+obtener la posición (indice) del valor que estamos mostrando, el formato es:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{pos}}: {{tarea}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: right&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Vamos por partes, primero usamos el formato <cite>(tarea, pos) in tareas</cite> para que vue
+nos devuelva no solo cada elemento en la lista sino si posición (indice), el cual
+vamos a nombrar <cite>pos</cite>.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Luego para ver que estamos haciendo las cosas bien, mostramos el valor de <cite>pos</cite>
+antes de la descripción de cada tarea:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{pos}}: {{tarea}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Finalmente agregamos un botón, que al ser clickeado llama a la función
+<cite>$delete</cite> de vuejs, que recibe dos parámetros, el primero es la lista a la que
+le queremos remover un elemento, el segundo parámetro es la posición o indice
+que queremos remover.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: right&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado con un poco mas de formato:</p>
+<div id="todo-app-3">
+  <input v-model="tituloNuevo" type="text" class="form-control" id="tareaDesc" placeholder="Descripción de tarea">
+
+  <div class="my-2 text-center">
+        <button v-on:click="tareas.push(tituloNuevo); tituloNuevo = '';"
+                        class="btn btn-primary">Crear nueva tarea</button>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover">
+        <tbody>
+          <tr v-for="(tarea, pos) in tareas">
+                <td>{{pos}}</td>
+                <td>{{tarea}}</td>
+                <td class="text-center">
+                  <button v-on:click="$delete(tareas, pos)" class="btn btn-danger btn-sm">X</button>
+                </td>
+          </tr>
+        </tbody>
+  </table>
+</div>
+<script>
+  new Vue({
+        el: '#todo-app-3',
+        data: {
+          tituloNuevo: '',
+          tareas: [
+                'Conquistar el mundo',
+                'Abolir el patriarcado',
+                'Comprar pan'
+          ]
+        }
+  })
+</script><p>Código completo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Vue: Lista de Tareas<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tareaDesc&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Descripción de tarea&quot;</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-2 text-center&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span>
+                                <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+          <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-striped table-hover&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+                  <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{pos}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-danger btn-sm&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+          <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
+                <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="nx">tituloNuevo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                  <span class="nx">tareas</span><span class="o">:</span> <span class="p">[</span>
+                        <span class="s1">&#39;Conquistar el mundo&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Abolir el patriarcado&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;Comprar pan&#39;</span>
+                  <span class="p">]</span>
+                <span class="p">}</span>
+          <span class="p">})</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
