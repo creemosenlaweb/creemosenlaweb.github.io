@@ -1,0 +1,397 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Datos con Javascript &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Un poco de lógica a la vista" href="un-poco-de-logica-a-la-vista.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Datos con Javascript</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="un-poco-de-logica-a-la-vista.html" title="Previous Chapter: Un poco de lógica a la vista" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Un poco de ló...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="datos-con-javascript">
+<h1>Datos con Javascript<a class="headerlink" href="#datos-con-javascript" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En el capítulo anterior <a class="reference internal" href="un-poco-de-logica-a-la-vista.html"><span class="doc">Un poco de lógica a la vista</span></a>
+usamos un poco de javascript pero sin una introducción formal, ya es tiempo de
+conocerlo un poco mejor, empezando con la forma de expresar distintos tipos de
+datos, esto nos va a permitir definir el estado inicial de nuestra aplicación.</p>
+<p>Antes de empezar de lleno te recomiendo que escribas los ejemplos que voy
+poniendo así te vas acostumbrando a programar, es muy común pensar que solo
+leyendo uno entiende las cosas, pero es muy fácil de darse cuenta que no es tan
+así cuando intentamos escribirlo por nuestra cuenta y empezamos a notar
+detalles importantes que se nos pasaron de largo al leerlo.</p>
+<p>Para poder probar hay dos formas, la primera es abrir la sección de
+consola interactiva en las herramientas de desarrollo de tu navegador.</p>
+<p>Las herramientas de desarrollo se abren apretando la tecla F12 en Firefox o
+Chrome, esto nos va a abrir un panel en la parte inferior de la pantalla, la
+cual tiene múltiples secciones, la que vamos a usar hoy es la que normalmente
+es la tercera de izquierda a derecha, llamada &quot;Consola&quot;, hace click en el tab
+&quot;Consola&quot; o &quot;Console&quot; según el idioma de tu navegador.</p>
+<p>En la parte inferior hay un símbolo <cite>&gt;</cite> o <cite>&gt;&gt;</cite>, si hacemos click a la derecha
+va a aparecer un cursor, ahí podemos escribir javascript, el cual se va a
+ejecutar cuando apretemos enter y nos va a mostrar el resultado (o un error).</p>
+<p>La otra forma es usar alguna consola interactiva online, una conocida es
+<a class="reference external" href="http://repl.it/languages/javascript">repl.it</a>, hace click y debería abrirte
+una pagina donde podes escribir en el panel del medio y ejecutarlo apretando la
+tecla Control y Enter a la vez, el resultado debería aparecer en el panel de la
+derecha.</p>
+<p>Acá hay un video mostrando como usarlo:</p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/gZwjiOlzqww?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><p>Ya tenemos lo que necesitamos para empezar.</p>
+<div class="section" id="numeros-decimales">
+<h2>Números Decimales<a class="headerlink" href="#numeros-decimales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un tipo de dato muy usado, tenemos dos tipos, los enteros (integer en ingles),
+son números sin coma decimal, veamos algunos:</p>
+<p>Escribiendo lo siguiente:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Si apretamos enter en la consola del navegador o Ctrl+Enter en repl.it el
+resultado que nos va a devolver es:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Nada mágico, decimos que javascript evaluó el código <cite>1</cite> y el resultado fue
+<cite>1</cite>, aunque no lo creas eso es un programa valido, aunque no uno muy útil.</p>
+<p>Veamos otros números, de ahora en mas voy a poner el código y el resultado, se
+entiende que tenes que escribirlo y apretar enter o Ctrl+enter según donde
+estés escribiendo el código para ver el resultado.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">42</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>También se pueden números negativos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">42</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">42</span>
+</pre></div>
+</div>
+<p>Números grandes</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1234567890</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1234567890</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Números Decimales<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>También podemos escribir números con decimales, en programación los vas a
+escuchar nombrar como &quot;float&quot;, &quot;floating point number&quot;, o &quot;double&quot;, en lugar de
+una coma se usa un punto:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mf">0.5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mf">10.5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">10.5</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="texto">
+<h2>Texto<a class="headerlink" href="#texto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Otro tipo de dato muy importante es el texto, como vas a ir viendo a los
+programadores les gusta poner nombres raros a las cosas y nunca decidir
+cambiarlos, por mas que la razón del nombre ya se haya olvidado.</p>
+<p>En este caso, al tipo de dato texto en programación se le suele llamar cadena
+de texto, en ingles &quot;string&quot;.</p>
+<p>En javascript el texto es cualquier cosa envuelta en comillas simples <cite>'</cite> o
+dobles, <cite>&quot;</cite>, a la computadora le da igual cual uses.</p>
+<p>Empecemos con el texto mas simple, texto vacío:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>En Firefox cuando escribo con comillas simples me lo muestra de vuelta en
+comillas dobles, así que parece que tiene una preferencia :)</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>El texto mas común que vas a encontrar en <a class="reference external" href="https://es.wikipedia.org/wiki/Hola_mundo">introducciones a programación</a>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Hola mundo!&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Hola mundo!&quot;</span>
+</pre></div>
+</div>
+<p>Si queremos tener comillas dentro del texto, tenemos que &quot;escaparlas&quot; con una
+barra invertida antes de la comilla si es del mismo tipo que estamos usando
+para envolver el texto, así la computadora sabe que no se termina el texto aun,
+esta es una buena razón para usar un tipo de comillas sobre el otro, para evitar
+tener que escapar las comillas internas:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es &quot;texto&quot;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Si queremos usar el mismo tipo de comillas las tenemos que escapar:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es \&quot;texto\&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Igual para comillas simples:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es \&#39;texto\&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verdadero-y-falso">
+<h2>Verdadero y Falso<a class="headerlink" href="#verdadero-y-falso" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En programación se toman muchas decisiones, esas decisiones se toman según
+condiciones, las cuales evalúan a verdadero o falso, y según el resultado
+decidimos hacer una cosa, otra, o ninguna.</p>
+<p>Debido a que esto es algo muy común, existe un tipo de dato muy simple, que
+se llama <a class="reference external" href="https://es.wikipedia.org/wiki/Tipo_de_dato_l%C3%B3gico">Lógico</a> pero
+lo vas a encontrar usualmente mencionado como booleano (pronunciado buleano) o directamente en ingles, bool (pronunciado bul),
+en honor a <a class="reference external" href="https://es.wikipedia.org/wiki/George_Boole">George Boole</a></p>
+<p>Hay solo dos valores para este tipo de datos:</p>
+<p>Verdadero:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Falso:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indicando-ausencia-de-datos">
+<h2>Indicando ausencia de datos<a class="headerlink" href="#indicando-ausencia-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como hacemos si queremos indicar que a un dato no lo tenemos?</p>
+<p>Un tal Tony Hoare se pregunto lo mismo en 1965 y tuvo una idea, un tipo de dato
+al cual luego iba a llamar <a class="reference external" href="https://es.wikipedia.org/wiki/C._A._R._Hoare#cite_ref-4">&quot;El error de los mil millones de dólares&quot;</a> , este es el tipo
+de dato nulo, el cual tiene un solo valor:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">null</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">null</span>
+</pre></div>
+</div>
+<p>El problema surge cuando pensamos que vamos a recibir un número, texto u otro
+tipo de dato y alguien nos envía un <cite>null</cite> para indicarnos que no tiene ningún
+valor, nosotros operamos sobre ese valor asumiendo que tiene un valor y lo que
+obtenemos a cambio es un error. Así que primer consejo, intenta minimizar la
+cantidad de veces que usas este tipo de datos, aunque muchas veces no quede
+alternativa.</p>
+<p>Hasta aquí llegamos y ya aprendimos todos los tipos de datos simples en
+javascript, ahora pasemos a los tipos de datos &quot;compuestos&quot;, es decir, estos
+tipos de datos contienen otros datos.</p>
+</div>
+<div class="section" id="lista">
+<h2>Lista<a class="headerlink" href="#lista" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En nuestro ejemplo del capitulo anterior teníamos una lista de tareas, cada
+tarea era un valor de tipo texto.</p>
+<p>Una lista se define rodeando sus elementos entre corchetes <cite>[</cite> para empezar la
+lista y <cite>]</cite> para terminarla.</p>
+<p>Por razones históricas el tipo de dato lista también suele llamarse en ingles
+<a class="reference external" href="https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)">&quot;array&quot;</a>.</p>
+<p>Empecemos por la lista mas simple, una lista sin elementos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[]</span>
+</pre></div>
+</div>
+<p>Firefox me lo muestra así:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Una lista de un elemento:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Una lista de dos elementos, separamos cada elemento con una coma <cite>,</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="n">true</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Como veras una lista puede contener cualquier tipo de dato, no hace falta que
+todos sean del mismo tipo, veamos un caso extremo con todos los tipos de datos
+que aprendimos hasta ahora, te desafío a escribirlo sin cometer un error al
+primero intento, yo cometí uno (pista: me olvide de cerrar un corchete :).</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;hola&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[[</span><span class="s2">&quot;si, listas dentro de listas&quot;</span><span class="p">]]]</span>
+</pre></div>
+</div>
+<p>Firefox me lo muestra indicándome que tiene 12 elementos y me muestra algunos,
+no todos, no te preocupes, todos los elementos están ahí, si hago click en la
+flecha <cite>&gt;</cite> me expande los elementos así los puedo explorar:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt; Array(12) [ -1, 0, 1, 42, 0.5, true, false, null, &quot;&quot;, &quot;hola&quot;, … ]
+</pre></div>
+</div>
+</div>
+<div class="section" id="objeto">
+<h2>Objeto<a class="headerlink" href="#objeto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Felicitaciones, llegamos al ultimo tipo de dato de javascript, el objeto,
+llamado de muchas formas, en otro lado lo veras como &quot;map&quot;, &quot;hash&quot;, &quot;record&quot;,
+en javascript se lo suele llamar objeto, así que vamos a seguir nombrandolo
+así.</p>
+<p>Un objeto es un tipo de dato que nos permite ponerle nombres a los valores que
+contiene, entonces si queremos, por ejemplo, tener un valor que represente un
+personaje en una serie y queremos tener su nombre, su tipo y su color, podemos
+hacerlo con un objeto, pero no nos adelantemos, empecemos con el objeto mas
+simple, uno que no tiene ningún valor, sí, aunque no lo creas es muy útil.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{}</span>
+</pre></div>
+</div>
+<p>Por razones que aprenderemos mas adelante, firefox se piensa que estoy
+intentando hacer otra cosa y me devuelve:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">undefined</span>
+</pre></div>
+</div>
+<p>Quizás cuando pruebes esto ya no se comporte así, Chrome no se confunde y devuelve:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Te preguntaras que es ese <cite>undefined</cite> que devolvió?</p>
+<p>Es un tipo de dato que no mencione hasta ahora porque es un valor que
+representa la ausencia de valores, no es como null que es un valor que dice &quot;no
+hay valor&quot;, undefined es un poco mas confuso y abstracto y es usado cuando una
+operación no devuelve ningún valor, o cuando por ejemplo intentamos obtener un
+elemento en una lista vacía o un campo que no existe en un objeto, en ese caso
+null no es útil porque ese campo no esta definido como null, simplemente no
+esta definido, en esos casos obtenemos a su primo: <cite>undefined</cite>.</p>
+<p>No hace falta que entiendas el significado de undefined aun, ya vas a
+encontrartelo mas seguido de lo deseado.</p>
+<p>Sigamos con un objeto con un solo campo:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Para tener mas de un campo separamos los pares clave valor (los recordaras de CSS) con comas:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="s2">&quot;tipo&quot;</span><span class="o">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="n">tipo</span><span class="p">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Listo! ya sabes todos los tipos de datos necesarios para programar en
+javascript, y de paso aprendiste sobre <a class="reference external" href="https://es.wikipedia.org/wiki/JSON">JSON</a> (pronunciado yeison), que es un
+formato que nos permite transmitir datos entre computadoras, el cual se extrajo
+de los tipos de datos de javascript, así que cuando alguien te diga que un
+programa genera/recibe/produce datos en JSON, ya sabes a que se refieren, y
+ahora podes leerlo y escribirlo.</p>
+<p>También deberías entender y poder escribir los datos iniciales en el capitulo
+anterior.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
