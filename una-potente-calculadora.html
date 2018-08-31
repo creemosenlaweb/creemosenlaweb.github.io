@@ -1,0 +1,737 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Una potente calculadora &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Datos con Javascript" href="datos-con-javascript.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Una potente calculadora</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="datos-con-javascript.html" title="Previous Chapter: Datos con Javascript" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Datos con Javascript
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="una-potente-calculadora">
+<h1>Una potente calculadora<a class="headerlink" href="#una-potente-calculadora" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En <a class="reference internal" href="datos-con-javascript.html"><span class="doc">Datos con Javascript</span></a> aprendimos sobre los distintos
+tipos de datos en javascript (normalmente abreviado js).</p>
+<p>Ahora vamos a aprender como realizar operaciones sobre algunos de esos datos,
+lo suficiente para tener una muy potente calculadora a nuestra disposición.</p>
+<p>Ya que mencionamos la calculadora, empecemos por los que están disponibles en una.</p>
+<div class="section" id="operadores-matematicos">
+<h2>Operadores Matemáticos<a class="headerlink" href="#operadores-matematicos" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="suma-y-resta">
+<h3>Suma y resta<a class="headerlink" href="#suma-y-resta" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para números enteros (normalmente se le dicen int/ints) y decimales (float/floats):</p>
+<p>Con enteros el resultado es otro entero:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Como veras si ponemos el menos delante de un numero indicamos que es negativo:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>También podemos poner un mas, aunque no hace mucho efecto:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="o">+</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Cuando la operación mezcla enteros y decimales, el resultado &quot;se promueve&quot; a
+decimal:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mf">3.5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mf">1.5</span>
+</pre></div>
+</div>
+<p>Podemos tener mas de una operación en la misma linea:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="mf">3.5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">-</span> <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">4.5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiplicacion-y-division">
+<h3>Multiplicación y división<a class="headerlink" href="#multiplicacion-y-division" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El símbolo de la multiplicación y división son distintos a los de la calculadora
+o los que escribimos a mano, la multiplicación es <cite>*</cite> y la división es  <cite>/</cite>,
+veamos algunos ejemplos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">2.5</span>
+</pre></div>
+</div>
+<p>Fijate que la división devuelve decimales aunque los números sean enteros.</p>
+<p>Mezclemos un poco:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+<p>Dividiendo por cero nos da un resultado raro:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Infinity</span>
+</pre></div>
+</div>
+<p>Y su par:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">/</span> <span class="o">-</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="n">Infinity</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="precedencia">
+<h3>Precedencia<a class="headerlink" href="#precedencia" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Vimos suma y resta separado de multiplicación y división porque esos operadores
+tienen distinta precedencia, es decir, se evalúan en un orden establecido, veamos
+un ejemplo, si te digo que adivines el resultado de:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Cual crees que es?</p>
+<ul class="simple">
+<li>14</li>
+<li>20</li>
+</ul>
+<p>El resultad es 14, porque la multiplicación se &quot;evalua&quot; antes que la suma, si
+no especificamos explícitamente la precedencia con paréntesis, javascript
+&quot;inserta&quot; los paréntesis según cierto orden preestablecido.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Es lo mismo que</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yo siempre prefiero poner los paréntesis para que quede clara la precedencia
+aun cuando no es necesario, esto va a ser aun mas importante cuando aprendamos a
+un mas operadores, si de hecho queremos el otro resultado, simplemente usamos
+paréntesis para forzar el orden deseado:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resto-de-division">
+<h3>Resto de división<a class="headerlink" href="#resto-de-division" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si en lugar del resultado de la división queremos saber el resto, usamos el
+operador <cite>%</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="operadores-de-comparacion">
+<h2>Operadores de comparación<a class="headerlink" href="#operadores-de-comparacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Con los operadores que vimos hasta ahora ya tenemos una potente calculadora,
+pero si recordas el tipo bool del capítulo anterior, recordaras que dije que es
+el resultado de comparaciones y operaciones lógicas, ahora vamos a ver algunas
+de ellas.</p>
+<div class="section" id="igual-y-desigual">
+<h3>Igual y desigual<a class="headerlink" href="#igual-y-desigual" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Lo mas fácil que podemos comparar es si dos cosas son iguales, pero como todo
+en la programación, las cosas son un poco mas complicadas de lo necesario,
+vamos por partes:</p>
+<p>Comparando por igualdad:</p>
+<p>1 es igual a si mismo</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>1 no es distinto a si mismo</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>1 no es distinto a si mismo</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Hasta acá todo bien, pero ya sabemos que en javascript hay dos tipos para
+indicar ausencia de datos, null y undefined, hace mucho tiempo, intentando
+hacernos un favor, los creadores de javascript decidieron que ciertas cosas
+eran iguales cuando claramente no lo son:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;1&quot;</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Si, viste bien, el texto con el contenido &quot;1&quot;, igual al numero 1, eso les
+pareció una ayuda, pero el 99.9% de las veces termina siendo un problema, razón
+por la cual introdujeron otros dos operadores de igualdad mas estrictos,
+veamos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">null</span> <span class="o">===</span> <span class="kc">undefined</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;1&quot;</span> <span class="o">===</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">null</span> <span class="o">!==</span> <span class="kc">undefined</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;1&quot;</span> <span class="o">!==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Ahora te doy un consejo, que mas que consejo es orden, siempre usa <cite>===</cite> y
+<cite>!==</cite>, porque cuando veas código usando las versiones mas flexibles, no sabes
+si hay un posible error en ese código o si la persona realmente quiere hacer
+una comparación mas flexible.</p>
+</div>
+</div>
+<div class="section" id="mayores-y-menores">
+<h2>Mayores y Menores<a class="headerlink" href="#mayores-y-menores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Si queremos saber si un numero es menor o mayor a otro usamos los operadores
+de comparación correspondientes:</p>
+<dl class="docutils">
+<dt>a &gt; b</dt>
+<dd>es a mayor que b?</dd>
+<dt>a &gt;= b</dt>
+<dd>es a mayor o igual que b?</dd>
+<dt>a &lt; b</dt>
+<dd>es a menor que b?</dd>
+<dt>a &lt;= b</dt>
+<dd>es a menor o igual que b?</dd>
+</dl>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3>Precedencia<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La siguiente linea:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Es equivalente a:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="o">&lt;</span> <span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Pero antes de seguir intentando memorizarte el orden, mas fácil es siempre usar
+paréntesis :)</p>
+</div>
+</div>
+<div class="section" id="operadores-logicos">
+<h2>Operadores logicos<a class="headerlink" href="#operadores-logicos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En la vida real, cuando tomamos decisiones, usualmente decimos cosas como:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Si</span> <span class="n">el</span> <span class="n">precio</span> <span class="k">del</span> <span class="n">tomate</span> <span class="n">es</span> <span class="n">menor</span> <span class="n">que</span> <span class="mi">5</span> <span class="n">y</span> <span class="n">el</span> <span class="n">precio</span> <span class="n">de</span> <span class="n">la</span> <span class="n">lechuga</span> <span class="n">es</span> <span class="n">menor</span>
+<span class="n">que</span> <span class="mi">6</span> <span class="n">o</span> <span class="n">el</span> <span class="n">precio</span> <span class="k">del</span> <span class="n">ajo</span> <span class="n">es</span> <span class="n">mayor</span> <span class="n">a</span> <span class="mi">7</span><span class="p">,</span> <span class="n">entonces</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>En esa expresión ya sabemos como expresar los números y las comparaciones, lo
+que nos falta expresar son los &quot;y&quot; y los &quot;o&quot;, vamos a por ellos.</p>
+<div class="section" id="conjuncion-y">
+<h3>Conjunción (y)<a class="headerlink" href="#conjuncion-y" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La conjunción es cuando el resultado de una expresión es cierta/verdadera/true
+si <strong>ambas</strong> partes son verdaderas. En javascript el símbolo que usamos para
+expresarla es <cite>&amp;&amp;</cite>, veamos todos los casos de este operador en una tabla:</p>
+<table border="1" class="table table-bordered table-stripped table-hover docutils">
+<colgroup>
+<col width="61%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operación</th>
+<th class="head">Resultado</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>true &amp;&amp; true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>true &amp;&amp; false</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>false &amp;&amp; true</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>false &amp;&amp; false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Como podemos ver, solo es verdadero si ambos lados son verdaderos, veamoslo
+en javascript</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>En ambos lados podemos poner cualquier expresión que evalúe a true o false:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Como con los otros operadores, podemos tener mas de uno:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disyuncion-o">
+<h3>Disyunción (o)<a class="headerlink" href="#disyuncion-o" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La disyunción es cuando el resultado de una expresión es cierta/verdadera/true
+si <strong>al menos una</strong> de las partes son verdaderas.</p>
+<p>En javascript el símbolo que usamos para expresarla es <cite>||</cite>, veamos todos los
+casos de este operador en una tabla:</p>
+<table border="1" class="table table-bordered table-stripped table-hover docutils">
+<colgroup>
+<col width="61%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operación</th>
+<th class="head">Resultado</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>true || true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>true || false</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>false || true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>false || false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Veamoslo en javascript</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span> <span class="o">||</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span> <span class="o">||</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">||</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">||</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>En ambos lados podemos poner cualquier expresión que evalúe a true o false:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Como con los otros operadores, podemos tener mas de uno:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">1</span> <span class="o">!==</span> <span class="mi">2</span> <span class="o">||</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="negacion-no">
+<h3>Negación (no)<a class="headerlink" href="#negacion-no" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En español, si decimos &quot;no es verdadero&quot;, nos referimos a que es falso, y al
+revés, &quot;no es falso&quot;, indica que es verdadero. En lógica este operador se llama
+&quot;not&quot; (no en ingles), en js el operador es <cite>!</cite> y se pone delante de un valor
+para &quot;negarlo&quot;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Podemos negar cualquier expresión, si es mas que un valor, lo ponemos entre
+paréntesis:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sobre-valores-simil-falsos-y-cortocircuitos">
+<h3>Sobre valores símil falsos y cortocircuitos<a class="headerlink" href="#sobre-valores-simil-falsos-y-cortocircuitos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si te gusta romper todo lo que cae en tus manos como yo, se te habrá ocurrido
+&quot;que pasa si pongo valores raros en esos operadores&quot;, bueno, javascript intenta
+ayudarnos, pero a veces sus ayudas terminan siendo poco útiles, veamos algunos
+ejemplos.</p>
+<p>Si negamos dos veces un booleano, nos da el mismo valor:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Que pasa si negamos otros valores? veamos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>Como le pedimos que niegue un valor y js espera un booleano, al darle otra cosa
+lo &quot;convierte&quot; (coherse en ingles) a booleano siguiendo ciertas reglas, todos
+los tipos tienen un valor que evalúa a falso y todos los otros a verdadero, si
+negamos dos veces cualquier valor obtenemos su valor booleano, por lo que
+podemos decir que cero es &quot;falsy&quot; (es una expresión en ingles que podríamos
+traducir como &quot;similar a false&quot;) y cualquier otro numero es verdadero:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="mi">42</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="s2">&quot;0&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="p">[]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="p">{}</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="kc">null</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">!!</span><span class="kc">undefined</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>Entonces podemos decir que 0, el texto vacío, null y undefined, cuando son
+evaluados en operaciones que esperan un valor booleano, actúan como false,
+todos los otros, como true.</p>
+<p>Y los cortocircuitos?</p>
+<p>En los operadores <cite>&amp;&amp;</cite> y <cite>||</cite> hay casos donde viendo el lado izquierdo de
+la operación, javascript ya sabe cual es el resultado, veamos de nuevo las
+tablas de ambos operadores:</p>
+<table border="1" class="table table-bordered table-stripped table-hover docutils">
+<colgroup>
+<col width="61%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operación</th>
+<th class="head">Resultado</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>true &amp;&amp; true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>true &amp;&amp; false</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>false &amp;&amp; true</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>false &amp;&amp; false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Si el lado izquierdo es false, el resultado va a ser false, por lo cual para
+que el código se ejecute mas rápido, javascript no evalúa el lado derecho y
+devuelve directamente false.</p>
+<table border="1" class="table table-bordered table-stripped table-hover docutils">
+<colgroup>
+<col width="61%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operación</th>
+<th class="head">Resultado</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>true || true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>true || false</td>
+<td>true</td>
+</tr>
+<tr class="row-even"><td>false || true</td>
+<td>true</td>
+</tr>
+<tr class="row-odd"><td>false || false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Si el lado izquierdo es true, el resultado va a ser true, por lo cual el lado
+derecho no se ejecuta y devuelve directamente true.</p>
+<p>Esto no es importante aun porque todavía no vimos funciones, pero imaginate
+que javascript encuentra la expresión:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="nx">lanzarMisil</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Por la lógica de &quot;cortocircuito&quot;, el misil no se va a lanzar, ya que la función
+no va a ser evaluada.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

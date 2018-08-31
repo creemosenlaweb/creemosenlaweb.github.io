@@ -28,3 +28,4 @@ Creemos en la Web
    recursos-online
    un-poco-de-logica-a-la-vista
    datos-con-javascript
+   una-potente-calculadora
