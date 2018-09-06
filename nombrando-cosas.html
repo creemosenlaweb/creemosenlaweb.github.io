@@ -1,0 +1,267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Nombrando cosas &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Una potente calculadora" href="una-potente-calculadora.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Nombrando cosas</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="una-potente-calculadora.html" title="Previous Chapter: Una potente calculadora" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Una potente c...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="nombrando-cosas">
+<h1>Nombrando cosas<a class="headerlink" href="#nombrando-cosas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección anterior (<a class="reference internal" href="una-potente-calculadora.html"><span class="doc">Una potente calculadora</span></a>)
+aprendimos a usar javascript como una calculadora, probemos usarla para eso convirtiendo de grados Celsius a Fahrenheit.</p>
+<p>En la mayoría de los países se usan los grados centígrados para temperatura,
+pero en algunos otros se usan los grados Fahrenheit, buscando en google como
+es la formula de conversión, google me dice esto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>°F = °C x 1.8 + 32
+</pre></div>
+</div>
+<p>Donde °F significa &quot;el resultado de la conversión, grados fahrenheit&quot; y °C
+significa &quot;el valor en grados centígrados a convertir&quot;.</p>
+<p>Como podemos ver, la formula &quot;nombra&quot; valores que van a variar según que
+queremos convertir, probemos calcular cuanto es 36 grados centígrados a
+fahrenheit:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">36</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">96.8</span>
+</pre></div>
+</div>
+<p>El código es bastante similar, pero tiene un par de problemas:</p>
+<p>Primero, si nos encontramos con la expresión <cite>36 * 1.8 + 32</cite> en el medio de
+otro código, como sabemos que partes son &quot;parámetros&quot;, es decir, valores que
+podemos cambiar y cuales son valores fijos de la formula.</p>
+<p>Segundo, como sabemos formula de que es? puede ser cualquier calculo.</p>
+<p>Tercero, si queremos usar esa formula muchas veces para distintos valores,
+tenemos que escribir la formula cada vez? Osea que tenemos que recordarla
+siempre o buscarla siempre? Esto puede hacer que en algún momento nos
+equivoquemos y la escribamos mal o si necesitamos hacer un cambio tenemos que
+buscar todas las veces que la usamos y cambiarla.</p>
+<p>Todos estos son indicios de lo mismo, nos gustaría ponerle un nombre a la
+formula y cada vez que la queramos usar simplemente mencionamos el nombre y le
+proveemos los valores que requiera. En este caso el nombre podría ser
+&quot;centigradosAFahrenheit&quot;.</p>
+<p>... silencio ...</p>
+<p>Te preguntas porque ese nombre todo junto?</p>
+<p>Resulta que en javascript podemos nombrar cualquier cosa siempre que el nombre
+cumpla con un par de condiciones:</p>
+<ul class="simple">
+<li>Tiene que empezar con una letra, minúscula o mayúscula del alfabeto ingles</li>
+<li>Luego puede tener cualquier combinación de letras minúsculas, mayúsculas o números</li>
+</ul>
+<p>Nombres validos:</p>
+<ul class="simple">
+<li>A</li>
+<li>b</li>
+<li>Ab</li>
+<li>aB</li>
+<li>a1</li>
+<li>diaDelMes</li>
+<li>parametro9</li>
+</ul>
+<p>Nombres inválidos:</p>
+<ul class="simple">
+<li>1a<ul>
+<li>empieza con numero</li>
+</ul>
+</li>
+<li>a#<ul>
+<li>tiene un carácter que no es ni una letra ni un numero</li>
+</ul>
+</li>
+<li>centígrados a fahrenheit<ul>
+<li>tiene espacios y tilde, no esta permitido</li>
+</ul>
+</li>
+<li>año<ul>
+<li>tiene ñ</li>
+</ul>
+</li>
+</ul>
+<p>Otro detalle es que en javascript, las formulas se llaman funciones, como en
+matemáticas, aunque las funciones de javascript son mas generales que las
+funciones en matemáticas, funcionan de una manera similar:</p>
+<ul class="simple">
+<li>Una función tiene un nombre</li>
+<li>Una función recibe cero o mas valores de entrada o parámetros</li>
+<li>Una función devuelve un valor de salida</li>
+</ul>
+<p>Veamos como definir una función bien simple en javascript, una función que
+no recibe ningún parámetro y siempre devuelve el número 7:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">siete</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vamos por partes:</p>
+<p>Para definir una función en javascript, empezamos escribiendo la palabra
+&quot;function&quot;, que significa función en ingles.</p>
+<p>Luego indicamos el nombre de la función, en este caso &quot;siete&quot;.</p>
+<p>Luego viene la lista de parámetros entre paréntesis, separados por coma si hay
+mas de uno, en este caso no necesitamos ningún parámetro, así que simplemente
+abrimos y cerramos los paréntesis.</p>
+<p>Luego viene &quot;el cuerpo&quot; de la función, que es donde hacemos los cálculos necesarios, cada calculo se separa del siguiente con un punto y coma &quot;;&quot;.</p>
+<p>Cuando queremos terminar de ejecutar la función y devolver un valor lo
+indicamos empezando la linea con la palabra &quot;return&quot; (retornar en ingles) y el
+valor que queremos devolver, en este caso el numero 7.</p>
+<p>Como usamos nuestra primera función? la nombramos y le indicamos los parámetros
+que le queremos pasar, en este caso no hay parámetros así que de nuevo es
+simplemente abrir y cerrar paréntesis.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">siete</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>Volviendo al caso de la formula de conversión, tenemos un parámetro que es el
+valor en centígrados que queremos convertir.</p>
+<p>Como ese parámetro va a tomar distintos valores para cada conversión, le vamos a poner un nombre, propongo ponerle &quot;gradosC&quot;.</p>
+<p>Veamos de definir nuestra función:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">centigradosAFahrenheit</span><span class="p">(</span><span class="nx">gradosC</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gradosC</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Como veras seguimos la misma estructura que antes, la palabra &quot;function&quot;,
+seguida del nombre de la función a definir, seguida de la lista de parámetros
+entre paréntesis, en este caso uno solo, llamado &quot;gradosC&quot;, seguido del cuerpo
+de la función entre llaves.</p>
+<p>El cuerpo de la función tiene una sola linea que &quot;retorna&quot; el resultado de
+calcular <cite>gradosC * 1.8 + 32</cite>.</p>
+<p>Como veras cuando queremos usar un parámetro simplemente lo nombramos y
+javascript reemplaza el valor que se le asigno en la llamada en ese lugar, por
+lo que si llamamos a la función con el valor 36:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">centigradosAFahrenheit</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nos devuelve:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">96.8</span>
+</pre></div>
+</div>
+<p>Lo que hace javascript es reemplazar el valor del parámetro en esta llamada
+dentro del cuerpo de la función, así que:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nx">gradosC</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>En esta llamada se convierte en:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="mi">36</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Vamos viendo que nombrar cosas hace todo mas legible y reusable, dentro de una
+función podemos nombrar cualquier valor si hace las cosas mas claras.</p>
+<p>En este ejemplo es mas o menos claro, pero si quisiéramos ser mas explícitos
+podríamos ponerle un nombre al resultado como la formula inicial:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>°F = °C x 1.8 + 32
+</pre></div>
+</div>
+<p>Eso lo hacemos con otra palabra especial, cuando queremos nombrar una función
+nueva usamos la palabra &quot;function&quot;, cuando queremos nombrar un parámetro
+simplemente lo nombramos en la lista de parámetros, pero cuando queremos
+nombrar un valor en el cuerpo de una función, tenemos que usar la palabra
+&quot;let&quot;, una palabra que podríamos traducir como &quot;sea&quot;, veamos su uso así queda
+mas claro:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">centigradosAFahrenheit1</span><span class="p">(</span><span class="nx">gradosC</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">gradosF</span> <span class="o">=</span> <span class="nx">gradosC</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">gradosF</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>La linea:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">gradosF</span> <span class="o">=</span> <span class="nx">gradosC</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Podríamos traducirla como &quot;sea gradosF igual a gradosC * ...&quot;.</p>
+<p>En la siguiente linea nombramos gradosF, que es reemplazado por el valor que se
+le asigno en la linea anterior.</p>
+<p>Con esto aprendimos que en javascript hay al menos 3 cosas que podemos nombrar:</p>
+<ul class="simple">
+<li>Funciones: una forma de reusar pedazos de código sin repetirnos</li>
+<li>Parámetros: una forma de indicar partes del código que pueden variar</li>
+<li>Variables: una forma de nombrar cálculos intermedios sin repetirnos</li>
+</ul>
+<p>Estas 3 formas de nombrar nos permiten hacer nuestro código mas claro, hay
+un dicho muy conocido en la programación que dice:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Hay</span> <span class="n">solo</span> <span class="n">dos</span> <span class="n">cosas</span> <span class="n">difíciles</span> <span class="n">en</span> <span class="n">la</span> <span class="n">programación</span><span class="p">:</span> <span class="n">nombrar</span> <span class="n">cosas</span> <span class="n">e</span> <span class="n">invalidar</span> <span class="n">caches</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Ya aprendimos a nombrar cosas, lo difícil es ponerle el nombre indicado a cada
+cosa para que luego cuando se lea el código de nuevo quede clara la intención.</p>
+<p>Sobre caches vamos a aprender eventualmente, alguna vez cuando una pagina no
+funcionaba bien alguien te habrá dicho que limpies el cache de la computadora,
+esa es la razón :)</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
