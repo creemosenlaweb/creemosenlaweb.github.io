@@ -1,0 +1,362 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Calcular o no calcular, esa es la cuestión &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Nombrando cosas" href="nombrando-cosas.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Calcular o no calcular, esa es la cuestión</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="nombrando-cosas.html" title="Previous Chapter: Nombrando cosas" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Nombrando cosas
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="calcular-o-no-calcular-esa-es-la-cuestion">
+<h1>Calcular o no calcular, esa es la cuestión<a class="headerlink" href="#calcular-o-no-calcular-esa-es-la-cuestion" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En capítulos anteriores vimos un tipo de dato llamado <cite>bool</cite> o <cite>boolean</cite> que puede
+tomar dos valores, verdadero (true) o falso (false), los cuales son el
+resultado de operaciones lógicas y de comparación.</p>
+<p>En el siguiente capitulo vimos como hacer cálculos, ahora vamos a unir estos
+dos conceptos usando el resultado de comparaciones y operaciones lógicas para
+decidir que calculamos y que no, para eso vamos a introducir una nueva
+expresión llamada <em>if</em>, pero antes veamos un ejemplo.</p>
+<p>Vas a poner el despertador, <strong>si</strong> &quot;el día es un día de semana&quot;, <strong>entonces</strong> pones
+el despertador a las 8, <strong>sino</strong> lo dejas apagado.</p>
+<p>Esto lo podríamos expresar en javascript así:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">esDiaDeSemana</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Esta es la versión mas simple, en la cual escribimos la palabra clave <strong>if</strong>,
+luego entre paréntesis la condición que va a evaluar a verdadero o falso, luego
+entre llaves las expresiones que queremos evaluar si la condición es verdadera.</p>
+<p>Ese ejemplo asume que el despertador esta apagado, por lo que no necesitamos
+hacer nada si <cite>esDiaDeSemana</cite> es falso.</p>
+<p>Pero que pasa si queremos apagarlo por las dudas este prendido, no queremos
+despertarnos temprano por accidente un sábado!</p>
+<p>Entonces podemos usar otra palabra clave, veamos un ejemplo:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">esDiaDeSemana</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">apagarDespertadorSiEstaPrendido</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En este caso, después de la llave de cierre escribimos la palabra clave
+<strong>else</strong> que significa &quot;sino&quot; y entre llaves las expresiones a evaluar si la
+condición en el <strong>if</strong> es falsa.</p>
+<p>Podemos imaginar que el código de <cite>apagarDespertadorSiEstaPrendido</cite> es algo como:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">despertadorPrendido</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">apagarDespertador</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Con esto podemos hacer muchísimas cosas, pero si tu semana es variada y tenes
+que despertarte a horas distintas según el día, vas a necesitar tener mas de
+una condición, veamos como seria eso uniendo las dos palabras claves que ya
+aprendimos y pongamos todo en una función.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">configurarDespertador</span><span class="p">(</span><span class="nx">diaDeSemana</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;lunes&quot;</span> <span class="o">||</span> <span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;miércoles&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;martes&quot;</span> <span class="o">||</span> <span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;viernes&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">apagarDespertadorSiEstaPrendido</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Antes de describir la función por completo, notar que para tener una segunda
+condición a comprobar después del primer <strong>if</strong>, escribimos la palabra clave
+<strong>else</strong> seguida de la palabra clave <strong>if</strong>, esto se leería algo así como:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">si</span> <span class="p">(</span><span class="n">condicion1</span><span class="p">)</span> <span class="n">entonces</span>
+    <span class="n">ejecutar</span> <span class="n">bloque1</span>
+<span class="n">sino</span> <span class="n">si</span> <span class="p">(</span><span class="n">condicion2</span><span class="p">)</span> <span class="n">entonces</span>
+    <span class="n">ejecutar</span> <span class="n">bloque2</span>
+<span class="n">sino</span>
+    <span class="n">ejecutar</span> <span class="n">bloque3</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Definimos la función configurarDespertador que recibe como parámetro el diaDeSemana,
+y con el tenemos 3 bloques que podemos evaluar:</p>
+<ul class="simple">
+<li>Si es lunes o miércoles: despertador a las 8</li>
+<li>Si es martes o viernes: despertador a las 7</li>
+<li>sino, asegurarse que el despertador este apagado</li>
+</ul>
+<p>Si te fijas, el despertador no va a sonar los fines de semana ni el miércoles,
+cuando escribimos condiciones complejas o encadenadas hay que fijarse bien que
+estamos probando todos los casos.</p>
+<p>Para poder probar esto con código completo y ver si tomamos la decisión
+correcta vamos a aprender dos formas de mostrar al usuario de nuestra
+aplicación el resultado.</p>
+<p>Mostrando texto en la consola de desarrolladores con <cite>console.log</cite>.</p>
+<p>Durante el desarrollo nos puede pasar que queremos saber por donde se ejecuto
+el código o cual es el valor de una variable, para eso podemos usar el objeto
+<cite>console</cite> que tiene algunas funciones útiles, la mas útil de ellas es la
+función <cite>log</cite>.</p>
+<p>Abrí una pagina cualquiera, abrí las herramientas de desarrollo (usualmente F12
+la abre), abrí el tab &quot;Consola&quot; (o nombre similar) si no esta abierto en ese,
+si ves muchas cosas ahí hace click en el icono del tacho de basura para
+limpiar la consola y escribí:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Y apretá enter, deberías ver que la linea siguiente dice &quot;hola&quot;, probemos
+algunos otros ejemplos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">numero</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;numero: &quot;</span> <span class="o">+</span> <span class="nx">numero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;numero&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;numero&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;hola&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A mi me quedo así:</p>
+<div class="figure align-center">
+<img alt="_images/console-log.png" src="_images/console-log.png" />
+</div>
+<p>Podrás notar que <cite>console.log</cite> recibe tantos parámetros como deseemos y los
+muestra a todos, no hay necesidad de juntarlos todos en un solo valor de tipo
+texto.</p>
+<p>El objeto console tiene otras funciones útiles, proba alguno de los ejemplos
+anteriores reemplazando la función log con <cite>warn</cite>, <cite>error</cite>, <cite>info</cite>.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="nx">numero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;numero: &quot;</span> <span class="o">+</span> <span class="nx">numero</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;numero&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Con esto podemos &quot;simular el despertador&quot;, sin tener que escribir todo ahora,
+solo vamos a imprimir que haría.</p>
+<p>Pero antes de ir a eso, vamos a ver otra forma de mostrar información, que
+si bien es simple y medio molesta es una buena herramienta cuando estamos
+empezando un proyecto.</p>
+<p>Como existe el objeto <cite>console</cite>, que tiene varias funciones relacionadas a la
+consola de desarrollo, existe el objeto <cite>window</cite> que tiene funciones
+relacionadas a la ventana donde esta nuestra pagina, la cantidad de funciones
+que tiene es impresionante, pero por ahora nos vamos a enfocar en solo tres, la
+función <cite>alert</cite>, que nos permite mostrar un mensaje al usuario, la función
+<cite>confirm</cite> que nos permite mostrar un mensaje al usuario y el usuario puede
+responder el clásico &quot;OK&quot; o &quot;Cancelar&quot; y la función <cite>prompt</cite> que nos permite
+preguntar algo y el usuario puede responder con texto o cancelar.</p>
+<p>Empecemos por la mas fácil, <cite>alert</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">numero</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;numero: &quot;</span> <span class="o">+</span> <span class="nx">numero</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/alert.png" src="_images/alert.png" />
+</div>
+<p>A diferencia de <cite>console.log</cite>, <cite>window.alert</cite> recibe un solo parámetro, si
+queremos mostrar el valor de múltiples variables tenemos que juntarlas en un
+solo valor de tipo texto.</p>
+<p>Veamos <cite>window.confirm</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">respuesta</span><span class="p">;</span>
+<span class="c1">// responde una de las dos opciones</span>
+<span class="nx">respuesta</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Seguir?&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span> <span class="nx">respuesta</span><span class="p">);</span>
+
+<span class="c1">// responde la otra</span>
+<span class="nx">respuesta</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Seguir?&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span> <span class="nx">respuesta</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/confirm.png" src="_images/confirm.png" />
+</div>
+<p>la función devuelve <cite>true</cite> si se selecciono &quot;OK&quot; y <cite>false</cite> si se selecciono
+&quot;Cancel&quot;.</p>
+<p>Por ultimo <cite>window.prompt</cite>, el cual recibe dos parámetros, el primero es el
+mensaje a mostrar, el segundo es el valor por defecto para el campo de texto,
+si no lo especificamos empieza con el texto vació.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// selecciona &quot;Cancel&quot;</span>
+<span class="nx">respuesta</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Día de Semana&quot;</span><span class="p">,</span> <span class="s2">&quot;lunes&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span> <span class="nx">respuesta</span><span class="p">);</span>
+
+<span class="c1">// selecciona &quot;OK&quot;</span>
+<span class="nx">respuesta</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Día de Semana&quot;</span><span class="p">,</span> <span class="s2">&quot;lunes&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Respuesta&#39;</span><span class="p">,</span> <span class="nx">respuesta</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/prompt.png" src="_images/prompt.png" />
+</div>
+<p>La función devuelve <cite>null</cite> si se selecciono &quot;Cancel&quot; y el texto en el campo de
+texto si se selecciono &quot;OK&quot;.</p>
+<p>Probemos combinándolas un poco:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">r1</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Seguir?&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">r1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;:)&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;:(&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El código te va a preguntar si querés seguir, si respondes OK va a mostrar :),
+si respondes cancel va a mostrar :(.</p>
+<p>Una nota por si estas probando y te da este error o algo parecido:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">redeclaration</span> <span class="n">of</span> <span class="n">let</span> <span class="n">nombreDeVariableAca</span>
+</pre></div>
+</div>
+<p>Eso es porque declaraste dos veces la misma variable, las variables se declaran
+una sola vez por función con <cite>let</cite>, acá estamos en la consola, así que es como
+una función eterna que ejecuta cada linea que le damos, así que solo tenemos
+que declarar la variable una vez, después simplemente se siguen usando, sin
+tener que declararla de nuevo.</p>
+<p>Veamos como usaríamos la función <cite>window.prompt</cite> para configurar nuestro
+despertador:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">r2</span><span class="p">;</span>
+<span class="nx">r2</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Día&quot;</span><span class="p">,</span> <span class="s2">&quot;lunes&quot;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">r2</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Acción cancelada&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">configurarDespertador</span><span class="p">(</span><span class="nx">r2</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Acá estamos llamando a <cite>configurarDespertador</cite>, que definimos mas arriba solo
+si el usuario ingreso un día y apretó OK.</p>
+<p>La función <cite>configurarDespertador</cite> llama a un par de funciones que todavía no
+definimos, así que si probas este código te va a dar un error diciendo que
+<cite>apagarDespertadorSiEstaPrendido</cite> o <cite>ponerDespertador</cite> no están definidas,
+por ahora vamos a usar <cite>window.alert</cite> y una variables globales para simular el
+despertador.</p>
+<p>Acá va todo el código junto.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// una variable global (fuera de las funciones) para saber si el despertador</span>
+<span class="c1">// esta prendido o no, inicializado a false, indicando que esta apagado</span>
+<span class="kd">let</span> <span class="nx">despertadorPrendido</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="c1">// variable global para saber a que hora esta puesta la alarma</span>
+    <span class="nx">horaDespertador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">preguntarDiaYPonerDespertador</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">respuesta</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Día&quot;</span><span class="p">,</span> <span class="s2">&quot;lunes&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">respuesta</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Acción cancelada&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">configurarDespertador</span><span class="p">(</span><span class="nx">respuesta</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">configurarDespertador</span><span class="p">(</span><span class="nx">diaDeSemana</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;lunes&quot;</span> <span class="o">||</span> <span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;miércoles&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;martes&quot;</span> <span class="o">||</span> <span class="nx">diaDeSemana</span> <span class="o">===</span> <span class="s2">&quot;viernes&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">ponerDespertador</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">apagarDespertadorSiEstaPrendido</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">prenderDespertadorSiEstaApagado</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// si no esta prendido</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">despertadorPrendido</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// lo prendemos</span>
+        <span class="nx">despertadorPrendido</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;despertador prendido&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;despertador ya estaba prendido&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">apagarDespertadorSiEstaPrendido</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// si esta prendido</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">despertadorPrendido</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// lo apagamos</span>
+        <span class="nx">despertadorPrendido</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;despertador apagado&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;despertador ya estaba apagado&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ponerDespertador</span><span class="p">(</span><span class="nx">hora</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">prenderDespertadorSiEstaApagado</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;nueva hora para despertador&#39;</span><span class="p">,</span> <span class="nx">hora</span><span class="p">);</span>
+    <span class="nx">horaDespertador</span> <span class="o">=</span> <span class="nx">hora</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Te recomiendo que escribas el código en lugar de copiar y pegarlo, de esa forma
+te vas a ir acostumbrando a escribir los paréntesis, llaves y puntos y coma en
+su lugar y a entender los errores cuando te equivocaste en algo.</p>
+<p>Luego de declarar las variables y funciones llama <cite>preguntarDiaYPonerDespertador();</cite>
+y proba con distintos días varias veces viendo que se imprime en la consola.</p>
+<p>Como ejercicio queda comprobar que el día ingresado es un día valido, sino
+informarlo con <cite>window.alert</cite> y no intentar configurar el despertador.</p>
+<p>Como ayuda, te recomiendo que declares una nueva función <cite>esDiaValido</cite>, que
+uses <cite>if</cite> y <cite>else if</cite> para comprobar que el día pasado como parámetro es un día
+valido, si lo es devolvé <cite>true</cite> (<cite>return true;</cite>), en el <cite>else</cite> devolvé <cite>false</cite>
+(<cite>return false;</cite>).</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
