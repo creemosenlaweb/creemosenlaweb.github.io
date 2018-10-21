@@ -1,0 +1,604 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Ver o no ver, también es una cuestión &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Calcular o no calcular, esa es la cuestión" href="calcular-o-no-calcular.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Ver o no ver, también es una cuestión</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="calcular-o-no-calcular.html" title="Previous Chapter: Calcular o no calcular, esa es la cuestión" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Calcular o no...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ver-o-no-ver-tambien-es-una-cuestion">
+<h1>Ver o no ver, también es una cuestión<a class="headerlink" href="#ver-o-no-ver-tambien-es-una-cuestion" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En el capítulo anterior vimos como calcular o no según el resultado de una
+condición, ahora vamos a ver como cambiar que mostramos en HTML según
+el valor de condiciones.</p>
+<p>Vamos a hacerlo dándole una cara a nuestro despertador.</p>
+<p>Empecemos con la versión mas simple, inicializando un despertador con una sola
+alarma y mostrando si esta prendido o no y a que hora esta configurada la
+alarma.</p>
+<script src="/jslibs/vue-2.5.17.min.js"></script><div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;despertador-app-1&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>Despertador Prendido? <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{{despertadorPrendido}}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>Hora Despertador: {{horaDespertador}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#despertador-app-1&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">despertadorPrendido</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nx">horaDespertador</span><span class="o">:</span> <span class="mi">8</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>El resultado:</p>
+<div id="despertador-app-1">
+  <p class="alert alert-info">Despertador Prendido? <strong>{{despertadorPrendido}}</strong></p>
+  <p class="alert alert-info">Hora Despertador: {{horaDespertador}}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#despertador-app-1',
+    data: {
+      despertadorPrendido: false,
+      horaDespertador: 8
+    }
+  })
+</script><p>Repasando un poco <a class="reference external" href="https://vuejs.org/">vue.js</a>, tenemos un div raíz de
+nuestra aplicación, el cual tiene que tener un atributo <cite>id</cite> así le podemos
+indicar a vue.</p>
+<p>Dentro del div tenemos dos párrafos, el primero muestra el valor de la variable
+<cite>despertadorPrendido</cite> usando el formato de vue <cite>{{variable}}</cite> para indicar
+que queremos que ahí ponga el valor de <cite>variable</cite>, el segundo muestra el valor
+de la variable <cite>horaDespertador</cite>.</p>
+<p>Luego en un tag script inicializamos nuestra aplicación con <cite>new Vue(...)</cite>
+donde en <cite>...</cite> indicamos usando un objeto javascript dos atributos:</p>
+<dl class="docutils">
+<dt>el</dt>
+<dd>Id del tag raíz de esta aplicación, para indicarle que es un id tenemos
+que prefijarlo con un <cite>#</cite>.</dd>
+<dt>data</dt>
+<dd>Los datos de nuestra aplicación, por ahora las dos variables que usamos
+en el HTML arriba y que usamos en el capitulo anterior.</dd>
+</dl>
+<p>Con esto ya mostramos el estado actual de nuestro simple despertador, pero no
+podemos prenderlo ni cambiar la hora, veamos como hacer eso:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>&lt;div id=&quot;despertador-app-2&quot;&gt;
+  &lt;p v-if=&quot;despertadorPrendido&quot; class=&quot;alert alert-success&quot;&gt;Despertador Prendido&lt;/p&gt;
+  &lt;p v-else class=&quot;alert alert-danger&quot;&gt;Despertador Apagado&lt;/p&gt;
+
+  &lt;p class=&quot;alert alert-info&quot;&gt;Hora Despertador: {{horaDespertador}}&lt;/p&gt;
+
+  &lt;input v-model.number=&quot;horaDespertador&quot; type=&quot;number&quot; class=&quot;form-control&quot; placeholder=&quot;Hora Despertador&quot;&gt;
+
+  &lt;div class=&quot;mt-3 text-center&quot;&gt;
+    &lt;button v-if=&quot;despertadorPrendido&quot; v-on:click=&quot;despertadorPrendido = false&quot; class=&quot;btn btn-danger&quot;&gt;Apagar&lt;/button&gt;
+    &lt;button v-else v-on:click=&quot;despertadorPrendido = true&quot; class=&quot;btn btn-success&quot;&gt;Prender&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  new Vue({
+    el: &#39;#despertador-app-2&#39;,
+    data: {
+      despertadorPrendido: false,
+      horaDespertador: 8
+    }
+  })
+&lt;/script&gt;
+</pre></div>
+</div>
+<p>El resultado, proba cambiando la hora y haciendo click en el botón:</p>
+<div id="despertador-app-2">
+  <p v-if ="despertadorPrendido" class="alert alert-success">Despertador Prendido</p>
+  <p v-else class="alert alert-danger">Despertador Apagado</p>
+
+  <p class="alert alert-info">Hora Despertador: {{horaDespertador}}</p>
+
+  <input v-model.number="horaDespertador" type="number" class="form-control" placeholder="Hora Despertador">
+
+  <div class="mt-3 text-center">
+    <button v-if="despertadorPrendido"
+        v-on:click="despertadorPrendido = false"
+        class="btn btn-danger">Apagar</button>
+
+    <button v-else
+        v-on:click="despertadorPrendido = true"
+        class="btn btn-success">Prender</button>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#despertador-app-2',
+    data: {
+      despertadorPrendido: false,
+      horaDespertador: 8
+    }
+  })
+</script><p>Algunos cambios con respecto a la versión anterior, notaras que vue tiene su
+propio <cite>if</cite> como javascript, en este caso se escribe <cite>v-if=&quot;condicion&quot;</cite> lo usamos para decidir que párrafo mostramos, si <cite>despertadorPrendido</cite> es <cite>true</cite>, mostramos:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;despertadorPrendido&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-success&quot;</span><span class="p">&gt;</span>Despertador Prendido<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Sino:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">v-else</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-danger&quot;</span><span class="p">&gt;</span>Despertador Apagado<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><cite>v-else</cite> tiene que estar después de un tag con un atributo <cite>v-if</cite> o <cite>v-else-if</cite>.</p>
+<p>A la hora la seguimos mostrando de la misma forma pero ahora tenemos un campo
+de texto para poder cambiarlo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>&lt;input v-model.number=&quot;horaDespertador&quot; type=&quot;number&quot; class=&quot;form-control&quot; placeholder=&quot;Hora Despertador&quot;&gt;
+</pre></div>
+</div>
+<p>Con <cite>v-model</cite> le indicamos a vue que queremos que el contenido de este input
+refleje el valor del campo <cite>horaDespertador</cite>, es decir que va a mostrar su valor
+y cuando lo cambiemos va a actualizar su valor.</p>
+<p>Como el campo es un numero y no queremos tener un valor de tipo texto con un
+numero dentro, le indicamos a vue que nos lo convierta a numero con <cite>v-model.number</cite>.</p>
+<p>El resto es HTML estándar.</p>
+<p>Finalmente usamos <cite>v-if</cite> y <cite>v-else</cite> de nuevo para mostrar el botón Prender o Apagar
+según el valor de <cite>despertadorPrendido</cite>:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;despertadorPrendido&quot;</span>
+    <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;despertadorPrendido = false&quot;</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="p">&gt;</span>Apagar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-else</span>
+    <span class="na">v-on:click</span><span class="o">=</span><span class="s">&quot;despertadorPrendido = true&quot;</span>
+    <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-success&quot;</span><span class="p">&gt;</span>Prender<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>En cada botón le indicamos a vue con <cite>v-on:click</cite> que cuando el botón sea
+clickeado queremos cambiar el valor de <cite>despertadorPrendido</cite>.</p>
+<p>Con esto ya tenemos una aplicación para prender/apagar un despertador y cambiar
+la hora de la alarma, pero en el capítulo anterior teníamos una alarma con día,
+veamos como replicar eso en HTML.</p>
+<p>Lo primero que vamos a tener que hacer es tener por cada día de la semana
+un campo para <cite>despertadorPrendido</cite> y uno para <cite>horaDespertador</cite>.</p>
+<p>Podemos elegir mostrar todos los días o podemos hacerlo mas simple con un
+selector del día que queremos ver y manipular.</p>
+<p>El resto debería ser como hasta ahora.</p>
+<p>Veamos como seria eso:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>&lt;div id=&quot;despertador-app-3&quot;&gt;
+  &lt;p v-if=&quot;dias[diaSeleccionado].despertadorPrendido&quot;
+     class=&quot;alert alert-success&quot;&gt;Despertador Prendido&lt;/p&gt;
+  &lt;p v-else
+     class=&quot;alert alert-danger&quot;&gt;Despertador Apagado&lt;/p&gt;
+
+  &lt;p class=&quot;alert alert-info&quot;&gt;Hora Despertador:
+    {{dias[diaSeleccionado].horaDespertador}}&lt;/p&gt;
+
+  &lt;input v-model.number=&quot;dias[diaSeleccionado].horaDespertador&quot;
+     type=&quot;number&quot; class=&quot;form-control&quot; placeholder=&quot;Hora Despertador&quot;&gt;
+
+  &lt;select v-model=&quot;diaSeleccionado&quot; class=&quot;custom-select mt-3&quot;&gt;
+    &lt;option value=&quot;lunes&quot;&gt;Lunes&lt;/option&gt;
+    &lt;option value=&quot;martes&quot;&gt;Martes&lt;/option&gt;
+    &lt;option value=&quot;miercoles&quot;&gt;Miércoles&lt;/option&gt;
+    &lt;option value=&quot;jueves&quot;&gt;Jueves&lt;/option&gt;
+    &lt;option value=&quot;viernes&quot;&gt;Viernes&lt;/option&gt;
+    &lt;option value=&quot;sabado&quot;&gt;Sábado&lt;/option&gt;
+    &lt;option value=&quot;domingo&quot;&gt;Domingo&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;div class=&quot;mt-3 text-center&quot;&gt;
+    &lt;button v-if=&quot;despertadorPrendido&quot;
+        v-on:click=&quot;despertadorPrendido = false&quot;
+        class=&quot;btn btn-danger&quot;&gt;Apagar&lt;/button&gt;
+
+    &lt;button v-else
+        v-on:click=&quot;despertadorPrendido = true&quot;
+        class=&quot;btn btn-success&quot;&gt;Prender&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  new Vue({
+    el: &#39;#despertador-app-3&#39;,
+    data: {
+      diaSeleccionado: &#39;lunes&#39;,
+      dias: {
+        lunes: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        martes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        miercoles: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        jueves: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        viernes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        sabado: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        domingo: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+      }
+    }
+  })
+&lt;/script&gt;
+</pre></div>
+</div>
+<p>Resultado:</p>
+<div id="despertador-app-3">
+  <p v-if="dias[diaSeleccionado].despertadorPrendido"
+     class="alert alert-success">Despertador Prendido</p>
+  <p v-else
+     class="alert alert-danger">Despertador Apagado</p>
+
+  <p class="alert alert-info">Hora Despertador:
+    {{dias[diaSeleccionado].horaDespertador}}</p>
+
+  <input v-model.number="dias[diaSeleccionado].horaDespertador"
+     type="number" class="form-control" placeholder="Hora Despertador">
+
+  <select v-model="diaSeleccionado" class="custom-select mt-3">
+    <option value="lunes">Lunes</option>
+    <option value="martes">Martes</option>
+    <option value="miercoles">Miércoles</option>
+    <option value="jueves">Jueves</option>
+    <option value="viernes">Viernes</option>
+    <option value="sabado">Sábado</option>
+    <option value="domingo">Domingo</option>
+  </select>
+
+  <div class="mt-3 text-center">
+    <button v-if="dias[diaSeleccionado].despertadorPrendido"
+        v-on:click="dias[diaSeleccionado].despertadorPrendido = false"
+        class="btn btn-danger">Apagar</button>
+
+    <button v-else
+        v-on:click="dias[diaSeleccionado].despertadorPrendido = true"
+        class="btn btn-success">Prender</button>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#despertador-app-3',
+    data: {
+      diaSeleccionado: 'lunes',
+      dias: {
+        lunes: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        martes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        miercoles: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        jueves: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        viernes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        sabado: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        domingo: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+      }
+    }
+  })
+</script><p>El HTML es bastante similar, solo que donde antes teníamos
+<cite>despertadorPrendido</cite> ahora tenemos <cite>dias[diaSeleccionado].despertadorPrendido</cite>
+y donde antes teníamos <cite>horaDespertador</cite> ahora tenemos
+<cite>dias[diaSeleccionado].horaDespertador</cite>, ya que tenemos que mostrar y cambiar
+los valores del día seleccionado.</p>
+<p>También tenemos un tag <cite>select</cite> con <cite>v-model</cite> seteado a <cite>diaSeleccionado</cite> así
+muestra el día seleccionado y si elegimos otro valor en el select el valor de
+<cite>diaSeleccionado</cite> es actualizado.</p>
+<p>Si no te gusta repetir mucho las cosas como yo, notaras que
+<cite>dias[diaSeleccionado]</cite> esta por todos lados, es molesto escribirlo, podemos
+cometer un error si lo escribimos mal y si llegamos a renombrar algo vamos a
+tener que ir a todos los lugares a actualizarlo.</p>
+<p>Seria mas fácil si pudiéramos &quot;nombrar&quot; este pedazo de código a algo mas
+claro y simple.</p>
+<p>Otra cosa que podrás haber notado si tenes una tendencia a intentar romper todo
+lo que te dan es que se puede poner horas incoherentes, por ejemplo 42 en el
+campo de <cite>horaDespertador</cite>, estaría bueno poder evitar eso.</p>
+<p>Veamos como podemos solucionar estos problemas:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span>&lt;div id=&quot;despertador-app-4&quot;&gt;
+  &lt;p v-if =&quot;diaActual.despertadorPrendido&quot;
+     class=&quot;alert alert-success&quot;&gt;Despertador Prendido&lt;/p&gt;
+  &lt;p v-else
+     class=&quot;alert alert-danger&quot;&gt;Despertador Apagado&lt;/p&gt;
+
+  &lt;p class=&quot;alert alert-info&quot;&gt;Hora Despertador:
+    {{diaActual.horaDespertador}}&lt;/p&gt;
+
+  &lt;div class=&quot;input-group mt-3&quot;&gt;
+    &lt;div class=&quot;input-group-prepend&quot;&gt;
+      &lt;label class=&quot;input-group-text&quot; for=&quot;inputGroupSelect01&quot;&gt;Cambiar Hora&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;input v-model.number=&quot;diaActual.horaDespertador&quot;
+     type=&quot;range&quot; min=&quot;0&quot; max=&quot;23&quot; class=&quot;form-control&quot; placeholder=&quot;Hora Despertador&quot;&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;input-group mt-3&quot;&gt;
+    &lt;div class=&quot;input-group-prepend&quot;&gt;
+      &lt;label class=&quot;input-group-text&quot; for=&quot;inputGroupSelect01&quot;&gt;Día&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;select v-model=&quot;diaSeleccionado&quot; class=&quot;custom-select&quot;&gt;
+      &lt;option value=&quot;lunes&quot;&gt;Lunes&lt;/option&gt;
+      &lt;option value=&quot;martes&quot;&gt;Martes&lt;/option&gt;
+      &lt;option value=&quot;miercoles&quot;&gt;Miércoles&lt;/option&gt;
+      &lt;option value=&quot;jueves&quot;&gt;Jueves&lt;/option&gt;
+      &lt;option value=&quot;viernes&quot;&gt;Viernes&lt;/option&gt;
+      &lt;option value=&quot;sabado&quot;&gt;Sábado&lt;/option&gt;
+      &lt;option value=&quot;domingo&quot;&gt;Domingo&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;mt-3 text-center&quot;&gt;
+    &lt;button v-if=&quot;diaActual.despertadorPrendido&quot;
+            v-on:click=&quot;diaActual.despertadorPrendido = false&quot;
+            class=&quot;btn btn-danger&quot;&gt;Apagar&lt;/button&gt;
+    &lt;button v-else
+            v-on:click=&quot;diaActual.despertadorPrendido = true&quot;
+            class=&quot;btn btn-success&quot;&gt;Prender&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  new Vue({
+    el: &#39;#despertador-app-4&#39;,
+    computed: {
+      diaActual: function () {
+        return this.dias[this.diaSeleccionado];
+      }
+    },
+    data: {
+      diaSeleccionado: &#39;lunes&#39;,
+      dias: {
+        lunes: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        martes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        miercoles: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        jueves: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        viernes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        sabado: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        domingo: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+      }
+    }
+  })
+&lt;/script&gt;
+</pre></div>
+</div>
+<p>Resulta en:</p>
+<div id="despertador-app-4">
+  <p v-if ="diaActual.despertadorPrendido"
+     class="alert alert-success">Despertador Prendido</p>
+  <p v-else
+     class="alert alert-danger">Despertador Apagado</p>
+
+  <p class="alert alert-info">Hora Despertador:
+    {{diaActual.horaDespertador}}</p>
+
+  <div class="input-group mt-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Cambiar Hora</label>
+    </div>
+  <input v-model.number="diaActual.horaDespertador"
+     type="range" min="0" max="23" class="form-control" placeholder="Hora Despertador">
+  </div>
+
+  <div class="input-group mt-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Día</label>
+    </div>
+    <select v-model="diaSeleccionado" class="custom-select">
+      <option value="lunes">Lunes</option>
+      <option value="martes">Martes</option>
+      <option value="miercoles">Miércoles</option>
+      <option value="jueves">Jueves</option>
+      <option value="viernes">Viernes</option>
+      <option value="sabado">Sábado</option>
+      <option value="domingo">Domingo</option>
+    </select>
+  </div>
+
+  <div class="mt-3 text-center">
+    <button v-if="diaActual.despertadorPrendido"
+            v-on:click="diaActual.despertadorPrendido = false"
+            class="btn btn-danger">Apagar</button>
+    <button v-else
+            v-on:click="diaActual.despertadorPrendido = true"
+            class="btn btn-success">Prender</button>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#despertador-app-4',
+    computed: {
+      diaActual: function () {
+        return this.dias[this.diaSeleccionado];
+      }
+    },
+    data: {
+      diaSeleccionado: 'lunes',
+      dias: {
+        lunes: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        martes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        miercoles: {
+          despertadorPrendido: true,
+          horaDespertador: 8
+        },
+        jueves: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        viernes: {
+          despertadorPrendido: true,
+          horaDespertador: 7
+        },
+        sabado: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+        domingo: {
+          despertadorPrendido: false,
+          horaDespertador: 8
+        },
+      }
+    }
+  })
+</script><p>Notaras que <cite>dias[diaSeleccionado]</cite> cambio a <cite>diaActual</cite>, pero como <cite>diaActual</cite>
+no es un valor, sino un valor &quot;calculado&quot; (computed en ingles) en base a otros
+dos valores <cite>dias</cite> y <cite>diaSeleccionado</cite>, no podemos ponerlo en el campo <cite>data</cite>,
+para estos datos calculados, vue nos permite especificarlos en el atributo
+<cite>computed</cite>, donde cada campo es un nombre y una función que devuelve su valor.</p>
+<p>En nuestro caso:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">diaActual</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dias</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">diaSeleccionado</span><span class="p">];</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>Ahora podemos decir <cite>diaActual</cite> en nuestro HTML y vue lo va a reemplazar por
+el valor de <cite>dias[diaSeleccionado]</cite>.</p>
+<p>Notaras que a diferencia del código en <cite>v-on:click</cite> en el HTML acá cada variable
+empieza con <cite>this.</cite>, esto es porque en el HTML de vue las únicas variables que podemos
+acceder son las que están en el campo <cite>data</cite> y <cite>computed</cite> de nuestra aplicación,
+por eso vue nos hace el favor de ponerle <cite>this.</cite> adelante a cada nombre, cuando
+pasamos ese código a javascript, el navegador no sabe a que nos estamos refiriendo,
+puede ser una variable en la función actual, una variable global o un atributo
+de nuestra aplicación vue, para especificar que nos referimos a un nombre dentro
+de nuestra aplicación, tenemos que prefijar los nombres con <cite>this</cite> (que en ingles
+se traduce a &quot;esto/este&quot; y siempre se refiere al objeto al que pertenece la función
+que estamos ejecutando.</p>
+<p>El otro cambio, mas allá de algunas mejoras estéticas usando clases de
+bootstrap, es que le cambiamos el tipo al <cite>input</cite> de <cite>number</cite> a <cite>range</cite> y le
+especificamos dos atributos nuevos <cite>min</cite> y <cite>max</cite>, de esta manera el navegador
+en lugar de mostrar un campo de texto donde se puede escribir cualquier cosa,
+muestra un &quot;slider&quot; donde solo se puede especificar un valor en el rango
+valido.</p>
+<p>Con eso ya tenemos nuestro despertador con soporte para alarmas por día, en el
+camino repasamos vuejs y aprendimos sobre campos calculados y el tipo <cite>range</cite>
+del tag <cite>input</cite>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
