@@ -1,0 +1,334 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>No nos llames, nosotros te llamamos &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Uno, dos, muchos" href="uno-dos-muchos.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">No nos llames, nosotros te llamamos</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="uno-dos-muchos.html" title="Previous Chapter: Uno, dos, muchos" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Uno, dos, muchos
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="no-nos-llames-nosotros-te-llamamos">
+<h1>No nos llames, nosotros te llamamos<a class="headerlink" href="#no-nos-llames-nosotros-te-llamamos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En el capítulo anterior vimos como acceder a elementos y atributos individuales
+de una colección o a todos ellos iterando con el ciclo for.</p>
+<p>en este capítulo vamos a ver como usar funciones para evitar repetir código
+y evitar errores comunes.</p>
+<div class="section" id="las-funciones-tambien-son-valores">
+<h2>Las funciones también son valores<a class="headerlink" href="#las-funciones-tambien-son-valores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hasta ahora declaramos funciones con la palabra clave <cite>function</cite> y las llamamos
+usando su nombre, paréntesis y una lista de argumentos.</p>
+<p>Pero quizás notaste que el nombre de las funciones es un identificador como
+cualquier otra variable, que pasa si intentamos <strong>usarla</strong> como cualquier otra
+variable?</p>
+<p>Probemos con una función simple:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">incrementar</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">valor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Probemosla:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<p>Que pasa si solo la nombramos?:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">incrementar</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>nada muy útil, pero nos indica que las funciones son valores como cualquier
+otra cosa y como cualquier otra cosa en javascript podemos pasarla como
+parámetro a funciones y devolverla de funciones.</p>
+<p>Probemos pasarla como parámetro a una función, pero, para que la usaríamos?
+lo único que sabemos hacer con una función es llamarla, así que hagamos eso:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">llamar</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Probemos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">llamar</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">26</span>
+</pre></div>
+</div>
+<p>Funciona, pero no es muy útil que digamos, que mas podríamos hacer?</p>
+<p>Como mencione antes, una buena practica en programación es no repetirse mucho,
+porque al repetirse podemos introducir errores en algunas partes, también hace
+mas difícil hacer cambios ya que tenemos el mismo código repetido en muchos
+lugares. También es útil escribir código complicado una sola vez en un solo
+lugar para evitar errores y hacer mas simple el resto del código.</p>
+<p>No se vos, pero escribir todo un for cada vez es un poco molesto, repetitivo
+y si en lugar de <cite>&lt;</cite> por error escribimos <cite>&lt;=</cite> tenemos un error que va a ser
+difícil de detectar, probemos escribir una función que nos evite escribir el
+for cada vez:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">porCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="nx">fn</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Lo que la función porCadaElemento hace es recibir una lista y una función
+como parámetros y llamar a la función porCadaElemento de la lista pasandole
+dos parámetros, el elemento y el indice del elemento en la lista.</p>
+<p>Para probarlo vamos a necesitar una función, empecemos imprimiendo los elementos de la lista:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">imprimirElemento</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;elemento&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="s1">&#39;de lista es&#39;</span><span class="p">,</span> <span class="nx">elemento</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ahora llamemos a porCadaElemento con una lista y esta función:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">porCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">imprimirElemento</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>El resultado es:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">10</span>
+<span class="n">elemento</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">20</span>
+<span class="n">elemento</span> <span class="mi">2</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p>Funciona, pero que pasa si queremos hacer algo en cada elemento y acumularlo?
+creemos una función para eso:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">aCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+            <span class="nx">nuevoElemento</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+
+        <span class="nx">resultado</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">nuevoElemento</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">resultado</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><cite>aCadaElemento</cite> se le aplica la función que pasamos por parámetro y el resultado
+que devuelva se agrega a una nueva lista que devolvemos cuando llamamos a la
+función para todos los elementos de la lista de entrada, probemos un caso
+para entenderlo mejor:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">incrementar</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>A cada elemento de la lista <cite>[10, 20, 30]</cite> le &quot;aplicamos&quot; la función
+<cite>incrementar</cite> y acumulamos el resultado en una nueva lista que devolvemos.</p>
+<p>Otra cosa que podemos hacer es &quot;filtrar&quot; elementos de una lista, con una
+función que recibe una lista y una función que le indica si cada elemento debe
+ser descartado de la lista resultado o no.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">filtrar</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+                <span class="nx">incluir</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">incluir</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">resultado</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">elemento</span><span class="p">);</span>
+            <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">resultado</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Para probar esta función vamos a necesitar una función nueva que reciba un
+valor y devuelva true si la condición es verdadera y false si es falsa. Este
+tipo de funciones se suelen llamar &quot;predicados&quot;.</p>
+<p>Creemos una que nos diga si un numero es par:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// si el resto de la división es cero, entonces el numero es par</span>
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Probemos nuestro &quot;predicado&quot; <cite>esPar</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Ahora probemosla con nuestra función <cite>filtrar</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Funciona y la intención del código queda mas clara que si tuviéramos todo el
+for mezclado con la lógica de lo que queremos hacer.</p>
+<p>Una cosa que podemos hacer si la lógica que queremos aplicar es solo útil
+en esa llamada es no declarar la función de antemano sino declararla directamente
+en el lugar donde la llamamos, así queda todo junto y no se nos llena el código
+de funciones que se usan una sola vez, como podemos pasar parámetros de valores
+directamente sin declarar variables, podemos pasar funciones directamente sin
+declararlas de antemano:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">elemento</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Estas funciones sin declarar se llaman &quot;funciones anónimas&quot; o &quot;lambda&quot; ya que
+no tienen nombre, pero es buena practica aun cuando nunca la vamos a llamar por
+nombre, de darle un nombre para poder entender mas fácil que es lo que hace:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">elemento</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Pero si estas cosas son tan comunes, seguro alguien ya las hizo por nosotros no?</p>
+<p>Así es, estas funciones son tan comunes que tienen nombres estándar y vienen
+incluidas en javascript.</p>
+<ul class="simple">
+<li><cite>porCadaElemento</cite> se llama <cite>forEach</cite> (&quot;porCada&quot; en ingles)</li>
+<li><cite>aCadaElemento</cite> se llama <cite>map</cite> (&quot;mapear&quot; o &quot;aplicar&quot; en ingles)</li>
+<li><cite>filtrar</cite> se llama <cite>filter</cite> (&quot;filtrar&quot; en ingles)</li>
+</ul>
+<p>Estas funciones están disponibles como atributos en las listas, un atributo que
+es una función suele llamarse método.</p>
+<p>Probemos con los métodos de las listas lo que ya hicimos:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">imprimirElemento</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Imprime:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">0</span>
+<span class="n">elemento</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">1</span>
+<span class="n">elemento</span> <span class="mi">2</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">2</span>
+<span class="n">elemento</span> <span class="mi">3</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">3</span>
+<span class="n">elemento</span> <span class="mi">4</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">4</span>
+<span class="n">elemento</span> <span class="mi">5</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">5</span>
+<span class="n">elemento</span> <span class="mi">6</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">6</span>
+<span class="n">elemento</span> <span class="mi">7</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">7</span>
+<span class="n">elemento</span> <span class="mi">8</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">8</span>
+<span class="n">elemento</span> <span class="mi">9</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">9</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span> <span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">esPar</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Este capitulo es uno de los mas densos de todos hasta ahora, pero con lo
+aprendido hasta acá ya podes programar cualquier cosa :) solo queda un concepto
+importante por aprender pero no es necesario, sino que es útil para evitar que
+nuestro código no se vuelva muy complicado.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
