@@ -1,5 +1,5 @@
-Creemos en la Web: Uno, dos, muchos
-===================================
+Uno, dos, muchos
+================
 
 En capítulos anteriores vimos tipos de datos "compuestos", también llamados
 colecciones, como listas y objetos, también vimos, solo por necesidad, como
