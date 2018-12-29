@@ -1,0 +1,408 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Datos por favor, pero validos &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="No nos llames, nosotros te llamamos" href="no-nos-llames-nosotros-te-llamamos.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Datos por favor, pero validos</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="no-nos-llames-nosotros-te-llamamos.html" title="Previous Chapter: No nos llames, nosotros te llamamos" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; No nos llames...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="datos-por-favor-pero-validos">
+<h1>Datos por favor, pero validos<a class="headerlink" href="#datos-por-favor-pero-validos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Ya sabemos suficiente HTML, CSS y Javascript para hacer una aplicación
+completa, así que empecemos y aprendamos lo que falta a medida que lo vayamos
+necesitando.</p>
+<p>Gran parte de las aplicaciones implica mostrar y solicitar datos, así que
+probemos solicitar datos, mas conocidos como &quot;formularios&quot; o &quot;forms&quot; para los
+amigos.</p>
+<p>El primero que nos vamos a encontrar en cualquier aplicación es el de
+autenticación, donde pedimos usuario y contraseña y lo validamos, si es valido
+pasamos a la siguiente pagina, si no, mostramos un mensaje de error.</p>
+<p>Empecemos con un &quot;esqueleto de aplicación vue&quot;, es decir, los componentes necesarios
+pero sin que haga algo en particular.</p>
+<p>Para eso necesitamos un archivo html, llamemoslo index.html:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Soy el una pagina web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- importamos nuestro estilo especifico --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- importamos nuestro javascript --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/script.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-3&quot;</span><span class="p">&gt;</span>
+        <span class="c">&lt;!-- la raíz de nuestra aplicación --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Soy una aplicación vue.js basica<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- incluimos el botón de Glitch para mostrar los detalles de la pagina y permitir que</span>
+<span class="c">          otras personas vean el código y puedan remixar el proyecto --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glitchButton&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position:fixed;top:20px;right:20px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://button.glitch.me/button.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Si no te acordás algunos de los elementos podes repasarlos de capítulos
+anteriores o enterarte que yo no los escribí de memoria sino que los fui a
+buscar a un capitulo anterior y lo copie acá ;)</p>
+<p>Para darle &quot;vida&quot; a esta aplicación vamos a necesitar un poco de Javascript,
+indicado por la presencia del tag <cite>&lt;script src=&quot;/script.js&quot;&gt;&lt;/script&gt;</cite> en el html.</p>
+<p>Ahora creemos un archivo llamado <cite>script.js</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
+
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">evento</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>El código define una función llamada main (principal en ingles) que va a ser
+el &quot;punto de entrada&quot; de nuestra aplicación.</p>
+<p>Pero cuando la llamamos?</p>
+<p>Necesitamos llamarla cuando la pagina termine de cargar, para saber eso le
+podemos decir al objeto <cite>window</cite> que cuando termine de cargar llame a la
+función <cite>main</cite>.</p>
+<p>En HTML/Javascript distintos elementos pueden emitir eventos para notificar de
+cosas que suceden, uno de ellos es la ventana que nos puede avisar cuando termino
+de cargar.</p>
+<p>Para poder reaccionar a estos eventos, tenemos que &quot;escuchar&quot; (listen en ingles).</p>
+<p>Los objetos que emiten eventos tienen un método llamado <cite>addEventListener</cite>
+(recordemos que un método es una función asociada a un objeto que podemos
+llamar con <cite>objeto.metodo()</cite>).</p>
+<p>El método addEventListener (&quot;añadir oyente de evento&quot; en ingles) recibe dos
+argumentos, el primero es el nombre del evento que queremos escuchar, en este
+caso es el evento <cite>'load'</cite>. El segundo argumento es la función a llamar cuando
+ese evento suceda. La función va a ser llamada con un argumento que contiene
+información sobre el evento que acaba de suceder, en nuestro caso no nos hace
+falta.</p>
+<p>Cuando la pagina cargue, el objeto <cite>window</cite> (ventana) va a emitir el evento
+<cite>'load'</cite> y va a buscar todas las funciones que escuchan ese evento y las va a
+llamar pasandoles un objeto evento con la información del evento.</p>
+<p>En ese momento nuestra función <cite>main</cite> sera llamada, la cual va a crear un nuevo
+objeto de tipo <cite>Vue</cite> pasandole opciones de inicialización en un objeto, las
+opciones de inicialización por ahora son:</p>
+<dl class="docutils">
+<dt>el</dt>
+<dd>id del tag donde la aplicación va a correr, en nuestro caso es el id <cite>app</cite>,
+para indicarle que es un id le ponemos el # adelante (después vamos a ver
+otras formas de indicarle el tag raiz.</dd>
+<dt>data</dt>
+<dd>los datos iniciales de nuestra aplicación, por ahora un objeto vacio.</dd>
+</dl>
+<p>Por si te dio curiosidad que es el <cite>/*globals Vue*/</cite>, es para indicarle al
+programa que chequea errores que la variable Vue existe porque otro script la
+definió, así no nos dice que estamos refiriéndonos a una variable inexistente.</p>
+<p>Acá tenes el proyecto base en <a class="reference external" href="https://glitch.com">glitch.com</a>, hace click en
+<cite>Remix to Edit</cite> arriba a la derecha para hacerle cambios, hace click en <cite>Edit</cite>
+abajo a la derecha para abrir este ejemplo en una pagina completa para
+editarlo.</p>
+<p>Abajo a la izquierda podes cambiar entre ver el código (Code), la aplicación
+(App) o ambas (Both).</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<iframe allow="geolocation; microphone; camera; midi; encrypted-media" src="https://glitch.com/embed/#!/embed/cew-vue-base?path=README.md&previewSize=0" alt="cew-vue-base on Glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
+</div><p>Muy lindo todo pero esta aplicación no hace nada, empecemos por agregar los
+campos de usuario y contraseña, para eso los definimos en el estado inicial
+de nuestra aplicación (el campo <cite>data</cite>):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
+
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">evento</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Luego, como personas eficientes que somos, vamos a un ejemplo de bootstrap de
+pagina de login <a class="reference external" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">https://getbootstrap.com/docs/4.1/examples/sign-in/</a> apretamos
+el botón derecho sobre la pagina y elegimos la opción que dice algo así como
+&quot;Ver Código Fuente&quot; o &quot;View Page Source&quot; (puede variar en tu navegador), copiamos
+la parte del HTML que nos interesa, la pegamos en nuestro proyecto y la adaptamos
+a nuestras necesidades, a mi me quedo así:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;h3 mb-3 font-weight-normal&quot;</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span> <span class="na">autofocus</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-3&quot;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-block mt-3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Usando el atributo <cite>v-model</cite> en los tags <cite>input</cite> conectamos los valores de
+nuestra aplicación al HTML.</p>
+<p>Ahora necesitamos que cuando se haga click en el botón comprobemos los valores,
+para eso vamos a usar el atributo <cite>&#64;click</cite> en el tag <cite>button</cite>:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;login()&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-block mt-3&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Pero a que función o método <cite>login</cite> llama?  al método login de nuestra aplicación,
+razón por la cual tenemos que definirlo en el atributo <cite>methods</cite>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
+
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Éxito&quot;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">);</span>
+                <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Lo que login hace por ahora es comprobar si el usuario es <cite>'bob'</cite> y la
+contraseña es <cite>'secreto'</cite>, si es así muestra un dialogo con el mensaje &quot;Éxito&quot;,
+sino muestra un dialogo con el mensaje &quot;Error&quot;.</p>
+<p>Fijate que para acceder a los campos <cite>username</cite> y <cite>password</cite> dentro del método
+<cite>login</cite> de nuestro objeto <cite>app</cite>, usamos <cite>this.username</cite> y <cite>this.password</cite>.</p>
+<p>La variable <cite>this</cite> es una variable que esta disponible en métodos (osea, funciones
+de objetos), y su valor es el objeto al que el método pertenece, <cite>this</cite> significa
+&quot;este&quot; en ingles, por lo que podemos acceder a los atributos y otros métodos
+del objeto actual usando <cite>this</cite>.</p>
+<p>Dicho de otra forma, si tenemos dos aplicaciones vue app1 y app2 y llamamos
+a login en ambas, <cite>this</cite> se va a referir a la aplicación correcta.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">app1</span><span class="p">.</span><span class="nx">login</span><span class="p">();</span> <span class="c1">// this es app1</span>
+<span class="nx">app2</span><span class="p">.</span><span class="nx">login</span><span class="p">();</span> <span class="c1">// this es app2</span>
+</pre></div>
+</div>
+<p>Dicho de otra otra forma, this es el valor a la izquierda del punto cuando
+llamamos a un método.</p>
+<p>Proba login con distintos usuarios y contraseñas.</p>
+<p>Lo que podemos hacer ahora es, si el usuario y contraseña son correctos, ir
+a otra pagina.</p>
+<p>Para eso necesitamos saber en que pagina estamos, si en login
+o la pagina principal y según eso mostrar una pagina o la otra. Para eso
+vamos a agregar un atributo mas a nuestra aplicación, llamado <cite>view</cite> (vista
+e ingles), si <cite>view</cite> es <cite>'login'</cite>, mostramos lo que veníamos mostrando hasta ahora,
+si <cite>view</cite> es <cite>'main'</cite> (principal en ingles), mostramos una pagina donde le
+damos la bienvenida.</p>
+<p>Ya que estamos, vamos a mostrar un mensaje mas agradable si el login es invalido,
+para eso vamos a agregar otro atributo, llamado <cite>error</cite>, que si no es vacio
+va a mostrar un mensaje de error en la pantalla:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
+          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+          <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+          <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El HTML queda así:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;login&#39;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;h3 mb-3 font-weight-normal&quot;</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span> <span class="na">autofocus</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-3&quot;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;error !== &#39;&#39;&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-danger mt-3&quot;</span><span class="p">&gt;</span>
+      {{error}}
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;login()&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-block mt-3&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;main&#39;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hola {{username}}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Fijate que la estructura base es:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;login&#39;&quot;</span><span class="p">&gt;</span>
+            <span class="c">&lt;!-- pagina de login acá --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;main&#39;&quot;</span><span class="p">&gt;</span>
+            <span class="c">&lt;!-- pagina principal acá --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Usamos <cite>v-if</cite> para incluir o no distintos tags (y sus descendientes) según el valor
+del atributo <cite>view</cite>, lo mismo hacemos con el mensaje de error:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;error !== &#39;&#39;&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-danger mt-3&quot;</span><span class="p">&gt;</span>
+  {{error}}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Para cerrar el ciclo, vamos a permitir volver a la pagina de login, osea que
+vamos a agregar un botón &quot;logout&quot; que permita ir de la pagina principal al login:</p>
+<p>Cambiamos la sección principal para que quede:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;main&#39;&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hola {{username}}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;logout()&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;float-right&quot;</span><span class="p">&gt;</span>logout<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Y agregamos el método <cite>logout</cite> a la lista de métodos de la aplicación, donde
+seteamos <cite>view</cite> a <cite>'login'</cite> y por las dudas limpiamos el mensaje de error,
+usuario y password.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="nx">logout</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;login&#39;</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
+          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+          <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+          <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El resultado final para explorarlo:</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/vue-login?path=script.js&previewSize=0"
+        alt="vue-login on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div></div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
