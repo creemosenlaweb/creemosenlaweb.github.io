@@ -79,33 +79,35 @@ pero sin que haga algo en particular.</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- para que muestre bien tildes y caracteres especiales --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
 
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Soy el una pagina web<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- para que se vea bien en Internet Explorer --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
 
-        <span class="c">&lt;!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="c">&lt;!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- para que se vea bien en telefonos mobiles --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
 
-        <span class="c">&lt;!-- importamos nuestro estilo especifico --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 
-        <span class="c">&lt;!-- importamos nuestro javascript --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/script.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- importamos nuestro estilo especifico --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- importamos nuestro javascript --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/script.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-3&quot;</span><span class="p">&gt;</span>
-        <span class="c">&lt;!-- la raíz de nuestra aplicación --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Soy una aplicación vue.js basica<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-        <span class="c">&lt;!-- incluimos el botón de Glitch para mostrar los detalles de la pagina y permitir que</span>
-<span class="c">          otras personas vean el código y puedan remixar el proyecto --&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glitchButton&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;position:fixed;top:20px;right:20px;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://button.glitch.me/button.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- la raíz de nuestra aplicación --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Soy una aplicación vue.js basica<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -118,7 +120,7 @@ indicado por la presencia del tag <cite>&lt;script src=&quot;/script.js&quot;&gt
 <p>Ahora creemos un archivo llamado <cite>script.js</cite>:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
 
-<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">evento</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
     <span class="nx">data</span><span class="o">:</span> <span class="p">{}</span>
@@ -177,7 +179,7 @@ campos de usuario y contraseña, para eso los definimos en el estado inicial
 de nuestra aplicación (el campo <cite>data</cite>):</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
 
-<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">evento</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
     <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -199,7 +201,7 @@ a nuestras necesidades, a mi me quedo así:</p>
 <div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;h3 mb-3 font-weight-normal&quot;</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span> <span class="na">autofocus</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-3&quot;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
@@ -222,20 +224,20 @@ razón por la cual tenemos que definirlo en el atributo <cite>methods</cite>:</p
 
 <span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
-        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Éxito&quot;</span><span class="p">);</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">);</span>
-                <span class="p">}</span>
-          <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">username</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-          <span class="nx">password</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Éxito&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">);</span>
         <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
@@ -273,22 +275,22 @@ para eso vamos a agregar otro atributo, llamado <cite>error</cite>, que si no es
 va a mostrar un mensaje de error en la pantalla:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
-        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
-                <span class="p">}</span>
-          <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-          <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-          <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
         <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
@@ -298,7 +300,7 @@ va a mostrar un mensaje de error en la pantalla:</p>
 
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;login&#39;&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;h3 mb-3 font-weight-normal&quot;</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span><span class="p">&gt;</span>Usuario<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputUser&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span> <span class="na">autofocus</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-3&quot;</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">required</span><span class="p">&gt;</span>
@@ -321,11 +323,11 @@ va a mostrar un mensaje de error en la pantalla:</p>
 <div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
 
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;login&#39;&quot;</span><span class="p">&gt;</span>
-            <span class="c">&lt;!-- pagina de login acá --&gt;</span>
+    <span class="c">&lt;!-- pagina de login acá --&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;view === &#39;main&#39;&quot;</span><span class="p">&gt;</span>
-            <span class="c">&lt;!-- pagina principal acá --&gt;</span>
+    <span class="c">&lt;!-- pagina principal acá --&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -352,28 +354,28 @@ seteamos <cite>view</cite> a <cite>'login'</cite> y por las dudas limpiamos el m
 usuario y password.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-        <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
-        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
-                <span class="p">}</span>
-          <span class="p">},</span>
-          <span class="nx">logout</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;login&#39;</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-          <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-          <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-          <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">===</span> <span class="s1">&#39;bob&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">===</span> <span class="s1">&#39;secreto&#39;</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;Usuario o contraseña incorrecta&#39;</span><span class="p">;</span>
         <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">logout</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">view</span> <span class="o">=</span> <span class="s1">&#39;login&#39;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">error</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">view</span><span class="o">:</span> <span class="s1">&#39;login&#39;</span><span class="p">,</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
@@ -381,10 +383,10 @@ usuario y password.</p>
 <p>El resultado final para explorarlo:</p>
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
-        allow="geolocation; microphone; camera; midi; encrypted-media"
-        src="https://glitch.com/embed/#!/embed/vue-login?path=script.js&previewSize=0"
-        alt="vue-login on Glitch"
-        style="height: 100%; width: 100%; border: 0;">
+    allow="geolocation; microphone; camera; midi; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/vue-login?path=script.js&previewSize=0"
+    alt="vue-login on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div></div>
 

@@ -20,38 +20,40 @@ Para eso necesitamos un archivo html, llamemoslo index.html:
 
 .. code-block:: html
 
-	<!doctype html>
-	<html>
-	  <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!doctype html>
+    <html>
+      <head>
+        <!-- para que muestre bien tildes y caracteres especiales -->
+        <meta charset="utf-8">
 
-		<title>Soy el una pagina web</title>
+        <!-- para que se vea bien en Internet Explorer -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
-		<!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <!-- para que se vea bien en telefonos mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- importamos nuestro estilo especifico -->
-		<link rel="stylesheet" href="/style.css">
+        <title>Login</title>
 
-		<!-- importamos nuestro javascript -->
-		<script src="/script.js" defer></script>
-	  </head>
-	  <body class="m-3">
-		<!-- la raíz de nuestra aplicación -->
-		<div id="app">
-		  <h1>Soy una aplicación vue.js basica</h1>
-		</div>
+        <!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+        <!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-		<!-- incluimos el botón de Glitch para mostrar los detalles de la pagina y permitir que
-		  otras personas vean el código y puedan remixar el proyecto -->
-		<div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-		<script src="https://button.glitch.me/button.js"></script>
-	  </body>
-	</html>
+        <!-- importamos nuestro estilo especifico -->
+        <link rel="stylesheet" href="/style.css">
+
+        <!-- importamos nuestro javascript -->
+        <script src="/script.js" defer></script>
+      </head>
+      <body class="m-3">
+
+        <!-- la raíz de nuestra aplicación -->
+        <div id="app">
+          <h1>Soy una aplicación vue.js basica</h1>
+        </div>
+
+      </body>
+    </html>
 
 
 Si no te acordás algunos de los elementos podes repasarlos de capítulos
@@ -67,7 +69,7 @@ Ahora creemos un archivo llamado `script.js`:
 
     /*globals Vue*/
 
-    function main(evento) {
+    function main(event) {
       let app = new Vue({
         el: '#app',
         data: {}
@@ -144,7 +146,7 @@ de nuestra aplicación (el campo `data`):
 
     /*globals Vue*/
 
-    function main(evento) {
+    function main(event) {
       let app = new Vue({
         el: '#app',
         data: {
@@ -168,7 +170,7 @@ a nuestras necesidades, a mi me quedo así:
     <div id="app">
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
-        <label for="inputUser" class="">Usuario</label>
+        <label for="inputUser">Usuario</label>
         <input v-model="username" type="text" id="inputUser" class="form-control" required autofocus>
 
         <label for="inputPassword" class="mt-3">Password</label>
@@ -192,28 +194,28 @@ razón por la cual tenemos que definirlo en el atributo `methods`:
 
 .. code-block:: javascript
 
-	/*globals Vue*/
+    /*globals Vue*/
 
-	function main(event) {
-	  let app = new Vue({
-		el: '#app',
-		methods: {
-		  login: function () {
-			if (this.username === 'bob' && this.password === 'secreto') {
-			  alert("Éxito");
-			} else {
-			  alert("Error");
-			}
-		  }
-		},
-		data: {
-		  username: "",
-		  password: ""
-		}
-	  });
-	}
+    function main(event) {
+      let app = new Vue({
+        el: '#app',
+        methods: {
+          login: function () {
+            if (this.username === 'bob' && this.password === 'secreto') {
+              alert("Éxito");
+            } else {
+              alert("Error");
+            }
+          }
+        },
+        data: {
+          username: '',
+          password: ''
+        }
+      });
+    }
 
-	window.addEventListener('load', main);
+    window.addEventListener('load', main);
 
 Lo que login hace por ahora es comprobar si el usuario es `'bob'` y la
 contraseña es `'secreto'`, si es así muestra un dialogo con el mensaje "Éxito",
@@ -256,26 +258,26 @@ va a mostrar un mensaje de error en la pantalla:
 
 .. code-block:: javascript
 
-	function main(event) {
-	  let app = new Vue({
-		el: '#app',
-		methods: {
-		  login: function () {
-			if (this.username === 'bob' && this.password === 'secreto') {
-			  this.view = 'main';
-			} else {
-			  this.error = 'Usuario o contraseña incorrecta';
-			}
-		  }
-		},
-		data: {
-		  view: 'login',
-		  error: '',
-		  username: '',
-		  password: ''
-		}
-	  });
-	}
+    function main(event) {
+      let app = new Vue({
+        el: '#app',
+        methods: {
+          login: function () {
+            if (this.username === 'bob' && this.password === 'secreto') {
+              this.view = 'main';
+            } else {
+              this.error = 'Usuario o contraseña incorrecta';
+            }
+          }
+        },
+        data: {
+          view: 'login',
+          error: '',
+          username: '',
+          password: ''
+        }
+      });
+    }
 
 El HTML queda así:
 
@@ -285,7 +287,7 @@ El HTML queda así:
       
       <div v-if="view === 'login'">
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-        <label for="inputUser" class="">Usuario</label>
+        <label for="inputUser">Usuario</label>
         <input v-model="username" type="text" id="inputUser" class="form-control" required autofocus>
         <label for="inputPassword" class="mt-3">Password</label>
         <input v-model="password" type="password" id="inputPassword" class="form-control" required>
@@ -310,11 +312,11 @@ Fijate que la estructura base es:
     <div id="app">
       
       <div v-if="view === 'login'">
-		<!-- pagina de login acá -->
+        <!-- pagina de login acá -->
       </div>
       
       <div v-if="view === 'main'">
-		<!-- pagina principal acá -->
+        <!-- pagina principal acá -->
       </div>
 
     </div>
@@ -346,43 +348,43 @@ usuario y password.
 
 .. code-block:: javascript
 
-	function main(event) {
-	  let app = new Vue({
-		el: '#app',
-		methods: {
-		  login: function () {
-			if (this.username === 'bob' && this.password === 'secreto') {
-			  this.view = 'main';
-			} else {
-			  this.error = 'Usuario o contraseña incorrecta';
-			}
-		  },
-		  logout: function () {
-			this.view = 'login';
-			this.error = '';
-			this.username = '';
-			this.password = '';
-		  }
-		},
-		data: {
-		  view: 'login',
-		  error: '',
-		  username: '',
-		  password: ''
-		}
-	  });
-	}
+    function main(event) {
+      let app = new Vue({
+        el: '#app',
+        methods: {
+          login: function () {
+            if (this.username === 'bob' && this.password === 'secreto') {
+              this.view = 'main';
+            } else {
+              this.error = 'Usuario o contraseña incorrecta';
+            }
+          },
+          logout: function () {
+            this.view = 'login';
+            this.error = '';
+            this.username = '';
+            this.password = '';
+          }
+        },
+        data: {
+          view: 'login',
+          error: '',
+          username: '',
+          password: ''
+        }
+      });
+    }
 
 
 El resultado final para explorarlo:
 
 .. raw:: html
 
-	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-	  <iframe
-		allow="geolocation; microphone; camera; midi; encrypted-media"
-		src="https://glitch.com/embed/#!/embed/vue-login?path=script.js&previewSize=0"
-		alt="vue-login on Glitch"
-		style="height: 100%; width: 100%; border: 0;">
-	  </iframe>
-	</div>
+    <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+      <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/vue-login?path=script.js&previewSize=0"
+        alt="vue-login on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+      </iframe>
+    </div>
