@@ -1,4 +1,4 @@
-Datos por favor, pero despues
+Datos por favor, pero después
 =============================
 
 En el capítulo anterior vimos como pedirle datos al usuario, pero en el momento
