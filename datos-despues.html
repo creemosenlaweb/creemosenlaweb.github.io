@@ -1,0 +1,429 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Datos por favor, pero despues &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Datos por favor, pero validos" href="datos-por-favor.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Datos por favor, pero despues</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="datos-por-favor.html" title="Previous Chapter: Datos por favor, pero validos" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Datos por fav...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="datos-por-favor-pero-despues">
+<h1>Datos por favor, pero despues<a class="headerlink" href="#datos-por-favor-pero-despues" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En el capítulo anterior vimos como pedirle datos al usuario, pero en el momento
+de validar los datos, lo hicimos simple con lógica fija en el código.</p>
+<p>En una aplicación real, le preguntaríamos a un servicio que tiene registradas
+las cuentas si el usuario y la contraseña son validas.</p>
+<p>Este tipo de servicios suelen llamarse APIs (interfaz de programación de
+aplicaciones en ingles).</p>
+<p>Las APIs son como funciones pero que corren en otras computadoras, razón por la
+cual al llamarlas no devuelven instantáneamente si no que demoran un buen rato,
+así que tenemos que aprender a esperar y manejar distintos casos.</p>
+<p>Por ejemplo cuando la solicitud funciona correctamente y cuando falla, ya sea
+por problemas de red, porque mandamos parámetros inválidos, porque el servicio
+no esta funcionando correctamente o una gran variedad de causas normalmente
+resumidas con &quot;se cayo el sistema&quot;.</p>
+<p>Empecemos cargando datos y mostrandolos, arrancamos con todo el HTML ya que no
+hay nada nuevo:</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- para que muestre bien tildes y caracteres especiales --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- para que se vea bien en Internet Explorer --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- para que se vea bien en telefonos mobiles --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Cargando Datos<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- importamos vue para poder crear aplicaciones con javascript https://vuejs.org/ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="c">&lt;!-- importamos las hojas de estilo base bootstrap https://getbootstrap.com/ --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- importamos nuestro estilo especifico --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/style.css&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- importamos nuestro javascript --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/client.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-3&quot;</span><span class="p">&gt;</span>
+
+    <span class="c">&lt;!-- la raíz de nuestra aplicación --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;cargando&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>
+          Cargando
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-stripped table-hover&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Fecha<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.fecha}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Numero<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.numero}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.nombre}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;recargar()&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>
+            Recargar
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Notaras que hice copy/paste del capitulo anterior, lo único que cambio es lo
+que esta dentro del <cite>div</cite> app, pero tampoco es algo nuevo, veamoslo en detalle:</p>
+<p>El primer div solo se muestra si el atributo <cite>cargando</cite> es <cite>true</cite>, mostrando
+el mensaje &quot;Cargando&quot;.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;cargando&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span>
+    Cargando
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Sino (con <cite>v-else</cite> que es como el else del if en javascript) significa que ya
+cargamos los datos, osea que los podemos mostrar, asumimos que los datos tienen
+al menos 3 campos: fecha, numero y nombre.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-stripped table-hover&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Fecha<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.fecha}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Numero<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.numero}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{datos.nombre}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Finalmente ponemos un botón que permite recargar los datos.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;recargar()&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>
+    Recargar
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>La lógica de nuestra aplicación esta en el archivo <cite>client.js</cite>, empecemos
+con una base que ya conocemos:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="cm">/*globals Vue*/</span>
+
+<span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">recargar</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// cargar aca</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">cargando</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">datos</span><span class="o">:</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">recargar</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>El código no hace nada nuevo, y de hecho no esta terminado, pero repasemos.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Cuando la pagina termine de cargar llamamos a la función <cite>main</cite>.</p>
+<p>La función <cite>main</cite> crea un nuevo objeto <cite>Vue</cite>, que va a funcionar en el tag
+con id <cite>&quot;app&quot;</cite>, la aplicacion tiene dos atributos:</p>
+<dl class="docutils">
+<dt>cargando</dt>
+<dd>indica si la aplicación esta cargando datos</dd>
+<dt>datos</dt>
+<dd>los datos cargados, inicialmente vacíos</dd>
+</dl>
+<p>Nuestra aplicación también tiene un método, <cite>recargar</cite>, que por ahora no hace
+nada, osea que si probas esto la pagina se va a quedar en &quot;Cargando&quot; por
+siempre.</p>
+<p>En el método <cite>recargar</cite> podríamos hacer algo como:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">recargar</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">datos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">fecha</span><span class="o">:</span> <span class="s2">&quot;una fecha&quot;</span><span class="p">};</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Pero eso setearia datos instantáneamente, nunca veríamos el mensaje &quot;Cargando&quot;,
+si solo hubiera una forma de pedirle al navegador que llame a una función &quot;después&quot;...</p>
+<p>Obviamente dicha funcionalidad existe y suele ser muy útil, por ejemplo para
+mostrar o esconder mensajes después de un tiempo prudente.</p>
+<p>Esta funcionalidad esta disponible en el objeto <cite>window</cite> y se llama
+<cite>setTimeout</cite>, el método recibe dos argumentos, el primero es la función a
+llamar, el segundo es cuanto tiene que pasar entre el momento en el que
+llamamos al método y cuando se va a llamar a nuestra función, en milisegundos
+(1 segundo son 1000 milisegundos).</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">recargar</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">cargarFalso</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">datos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">fecha</span><span class="o">:</span> <span class="s2">&quot;una fecha&quot;</span><span class="p">};</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">cargarFalso</span><span class="p">,</span> <span class="mi">3000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hay un par de detalles importantes en ese código, vamos por partes:</p>
+<p>Primero creamos una variable llamada app que tiene el mismo valor que <cite>this</cite>,
+porque haríamos eso? lo vamos a ver en un par de lineas.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Luego creamos una función llamada <cite>cargarFalso</cite>, que se llama así porque va a
+simular que estamos cargando los datos de un servicio esperando un poco y
+seteando los datos.</p>
+<p>Lo primero para notar es que podemos crear una función dentro de otra función
+o método, esto lo hacemos acá por dos razones.</p>
+<p>La primera razón es porque a esta función solo la necesitamos en el método
+recargar, así que hacerla &quot;visible&quot; al resto del código es innecesario y puede
+llegar a hacernos pensar después que es una función que tiene algún tipo de
+utilidad general cuando en realidad no la tiene fuera del método <cite>recargar</cite>.</p>
+<p>La segunda es que queremos tener acceso a la variable <cite>app</cite> que esta disponible
+en los métodos de nuestra aplicación vue, las funciones &quot;ven&quot; las variables
+declaradas en su &quot;cuerpo&quot; (body en ingles, lo que esta entre llaves), entonces
+al declararla dentro del método <cite>recargar</cite> tenemos acceso a la variable sin
+necesidad de hacer cosas raras, ya que <cite>window.setTimeout</cite> llama a una función
+pero no le pasa ningún argumento.</p>
+<p>En el cuerpo de la función <cite>cargarFalso</cite> podemos ver que seteamos el atributo
+<cite>datos</cite> de la variable <cite>app</cite> y aquí revelamos el misterio de la linea <cite>let app
+= this;</cite>, como vimos en el capitulo anterior, cada variable tiene un <cite>this</cite>
+implícito, su valor depende del &quot;valor antes del punto&quot; al llamarla, osea que
+cada función puede tener un valor distinto de <cite>this</cite> o ninguno si llamamos a la
+función directamente y no como un método.</p>
+<p>Para asegurarnos de setear <cite>datos</cite> en el objeto adecuado, asignamos el valor de
+<cite>this</cite> en el método de nuestra aplicación a otra variable para que no se confunda
+con el <cite>this</cite> de la función <cite>cargarFalso</cite>.</p>
+<p>No te preocupes, esta es una de las cosas mas confusas de javascript y te puede
+llevar una buena cantidad de tropiezos terminar de entenderlo por completo.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">cargarFalso</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">datos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">fecha</span><span class="o">:</span> <span class="s2">&quot;una fecha&quot;</span><span class="p">};</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Seteamos el atributo <cite>cargando</cite> de nuestra aplicación a true así la pagina
+cambia y muestra el mensaje &quot;Cargando&quot; hasta que la función <cite>cargarFalso</cite> sea
+llamada.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">app</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Finalmente llamamos al método <cite>setTimeout</cite> del objeto <cite>window</cite> y le pasamos
+nuestra función a llamar y cuando la tiene que llamar (en 3000 milisegundos, es
+decir 3 segundos).</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">cargarFalso</span><span class="p">,</span> <span class="mi">3000</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Si probas esto vas a ver que la pagina va a cargar, mostrar el mensaje &quot;Cargando&quot;
+y 3 segundos después va a mostrar los datos.</p>
+<p>Si apretamos el botón &quot;Recargar&quot; va a mostrar el mensaje y 3 segundos después
+los datos.</p>
+<p>Hagamos una pequeña modificación para que el cambio se note al hacer click en
+&quot;Recargar&quot; hagamos que el valor del campo fecha cambie.</p>
+<p>Para obtener la fecha y hora actual existe un tipo de objeto llamado &quot;Date&quot;
+(fecha en ingles).</p>
+<p>Cuando creamos un nuevo objeto del tipo <cite>Date</cite> el objeto que nos devuelve contiene
+la fecha y hora actual según el reloj de tu computadora, probemos un poco:</p>
+<p>Creamos un nuevo objeto de tipo <cite>Date</cite> usando <cite>new</cite>:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Llamamos al método <cite>toString</cite> que devuelve una representación de la fecha
+como texto:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;Tue Jan 01 2019 17:41:01 GMT-0300 (-03)&#39;</span>
+</pre></div>
+</div>
+<p>Llamamos al método <cite>toLocaleString</cite> que devuelve una representación de la fecha
+como texto adaptada al idioma y configuración de tu computadora, en tu caso
+probablemente aparezca distinto al mio, que tengo un lio de configuraciones de
+ingles, español y alemán:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;2019-1-1 17:41:01&#39;</span>
+</pre></div>
+</div>
+<p>El método <cite>toLocaleDateString</cite> devuelve una representación de la fecha, sin
+la parte del tiempo, como texto adaptada al idioma y configuración de tu
+computadora:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;2019-1-1&#39;</span>
+</pre></div>
+</div>
+<p>El método <cite>toLocaleTimeString</cite> devuelve una representación de la fecha, solo
+la parte del tiempo, como texto adaptada al idioma y configuración de tu
+computadora:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;17:41:01&#39;</span>
+</pre></div>
+</div>
+<p>El método <cite>getDate</cite> Devuelve el día del mes.</p>
+<p>No confundirlo con <cite>getDay</cite> que devuelve el día de la semana.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>El método <cite>getMonth</cite> devuelve el numero de mes, para complicarnos la existencia
+enero es 0 en lugar de 1:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>El método <cite>getFullYear</cite> devuelve el año.</p>
+<p>No confundirlo con <cite>getYear</cite> que devuelve el año menos 1900, osea que 2019 es
+119`, si, no tiene sentido, como muchas cosas que vamos a aprender.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">2019</span>
+</pre></div>
+</div>
+<p>El método <cite>getHours</cite> devuelve la hora.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">17</span>
+</pre></div>
+</div>
+<p>El método <cite>getMinutes</cite> devuelve los minutos.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">41</span>
+</pre></div>
+</div>
+<p>El método <cite>getSeconds</cite> devuelve los segundos.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">date1</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Esos son los principales métodos, y luego de este breve tour alternativo
+volvemos a lo que nos compete, usar <cite>new Date()</cite> para mostrar la hora del
+momento en el que cargaron los datos:</p>
+<p>Cambiamos <cite>cargarFalso</cite> para que en el campo <cite>fecha</cite> tenga la fecha actual en
+texto:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">cargarFalso</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">fecha</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+        <span class="nx">fechaTexto</span> <span class="o">=</span> <span class="nx">fecha</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span>
+
+    <span class="nx">app</span><span class="p">.</span><span class="nx">datos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">fecha</span><span class="o">:</span> <span class="nx">fechaTexto</span><span class="p">};</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">cargando</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ahora al apretar &quot;Recargar&quot; la fecha debería cambiar indicandonos que cargo de
+nuevo.</p>
+<p>Ya aprendimos mucho, como &quot;llamar funciones después&quot;, como declarar funciones
+dentro de otras para tener acceso a las variables del cuerpo de la función,
+como no confundir el <cite>this</cite> de distintas funciones creando variables y sobre el
+tipo de dato <cite>Date</cite> y alguno de sus métodos, pero lo mejor esta por llegar, en
+la próxima vamos a usar todo esto que aprendimos para cargar los datos de un
+servicio/servidor/API.</p>
+<p>El resultado esta en <a class="reference external" href="https://marianoguerra.github.io/creemos-en-la-web/paginas/datos-despues/2/">https://marianoguerra.github.io/creemos-en-la-web/paginas/datos-despues/2/</a></p>
+<p>Podes explorar el código con las herramientas de desarrollo.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
