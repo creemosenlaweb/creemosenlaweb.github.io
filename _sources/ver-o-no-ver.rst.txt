@@ -13,7 +13,7 @@ alarma.
 
 .. raw:: html
 
-    <script src="/jslibs/vue-2.5.17.min.js"></script>
+    <script src="jslibs/vue-2.5.17.min.js"></script>
 
 
 .. code-block:: html
