@@ -1,0 +1,344 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Datos por favor, es promesa &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Datos por favor, pero después" href="datos-despues.html" /> 
+  </head>
+  <body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Datos por favor, es promesa</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="datos-despues.html" title="Previous Chapter: Datos por favor, pero después" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Datos por fav...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="datos-por-favor-es-promesa">
+<h1>Datos por favor, es promesa<a class="headerlink" href="#datos-por-favor-es-promesa" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En el capítulo anterior vimos como cargar datos simulando la espera que surge
+de cargar datos de servicios remotos, ahora vamos a ver como cargar datos
+remotos de verdad, pero primero tenemos que aprender sobre algo llamado
+promesas.</p>
+<p>En una aplicación web todas las partes del código tienen que colaborar haciendo
+su trabajo lo mas rápido posible y dejando que otros puedan hacer su trabajo,
+si un pedazo de código se toma mucho tiempo, otras partes importantes no se
+ejecutan y se produce algo que te puede haber pasado, que es que la aplicación
+&quot;se congela&quot;.</p>
+<p>Es por eso que muchas funcionalidades en js se descomponen en pedazos mas
+chicos para evitar este problema.</p>
+<p>Una de ellas es cargar datos de otros servicios, no podemos darnos el lujo de
+esperar hasta que respondan, ya que si se toma un par de segundos la aplicación
+se congela.</p>
+<p>La solución es hacer la solicitud y obtener como resultado una promesa.</p>
+<p>Una promesa es un objeto que nos permite registrar funciones para cuando la
+promesa sea cumplida. La promesa puede ser cumplida exitosamente o puede haber
+un error. También podemos registrar funciones para que corran cuando la promesa
+sea cumplida, no importa si con éxito o con error.</p>
+<p>El tipo de dato promesa (<cite>Promise</cite> en ingles), no es nada mágico, si no que
+esta disponible para que la usemos si la necesitamos, vamos a probarla con
+ejemplos simples, no te preocupes si no entendés la parte de crear promesas,
+requiere un poco de &quot;pensar de adentro para afuera&quot;, normalmente al principio
+solo &quot;consumimos&quot; promesas, pero es necesario que las creemos así podemos
+probar todos los casos.</p>
+<p>Proba los fragmentos de código en <a class="reference external" href="https://glitch.com/">glitch</a> o en la
+consola en las herramientas de desarrollo.</p>
+<p>Una promesa nunca cumplida:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{});</span>
+</pre></div>
+</div>
+<p>Esta es la forma mas simple de crear una promesa, el tipo de dato <cite>Promise</cite>
+permite crear nuevos objetos de ese tipo con el operador <cite>new</cite>, el &quot;constructor&quot;
+de las promesas recibe como argumento una función, la función va a ser llamada
+en el momento en el que la promesa es construida y dicha función recibe dos
+argumentos:</p>
+<dl class="docutils">
+<dt>resolve</dt>
+<dd>una función a ser llamada si la promesa se cumple con éxito.</dd>
+<dt>reject</dt>
+<dd>una función a ser llamada si la promesa se cumple con un error.</dd>
+</dl>
+<p>Tanto <cite>resolve</cite> como <cite>reject</cite> son funciones que reciben un solo argumento, que
+va a ser pasado a las funciones que registremos para ambos casos.</p>
+<p>Una promesa resuelta instantaneamente con éxito:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;éxito!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Una promesa resuelta instantaneamente con error:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;error!&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Todo muy lindo, pero para que sirve que la resolvamos con éxito o error si no
+cambia nada?</p>
+<p>La utilidad de las promesas es poder registrar una o mas funciones que van a
+ser llamada en los tres casos que ya mencionamos: éxito, error o cuando se
+resuelva no importa el caso.</p>
+<p>Empecemos registrando una función con la promesa que nunca se resuelve, vamos a
+usar el método <cite>then</cite> (entonces en ingles) de los objetos de tipo <cite>Promise</cite>
+para registrar una función que va a ser llamada cuando la promesa se cumpla
+exitosamente, cuando sea llamada va a recibir un argumento que es el valor con
+el que la promesa se cumplió (el valor prometido ;).</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p1</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p1 resuelta: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>A mi en firefox me muestra este resultado, que quiere decir que llamar al
+método <cite>then</cite> del objeto promesa devuelve la promesa misma, esto nos va a ser
+útil después para &quot;encadenar&quot; llamadas a métodos en la promesa.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="nb">Promise</span> <span class="p">{</span> <span class="o">&lt;</span><span class="nx">state</span><span class="o">&gt;:</span> <span class="s2">&quot;pending&quot;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Fuera de eso, all llamar al método <cite>then</cite> del objeto promesa <cite>p1</cite> no paso nada,
+es natural ya que esa promesa esta &quot;pendiente&quot; (pending en ingles) y nunca se
+va a cumplir.</p>
+<p>La promesa <cite>p2</cite> se cumplió apenas la creamos, que pasa si registramos una
+función a ser llamada cuando se resuelva con éxito? Probemos:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p2</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p2 resuelta: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Una aclaración, las funciones que pasamos por parámetro para que sean llamadas
+en ingles se llaman &quot;callbacks&quot;, que traducido es &quot;llamame de vuelta&quot;,
+probablemente use esa palabra de ahora en mas porque es mas corta y para que te
+acostumbres ya que se usa mucho en la documentación.</p>
+<p>Volviendo al código, si lo probaste habrás notado que aparece un cuadro de
+dialogo mostrando el mensaje <cite>&quot;p2 resuelta: éxito!&quot;</cite>, es decir que si
+registramos un callback aun después de que la promesa sea cumplida la función
+va a ser llamada.</p>
+<p>Corre el código de nuevo y vas a ver que el dialogo aparece de nuevo, esto es
+útil ya que no tenemos que preocuparnos si registramos el callback antes o
+después de que la promesa se resuelva, una cosa a tener en cuenta es que cada
+callback va a ser llamada una sola vez, ya que cada objeto de promesa puede ser
+resuelta una vez.</p>
+<p>Ahora probemos lo mismo con la promesa que se resuelve con error:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p3</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p3 resuelta: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>El dialogo no aparece... porque <cite>then</cite> registra callbacks para el caso de
+éxito, si queremos registrar callbacks para el caso de error, tenemos que usar
+el método llamado <cite>catch</cite> (capturar en ingles).</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p3</span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p3 error: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Ahora el dialogo aparece.</p>
+<p>Que pasa si queremos hacer algo en ambos casos? hay otro método llamado <cite>finally</cite> (finalmente en ingles).</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p2</span><span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p2 finally&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">p3</span><span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;p3 finally&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Ambos muestran el dialogo, pero como veras no reciben el valor de resolución
+porque no sabemos cual sucedió.</p>
+<p>Que pasa si queremos hacer un poco de todo, algo si salio bien, por ejemplo
+actualizar datos, algo si salio mal, por ejemplo mostrar un error y algo
+siempre, por ejemplo esconder un mensaje de &quot;Cargando&quot;.</p>
+<p>Obviamente podemos escribir las tres llamadas separadas, pero como mencione
+las llamadas a los métodos <cite>then</cite>, <cite>catch</cite>, <cite>finally</cite> devuelven la promesa,
+por lo que podemos hacer algo que se llama &quot;encadenar&quot; llamadas, veamos como es:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">p2</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;then: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resultado</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;catch: &#39;</span> <span class="o">+</span> <span class="nx">resultado</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;finally&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>No cambia nada con hacerlo junto o por separado, pero suele hacerse según
+preferencia así que lo aclaro.</p>
+<p>Bueno, basta de promesas (cuac!), veamos como usar esto para cargar datos, para
+eso vamos a usar una función llamada <cite>fetch</cite> que hace una solicitud HTTP (como
+tu navegador para cargar esta pagina, imágenes y datos) y devuelve una promesa,
+vamos a cargar datos de ejemplo que puse en una pagina:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;https://marianoguerra.github.io/creemos-en-la-web/paginas/promesas/datos.json&quot;</span><span class="p">;</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ahora con todo lo que sabemos sobre promesas, veamos que nos da la promesa:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Lo que hago es mostrar el valor de <cite>response</cite> en la consola usando el método
+<cite>log</cite> del objeto <cite>console</cite> (consola en ingles).</p>
+<p>A mi en firefox me muestra esto, a vos te puede mostrar algo un poco distinto:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">Response</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;cors&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://marianoguerra.github.io/creemos-en-la-web/paginas/promesas/datos.json&quot;</span><span class="p">,</span> <span class="nx">redirected</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">status</span><span class="o">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nx">ok</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">statusText</span><span class="o">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span> <span class="nx">headers</span><span class="o">:</span> <span class="nx">Headers</span><span class="p">,</span> <span class="nx">body</span><span class="o">:</span> <span class="nx">ReadableStream</span><span class="p">,</span> <span class="nx">bodyUsed</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Es un objeto de tipo <cite>Response</cite> (respuesta en ingles) que tiene información
+variada sobre la solicitud que hicimos, pero lo que nosotros lo que queremos
+son los datos cuando la solicitud termine, para eso tenemos que pedirle al
+objeto <cite>response</cite> que lea el contenido de la respuesta. El objeto response
+tiene muchos métodos, uno de ellos es el método <cite>text</cite>, que nos devuelve...
+otra promesa..., la cual al resolverse nos da el contenido de la solicitud.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Texto!&#39;</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Al correrlo debería mostrar lo siguiente en la consola:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Texto! {
+    &quot;numero&quot;: 42,
+    &quot;lista&quot;: [1, 2, 3]
+}
+</pre></div>
+</div>
+<p>Como veras el contenido es texto, pero notaras que son datos javascript, el
+subset de javascript que sirve para describir datos y enviarlos entre
+computadoras se llama JSON (pronunciado yeison, acrónimo en ingles de
+JavaScript Object Notation, que significa Notación de Objetos JavaScript).</p>
+<p>Hay un objeto llamado <cite>JSON</cite> que tiene dos métodos útiles, uno llamado <cite>parse</cite>
+que recibe como argumento un valor de tipo texto (string) y nos devuelva los
+datos representados en ese texto, este es el que necesitamos, probemoslo:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">datos</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Datos!&#39;</span><span class="p">,</span> <span class="nx">datos</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Por suerte como esta es una actividad común, el objeto <cite>response</cite> tiene un
+método llamado <cite>json</cite> que hace la tarea por nosotros:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">datos</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Datos!&#39;</span><span class="p">,</span> <span class="nx">datos</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Ya que estamos hablando de JSON veamos el otro método <cite>stringify</cite> (algo así
+como &quot;hacer texto&quot; en ingles), que es el inverso de <cite>parse</cite>, es decir, recibe
+datos y nos devuelve la representación JSON de esos datos en un valor de tipo
+texto (string):</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="nx">lista</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]});</span>
+</pre></div>
+</div>
+<p>El resultado es:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;{\&quot;numero\&quot;:42,\&quot;lista\&quot;:[1,2,3]}&quot;</span>
+</pre></div>
+</div>
+<p>Para estar seguros de que funciona, probemos el inverso:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s2">&quot;{\&quot;numero\&quot;:42,\&quot;lista\&quot;:[1,2,3]}&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Notar que para poder insertar comillas dobles en un string, que ya tiene
+comillas dobles para indicar comienzo y fin, necesitamos poner una barra
+invertida antes de la comilla, para indicarle que no es el fin del string, sino
+que queremos poner esa comilla &quot;dentro&quot; del string. Esto normalmente se llama
+&quot;escapar&quot; caracteres.</p>
+<p>Para finalizar, solo recordar que como <cite>fetch</cite> devuelve una promesa, podemos
+&quot;encadenar&quot; llamadas a <cite>then</cite>, <cite>catch</cite> y <cite>finally</cite> para hacer distintas
+operaciones según cual fue el resultado de la solicitud.</p>
+<p>La forma general es:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// resultado de la solicitud</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// si hubo error</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// cuando la solicitud termino</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Resumiendo, aprendimos sobre promesas, llamadas encadenadas, la función <cite>fetch</cite>
+para hacer solicitudes a otros servicios, el formato JSON y su objeto con sus
+métodos <cite>parse</cite> y <cite>stringify</cite>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131588591-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131588591-2');
+</script>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
