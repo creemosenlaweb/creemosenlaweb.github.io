@@ -56,7 +56,7 @@ Creemos un proyecto nuevo con el siguiente contenido:
 
 		<p>Una imagen:</p>
 
-		<img title="un cubo" width="200" height="200"  src="cube.jpg">
+		<img title="un cubo" width="200" height="200"  src="assets/cube.jpg">
 	  </body>
 	</html>
 
@@ -95,9 +95,16 @@ fondo en ingles) tiene el valor negro (black).
 
 El resultado, si bien es lo que queremos, nos agrega un nuevo desafío:
 
-.. figure:: ../galleries/cew/4/01-bg-color.png
+.. raw:: html
 
-	El texto no se lee!
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-1?path=index.html&previewSize=33"
+		alt="css--paso-1 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Ahora tenemos que hacer que el texto sea un color claro, empezamos con el titulo:
 
@@ -116,7 +123,16 @@ Continuamos con el primer párrafo:
 
 Y el resultado se ve algo así:
 
-.. figure:: ../galleries/cew/4/02-color.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-2?path=index.html&previewSize=33"
+		alt="css--paso-2 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Si sos como yo, ya estarás pensando: "Esto va a llevar un buen tiempo y mucha repetición!".
 
@@ -139,7 +155,17 @@ En el mismo lugar que definimos el color de fondo.
 
 El resultado es lo que esperábamos:
 
-.. figure:: ../galleries/cew/4/03-color.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-3?path=index.html&previewSize=33"
+		alt="css--paso-3 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Gustos específicos
 ------------------
@@ -189,11 +215,22 @@ Intentemoslo:
 
 		<p>Una imagen:</p>
 
-		<img title="un cubo" width="200" height="200"  src="cube.jpg">
+		<img title="un cubo" width="200" height="200"  src="assets/cube.jpg">
 	  </body>
 	</html>
 
 Eso fue bastante repetitivo...
+
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-4?path=index.html&previewSize=33"
+		alt="css--paso-4 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Gustos específicos, cambiantes
 ------------------------------
@@ -290,7 +327,17 @@ Y así podemos centralizar todo el estilo de la pagina en la cabecera y separar
 claramente el contenido de su presentación, algo que es una buena costumbre en
 el desarrollo web.
 
-.. figure:: ../galleries/cew/4/04-style.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-5?path=index.html&previewSize=33"
+		alt="css--paso-5 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Gustos cambiantes, en muchos lugares
 ------------------------------------
@@ -307,36 +354,29 @@ Ahí es cuando dándote cuenta que vas a tener que hacer cambios en 10 documento
 
 A menos que haya otra forma de evitar la repetición.
 
-Por suerte la hay, y quizás ya la notaste al ver en tus proyectos de Thimble un
+Por suerte la hay, y quizás ya la notaste al ver en tus proyectos de glitch un
 archivo con un nombre familiar que todavía no mencionamos.
 
 El misterioso **style.css**.
 
-Si lo abrís vas a ver un contenido familiar con algunas cosas nuevas, el mio tiene esto:
+Si lo abrís vas a ver un contenido familiar con algunas cosas nuevas, si empiezo con "hello-webpage" el mio tiene esto:
 
 .. code-block:: css
 
-	/* Fonts from Google Fonts - more at https://fonts.google.com */
-	@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-	@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+	/* CSS files add styling rules to your content */
 
 	body {
-	  background-color: white;
-	  font-family: "Open Sans", sans-serif;
-	  padding: 5px 25px;
-	  font-size: 18px;
-	  margin: 0;
-	  color: #444;
+	  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+	  margin: 2em;
 	}
 
 	h1 {
-	  font-family: "Merriweather", serif;
-	  font-size: 32px;
+	  font-style: italic;
+	  color: #373fff;
 	}
 
-Con lo que aprendimos e ignorando las primeras dos lineas podemos ver que es un
-archivo que contiene CSS y que define el estilo para el tag body y para los
-títulos.
+Con lo que aprendimos podemos ver que es un archivo que contiene CSS y que
+define el estilo para el tag body y para los títulos.
 
 Pero ese estilo no se esta aplicando, porque no lo incluimos en nuestro
 documento.
@@ -344,7 +384,7 @@ documento.
 Para incluirlo vamos a aprender un tag nuevo, que hace muchas cosas distintas
 pero su tarea habitual es incluir archivos de estilo en documentos HTML.
 
-Si agregamos el siguiente tag:
+Si agregamos el siguiente tag en un proyecto con el archivo style.css de arriba:
 
 .. code-block:: html
 
@@ -353,7 +393,18 @@ Si agregamos el siguiente tag:
 Después del tag *style* en la cabecera podemos ver como de pronto el estilo
 contenido en ese archivo se aplica al documento!
 
-Antes de ver que sucedió y donde esta nuestro fondo negro veamos los dos
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-6?path=index.html&previewSize=33"
+		alt="css--paso-6 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
+Antes de ver que sucedió y que le paso al titulo veamos los dos
 atributos del tag `link <https://developer.mozilla.org/es/docs/Web/HTML/Elemento/link>`_:
 
 href
@@ -365,9 +416,9 @@ rel
 
 Ahora tendrás una de dos preguntas, o las dos:
 
-Y nuestro fondo oscuro?
+Que le paso al titulo?
 
-Y la C en CSS que significa?
+Y la C en CSS que significa? (bueno, capaz que esta pregunta no te la hiciste justo ahora)
 
 Resulta que las dos preguntas tienen mas o menos la misma respuesta, la C en
 CSS es de Cascada, osea que CSS en español significa hojas de estilo en
@@ -376,16 +427,18 @@ cascada.
 Y donde esta la cascada? en la forma en la que el navegador interpreta los
 estilos que definimos para nuestro documento.
 
-En nuestro documento primero le decimos que el fondo del tag body es negro y
-después cargamos un archivo CSS que le dice que el fondo es claro.
+En nuestro documento primero le decimos que el color del titulo (y del resto)
+es blanco y después cargamos un archivo CSS que le dice que el color del titulo
+es azulado.
 
 El navegador interpreta los estilos dándole la razón al ultimo que lo declaro y
 al mas especifico.
 
-En este caso, el ultimo en declarar el color de fondo del documento es el archivo (esta mas abajo en el documento HTML).
+En este caso, el ultimo en declarar el color del titulo es el archivo (esta mas abajo en el documento HTML).
 
-Y lo de mas especifico? bueno, el color del texto esta definido en varios lugares,
-en el tag style para el tag body, y en el archivo style.css para el tag body. en ese caso sabemos que el ultimo gana.
+Y lo de mas especifico? bueno, el color del texto esta definido en varios
+lugares, en el tag style para el tag body, y en el archivo style.css para el
+tag h1. en ese caso sabemos que el ultimo gana.
 
 Pero sin embargo los tags con clase **llamativo** son azules, como decide el
 navegador que el azul le gana al negro? Porque el atributo class es mas
@@ -446,4 +499,13 @@ cambiamos completamente el aspecto de la pagina sin tocar su contenido.
 
 El proyecto quedo así:
 
-.. figure:: ../galleries/cew/4/05-link.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-7?path=index.html&previewSize=33"
+		alt="css--paso-7 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
