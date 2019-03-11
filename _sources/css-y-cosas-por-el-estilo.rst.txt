@@ -148,7 +148,7 @@ Ahora digamos que se nos ocurre que queremos que la palabra **negrita**,
 *itálica* y los elementos impares de las listas tienen que tener fondo blanco y
 texto rojo.
 
-Intentemos lo:
+Intentemoslo:
 
 .. code-block:: HTML
 

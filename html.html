@@ -128,26 +128,9 @@ especificas, por ejemplo:</p>
 <p>Nuestra primera pagina web va a intentar replicar el ejemplo de Google Docs que
 vimos mas arriba, con esta pagina vamos a cubrir los principales elementos de
 HTML.</p>
-<p>Empezamos creando un nuevo proyecto en Thimble, si tenes dudas de como hacerlo
-revisa la sección anterior que contiene una introducción a Thimble.</p>
-<p>El nuevo proyecto comienza con un contenido por defecto:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Made with Thimble<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to Thimble<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-          Make something <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>amazing<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> with the web!
-        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-</div>
+<p>Empezamos creando un nuevo proyecto en <a class="reference external" href="https://glitch.com">glitch</a>, si tenes dudas de como hacerlo
+revisa la sección anterior que contiene una introducción a glitch.</p>
+<p>El nuevo proyecto comienza con pagina de ejemplo y varios archivos mas:</p>
 <p>Lo vamos a borrar y escribir el siguiente texto:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un título
 
@@ -168,11 +151,19 @@ Dos
 Tres
 </pre></div>
 </div>
-<p>El resultado debería ser similar al siguiente:</p>
-<div class="figure">
-<img alt="_images/02-plain-text.png" src="_images/02-plain-text.png" />
-</div>
-<p>Si la vista previa no se actualiza automáticamente podes hacer click en el
+<p>El resultado debería ser similar al siguiente, fijate que este y todos los
+siguientes ejemplos son interactivos, hace click en &quot;Edit your Project Here&quot;
+(Editar tu proyecto acá, en ingles) para hacer cambios y probar, si querés
+mantenerlo hace click en &quot;Remix to Edit&quot; (Remixar para editar, en ingles) para
+copiarlo en tu usuario y que los cambios se mantengan en tu copia.</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-1?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-1 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Si la vista previa no se actualiza automáticamente podes hacer click en el
 botón de refrescar vista previa.</p>
 <p>Como podemos ver la vista previa muestra todo el texto junto y sin formato, algo así:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">título</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">párrafo</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">palabra</span> <span class="n">es</span> <span class="n">en</span> <span class="n">negrita</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">en</span> <span class="n">itálica</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">otro</span> <span class="n">párrafo</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">no</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Manzana</span> <span class="n">Durazno</span> <span class="n">Banana</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Uno</span> <span class="n">Dos</span> <span class="n">Tres</span>
@@ -206,10 +197,14 @@ esa operación.</p>
 </pre></div>
 </div>
 <p>El resultado debería verse algo así:</p>
-<div class="figure">
-<img alt="_images/03-h1.png" src="_images/03-h1.png" />
-</div>
-<p>Tenemos el titulo!</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-2?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-2 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Tenemos el titulo!</p>
 <p>Y ese es el primer <strong>tag</strong> (etiqueta en inglés) que aprendimos:</p>
 <dl class="docutils">
 <dt>h1</dt>
@@ -229,10 +224,14 @@ un titulo de un nivel mas alto.</p>
 </pre></div>
 </div>
 <p>El resultado debería verse similar al siguiente:</p>
-<div class="figure">
-<img alt="_images/04-p.png" src="_images/04-p.png" />
-</div>
-<p>Notaras que ahora el primer párrafo tiene espacio con respecto al titulo y al
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-3?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-3 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Notaras que ahora el primer párrafo tiene espacio con respecto al titulo y al
 resto del texto, ahora hacemos lo mismo con los siguientes párrafos:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
@@ -258,10 +257,14 @@ Tres
 </pre></div>
 </div>
 <p>Como veras los saltos de linea y los espacios no afectan el formato final.</p>
-<div class="figure">
-<img alt="_images/05-p.png" src="_images/05-p.png" />
-</div>
-<p>Tenemos el titulo y los párrafos, ya casi que podemos escribir un cuento en HTML :)</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-4?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-4 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Tenemos el titulo y los párrafos, ya casi que podemos escribir un cuento en HTML :)</p>
 <p>Pero un poco mas de formato no vendría mal, sigamos con negrita e itálica.</p>
 <p>No hay nada de magia, es igual a las anteriores, rodeamos la sección que queremos
 formatear y le indicamos que formato queremos aplicarle.</p>
@@ -271,10 +274,14 @@ e itálica (<strong>i</strong> talic en ingles)?</p>
 </pre></div>
 </div>
 <p>El resultado debería verse algo así:</p>
-<div class="figure">
-<img alt="_images/06-bi.png" src="_images/06-bi.png" />
-</div>
-<p>Como podes ver en el párrafo, podemos tener tags/etiquetas dentro de otros tags/etiquetas, en este caso tenemos tags negrita e itálica dentro del tag de párrafo.</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-5?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-5 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Como podes ver en el párrafo, podemos tener tags/etiquetas dentro de otros tags/etiquetas, en este caso tenemos tags negrita e itálica dentro del tag de párrafo.</p>
 <p>Ya casi estamos!</p>
 <p>Solo faltan las listas, en este caso tenemos que indicar dos cosas distintas con tags:</p>
 <ol class="arabic">
@@ -344,10 +351,14 @@ no ordenada, le indicamos que queremos una ordenada (<strong>o</strong> rdered <
 </pre></div>
 </div>
 <p>Que debería verse similar a esto:</p>
-<div class="figure">
-<img alt="_images/07-lists.png" src="_images/07-lists.png" />
-</div>
-<p>Y con esto replicamos el documento de Google Docs y sabemos un poco mas cual es
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/primer-pagina--paso-6?path=index.html&previewSize=33"
+        alt="primer-pagina--paso-6 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Y con esto replicamos el documento de Google Docs y sabemos un poco mas cual es
 el contenido de los archivos .doc, .odt y similares, solo que esos están en
 formato binario (unos y ceros) ya que las computadoras los prefieren en lugar
 del formato texto, que preferimos los humanos :)</p>

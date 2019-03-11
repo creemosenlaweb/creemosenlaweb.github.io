@@ -85,28 +85,10 @@ Nuestra primera pagina web va a intentar replicar el ejemplo de Google Docs que
 vimos mas arriba, con esta pagina vamos a cubrir los principales elementos de
 HTML.
 
-Empezamos creando un nuevo proyecto en Thimble, si tenes dudas de como hacerlo
-revisa la sección anterior que contiene una introducción a Thimble.
+Empezamos creando un nuevo proyecto en `glitch <https://glitch.com>`_, si tenes dudas de como hacerlo
+revisa la sección anterior que contiene una introducción a glitch.
 
-El nuevo proyecto comienza con un contenido por defecto:
-
-.. code-block:: html
-
-	<!DOCTYPE html>
-	<html>
-	  <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Made with Thimble</title>
-		<link rel="stylesheet" href="style.css">
-	  </head>
-	  <body>
-		<h1>Welcome to Thimble</h1>
-		<p>
-		  Make something <strong>amazing</strong> with the web!
-		</p>
-	  </body>
-	</html>
+El nuevo proyecto comienza con pagina de ejemplo y varios archivos mas:
 
 Lo vamos a borrar y escribir el siguiente texto:
 
@@ -130,9 +112,22 @@ Lo vamos a borrar y escribir el siguiente texto:
 	Dos
 	Tres
 
-El resultado debería ser similar al siguiente:
+El resultado debería ser similar al siguiente, fijate que este y todos los
+siguientes ejemplos son interactivos, hace click en "Edit your Project Here"
+(Editar tu proyecto acá, en ingles) para hacer cambios y probar, si querés
+mantenerlo hace click en "Remix to Edit" (Remixar para editar, en ingles) para
+copiarlo en tu usuario y que los cambios se mantengan en tu copia.
 
-.. figure:: ../galleries/cew/2/02-plain-text.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-1?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-1 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Si la vista previa no se actualiza automáticamente podes hacer click en el
 botón de refrescar vista previa.
@@ -184,7 +179,16 @@ Por
 
 El resultado debería verse algo así:
 
-.. figure:: ../galleries/cew/2/03-h1.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-2?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-2 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Tenemos el titulo!
 
@@ -215,7 +219,17 @@ Como le indicamos que es un párrafo? como con el titulo, lo rodeamos de una eti
 
 El resultado debería verse similar al siguiente:
 
-.. figure:: ../galleries/cew/2/04-p.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-3?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-3 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Notaras que ahora el primer párrafo tiene espacio con respecto al titulo y al
 resto del texto, ahora hacemos lo mismo con los siguientes párrafos:
@@ -246,7 +260,16 @@ resto del texto, ahora hacemos lo mismo con los siguientes párrafos:
 
 Como veras los saltos de linea y los espacios no afectan el formato final.
 
-.. figure:: ../galleries/cew/2/05-p.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-4?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-4 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Tenemos el titulo y los párrafos, ya casi que podemos escribir un cuento en HTML :)
 
@@ -264,7 +287,17 @@ e itálica (**i** talic en ingles)?
 
 El resultado debería verse algo así:
 
-.. figure:: ../galleries/cew/2/06-bi.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-5?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-5 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Como podes ver en el párrafo, podemos tener tags/etiquetas dentro de otros tags/etiquetas, en este caso tenemos tags negrita e itálica dentro del tag de párrafo.
 
@@ -344,7 +377,16 @@ El código completo:
 
 Que debería verse similar a esto:
 
-.. figure:: ../galleries/cew/2/07-lists.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%; margin-bottom: 2em;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/primer-pagina--paso-6?path=index.html&previewSize=33"
+		alt="primer-pagina--paso-6 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Y con esto replicamos el documento de Google Docs y sabemos un poco mas cual es
 el contenido de los archivos .doc, .odt y similares, solo que esos están en
