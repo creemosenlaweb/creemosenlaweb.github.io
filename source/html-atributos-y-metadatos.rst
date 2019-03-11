@@ -138,25 +138,25 @@ Ya que aprendimos un tag nuevo, aprendamos otro similar y muy útil, el tag para
 
 .. code-block:: html
 
-    <img src="http://marianoguerra.org/galleries/cew/3/cube.jpg">
+    <img src="assets/cube.jpg">
 
 Así se ve:
 
 .. raw:: html
 
-    <img src="http://marianoguerra.org/galleries/cew/3/cube.jpg">
+    <img src="assets/cube.jpg">
 
 Agreguemos mas atributos, uno para el tooltip (title), y dos para definir el alto (height) y el ancho (width).
 
 .. code-block:: html
 
-    <img title="un cubo" width="200" height="200" src="http://marianoguerra.org/galleries/cew/3/cube.jpg">
+    <img title="un cubo" width="200" height="200" src="assets/cube.jpg">
 
 El resultado:
 
 .. raw:: html
 
-    <img title="un cubo" width="200" height="200" src="http://marianoguerra.org/galleries/cew/3/cube.jpg">
+    <img title="un cubo" width="200" height="200" src="assets/cube.jpg">
 
 Ahora pongamos todo junto en una pagina:
 
