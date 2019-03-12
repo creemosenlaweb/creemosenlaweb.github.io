@@ -80,7 +80,7 @@ debajo del tag <title>:
 
 .. code-block:: html
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 Y podemos ver que ya cambio un poco:
 
