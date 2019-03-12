@@ -323,7 +323,7 @@ abrirte una ventana nueva con el HTML la pagina. Otra forma de hacerlo en alguno
 navegadores es haciendo click derecho con el mouse sobre la pagina y seleccionando
 la opción "Ver Código" o similar.
 
-Copia el HTML en un proyecto nuevo de thimble.
+Copia el HTML en un proyecto nuevo.
 
 Visita la dirección: https://creemosenlaweb.github.io/paginas/landing/style.css
 
