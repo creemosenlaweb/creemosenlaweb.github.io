@@ -69,10 +69,14 @@
   <div class="section" id="lo-espacial-es-invisible-a-los-ojos">
 <h1>Lo espacial es invisible a los ojos<a class="headerlink" href="#lo-espacial-es-invisible-a-los-ojos" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>En la sección previa terminamos con una pagina que se veía así:</p>
-<div class="figure">
-<img alt="_images/05-link.png" src="_images/05-link.png" />
-</div>
-<p>Que tendríamos que hacer si quisiéramos que la palabra lista tuviera la clase <cite>llamativo</cite>?</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/css--paso-7?path=index.html&previewSize=33"
+        alt="css--paso-7 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div><p>Que tendríamos que hacer si quisiéramos que la palabra lista tuviera la clase <cite>llamativo</cite>?</p>
 <p>Hasta ahora para aplicar una clase a una palabra o conjunto de palabras aprovechábamos un tag que ya estaba ahí (<strong>b</strong>, <strong>i</strong> o <strong>li</strong>), pero dos de ellos aplican
 un formato que no queremos, y el otro solo funciona con listas.</p>
 <p>Como podemos hacer para definir una selección para aplicarle atributos pero que
@@ -195,17 +199,14 @@ pixeles:</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>El resultado queda algo así (tené en cuenta que esta sección ya tiene CSS así
-que en Thimble se va a ver un poco distinto):</p>
-<style>.llamativo{background-color: white; color: blue;}</style>
-<div style="border: 1px solid green; padding: 8px">
-  <p>Esto es un párrafo, la siguiente palabra es en <b class="llamativo">negrita</b>, la siguiente en <i class="llamativo">itálica</i></p>
-
-  <p style="margin: 8px; padding: 8px; border: 1px solid red;">Esto es otro párrafo</p>
-
-  <p>
-    Una <span class="llamativo">lista</span> no ordenada:
-  </p>
+<p>El resultado queda algo así:</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/espacial--paso-1?path=index.html&previewSize=33"
+        alt="espacial--paso-1 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
 </div><p>Con lo que aprendimos en esta sección podemos arreglar una cosa que no quedaba
 del todo bien.</p>
 <p>Quizás notaste que al aplicar la clase <cite>llamativo</cite> a los ítems de la lista, el
@@ -220,11 +221,7 @@ nuestro nuevo amigo el tag <cite>span</cite> para aplicar la clase solo al conte
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<ul>
-  <li class="llamativo">Manzana</li>
-  <li>Durazno</li>
-  <li class="llamativo">Banana</li>
-</ul><p>A:</p>
+<p>A:</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;llamativo&quot;</span><span class="p">&gt;</span>Manzana<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Durazno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -232,12 +229,15 @@ nuestro nuevo amigo el tag <cite>span</cite> para aplicar la clase solo al conte
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<ul>
-  <li><span class="llamativo">Manzana<span></li>
-  <li>Durazno</li>
-  <li><span class="llamativo">Banana<span></li>
-</ul><p>Y Problema resuelto.</p>
-</div>
+<p>Y Problema resuelto.</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+        allow="geolocation; microphone; camera; midi; encrypted-media"
+        src="https://glitch.com/embed/#!/embed/espacial--paso-2?path=index.html&previewSize=33"
+        alt="espacial--paso-2 on Glitch"
+        style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div></div>
 
 
           </div>

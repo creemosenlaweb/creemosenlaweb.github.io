@@ -3,7 +3,16 @@ Lo espacial es invisible a los ojos
 
 En la sección previa terminamos con una pagina que se veía así:
 
-.. figure:: ../galleries/cew/4/05-link.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/css--paso-7?path=index.html&previewSize=33"
+		alt="css--paso-7 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Que tendríamos que hacer si quisiéramos que la palabra lista tuviera la clase `llamativo`?
 
@@ -170,21 +179,18 @@ pixeles:
       </p>
     </div>
 
-El resultado queda algo así (tené en cuenta que esta sección ya tiene CSS así
-que en Thimble se va a ver un poco distinto):
+El resultado queda algo así:
 
 .. raw:: html
 
-    <style>.llamativo{background-color: white; color: blue;}</style>
-    <div style="border: 1px solid green; padding: 8px">
-      <p>Esto es un párrafo, la siguiente palabra es en <b class="llamativo">negrita</b>, la siguiente en <i class="llamativo">itálica</i></p>
-
-      <p style="margin: 8px; padding: 8px; border: 1px solid red;">Esto es otro párrafo</p>
-
-      <p>
-        Una <span class="llamativo">lista</span> no ordenada:
-      </p>
-    </div>
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/espacial--paso-1?path=index.html&previewSize=33"
+		alt="espacial--paso-1 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Con lo que aprendimos en esta sección podemos arreglar una cosa que no quedaba
 del todo bien.
@@ -204,14 +210,6 @@ Pasamos de:
       <li class="llamativo">Banana</li>
     </ul>
 
-.. raw:: html
-
-    <ul>
-      <li class="llamativo">Manzana</li>
-      <li>Durazno</li>
-      <li class="llamativo">Banana</li>
-    </ul>
-
 A:
 
 .. code-block:: html
@@ -222,13 +220,16 @@ A:
       <li><span class="llamativo">Banana<span></li>
     </ul>
 
+Y Problema resuelto.
+
 .. raw:: html
 
-    <ul>
-      <li><span class="llamativo">Manzana<span></li>
-      <li>Durazno</li>
-      <li><span class="llamativo">Banana<span></li>
-    </ul>
-
-Y Problema resuelto.
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/espacial--paso-2?path=index.html&previewSize=33"
+		alt="espacial--paso-2 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
