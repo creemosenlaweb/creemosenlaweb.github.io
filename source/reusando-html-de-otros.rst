@@ -14,7 +14,7 @@ templates (plantillas), que son paginas completas o secciones grandes de paginas
 y modificar el contenido de manera de no empezar de cero.
 
 En esta sección vamos a explorar algunos de esos templates, en este caso, los
-disponibles en la pagina del proyecto bootstrap: https://getbootstrap.com/docs/4.1/examples/
+disponibles en la pagina del proyecto bootstrap: https://getbootstrap.com/docs/4.3/examples/
 
 Cover
 -----
