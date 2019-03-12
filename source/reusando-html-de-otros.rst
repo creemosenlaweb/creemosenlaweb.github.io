@@ -207,7 +207,7 @@ Header y Footer
 
 Otro ejemplo muestra como tener una barra de navegación en la parte superior y
 un pie de pagina en la parte inferior con el contenido en el centro, copia y
-pega el siguiente HTML en un proyecto thimble nuevo:
+pega el siguiente HTML en un proyecto nuevo:
 
 .. code-block:: html
 
