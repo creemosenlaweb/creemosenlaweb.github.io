@@ -20,7 +20,7 @@ Cover
 -----
 
 Probemos uno de los ejemplos llamado *Cover*, copia y pega el siguiente HTML en
-un proyecto thimble nuevo:
+un proyecto nuevo:
 
 .. code-block:: html
 
@@ -32,7 +32,7 @@ un proyecto thimble nuevo:
 
 		<title>Titulo de Pagina</title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 		<link href="style.css" rel="stylesheet">
 	  </head>
@@ -183,11 +183,16 @@ Y el siguiente CSS en el archivo style.css del proyecto:
 
 Debería verse algo así:
 
-.. figure:: ../galleries/cew/7/01-cover.png
+.. raw:: html
 
-Una vez publicado:
-
-.. figure:: ../galleries/cew/7/02-cover-preview.png
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-html--paso-1?path=index.html&previewSize=33"
+		alt="reusando-html--paso-1 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Actividades propuestas:
 
@@ -214,7 +219,7 @@ pega el siguiente HTML en un proyecto thimble nuevo:
 
 		<title>Título de Pagina</title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 		<link href="style.css" rel="stylesheet">
 	  </head>
@@ -281,11 +286,17 @@ El contenido del archivo style.css del proyecto:
 
 Debería verse algo así:
 
-.. figure:: ../galleries/cew/7/03-nav-footer.png
+.. raw:: html
 
-Una vez publicado:
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-html--paso-2?path=index.html&previewSize=33"
+		alt="reusando-html--paso-2 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
-.. figure:: ../galleries/cew/7/04-nav-footer-preview.png
 
 Actividades propuestas:
 
@@ -300,7 +311,7 @@ Pagina Principal
 
 Esta pagina es bastante mas larga así que vamos a probar una forma nueva.
 
-Podes ver el resultado visitando https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/
+Podes ver el resultado visitando https://creemosenlaweb.github.io/paginas/landing/
 
 En la pagina principal hace click derecho en cada imagen y selecciona la opción
 "Descargar imagen como..." o similar.
@@ -314,17 +325,11 @@ la opción "Ver Código" o similar.
 
 Copia el HTML en un proyecto nuevo de thimble.
 
-Visita la dirección: https://marianoguerra.github.io/creemos-en-la-web/paginas/landing/style.css
+Visita la dirección: https://creemosenlaweb.github.io/paginas/landing/style.css
 
 Copia el CSS en el archivo style.css del proyecto.
 
-Agrega las imágenes que descargaste a un nuevo directorio llamado `img`,
-un video que muestra como:
-
-.. raw:: html
-
-    <video controls src="./videos/cew/7/create-folder-upload-images.mp4"></video>
-
+Agrega las imágenes que descargaste en el directorio `assets`.
 
 Actividades propuestas:
 
@@ -333,3 +338,16 @@ Actividades propuestas:
 
    + Manteniendo los nombres de las imágenes existentes (subiendo nuevas imágenes con nombres existentes)
    + Cambiando el nombre de las imágenes en el HTML (subiendo nuevas imágenes con nombres nuevos)
+
+Deberia quedar mas o menos así:
+
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-html--paso-3?path=index.html&previewSize=33"
+		alt="reusando-html--paso-3 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
