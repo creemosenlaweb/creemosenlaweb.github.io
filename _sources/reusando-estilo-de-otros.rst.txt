@@ -20,7 +20,7 @@ Podes ver algunos ejemplos en https://bootswatch.com/
 Incluyendo Bootstrap
 --------------------
 
-Vamos a ver como usar esto, empecemos con un proyecto nuevo en thimble con una
+Vamos a ver como usar esto, empecemos con un proyecto nuevo en glitch con una
 pagina básica:
 
 .. code-block:: html
@@ -64,7 +64,16 @@ pagina básica:
 
 Nuestra pagina de siempre, no muy linda de ver:
 
-.. figure:: ../galleries/cew/6/01-base.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-estilo--paso-1?path=index.html&previewSize=33"
+		alt="reusando-estilo--paso-1 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Ahora agregamos la hoja de estilo de bootstrap en el <head> de la pagina,
 debajo del tag <title>:
@@ -75,7 +84,16 @@ debajo del tag <title>:
 
 Y podemos ver que ya cambio un poco:
 
-.. figure:: ../galleries/cew/6/02-base-bootstrap.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-estilo--paso-2?path=index.html&previewSize=33"
+		alt="reusando-estilo--paso-2 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
 
 Un tour por algunos componentes de bootstrap
 --------------------------------------------
@@ -129,7 +147,17 @@ Agreguemos el siguiente HTML al <body> de nuestro proyecto:
 
 Debería verse algo así:
 
-.. figure:: ../galleries/cew/6/03-bs-alerts.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-estilo--paso-3?path=index.html&previewSize=33"
+		alt="reusando-estilo--paso-3 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Badges
 ------
@@ -190,7 +218,17 @@ nuestra hoja de estilos)
 
 El resultado es algo así:
 
-.. figure:: ../galleries/cew/6/04-badges.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-estilo--paso-4?path=index.html&previewSize=33"
+		alt="reusando-estilo--paso-4 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Barra de Navegacion
 ...................
@@ -293,7 +331,17 @@ elemento para mostrar, como los tabs del navegador web.
 
 El resultado es algo así:
 
-.. figure:: ../galleries/cew/6/05-nav.png
+.. raw:: html
+
+	<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+	  <iframe
+		allow="geolocation; microphone; camera; midi; encrypted-media"
+		src="https://glitch.com/embed/#!/embed/reusando-estilo--paso-5?path=index.html&previewSize=33"
+		alt="reusando-estilo--paso-5 on Glitch"
+		style="height: 100%; width: 100%; border: 0;">
+	  </iframe>
+	</div>
+
 
 Luego de explorar los componentes copiando y pegando los ejemplos intenta
 modificarlos, agregar mas items, eliminar algunos, reordenarlos etc.
