@@ -110,12 +110,14 @@ fuente a 16 pixeles:
 
 .. raw:: html
 
-    <div style="font-size: 16px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
-        <div style="width: 5em;  background-color: red; color: white; margin: 1em 0;">5em</div>
-        <div style="width: 5rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
-        <div style="width: 50px; background-color: red; color: white; margin: 1em 0;">50px</div>
-        <div style="width: 50%;  background-color: red; color: white;">50%</div>
-    </div>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/lugar--paso-1?path=index.html&previewSize=33"
+      alt="lugar--paso-1 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 El div azul que contiene a todos los otros divs establece el tamaño de la
 fuente, notar que los divs interiores tienen el mismo estilo que los de arriba:
@@ -131,12 +133,14 @@ fuente, notar que los divs interiores tienen el mismo estilo que los de arriba:
 
 .. raw:: html
 
-    <div style="font-size: 32px; width: 90%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
-        <div style="width: 5em;  background-color: red; color: white; margin: 1em 0;">5em</div>
-        <div style="width: 5rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
-        <div style="width: 50px; background-color: red; color: white; margin: 1em 0;">50px</div>
-        <div style="width: 50%;  background-color: red; color: white;">50%</div>
-    </div>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/lugar--paso-2?path=index.html&previewSize=33"
+      alt="lugar--paso-2 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 El primer div tiene un ancho de 5em, como el div padre establece el tamaño de
 la fuente a distintos valores en los dos ejemplos, el ancho resultante es
@@ -163,12 +167,14 @@ Probemos algo un poco distinto:
 
 .. raw:: html
 
-    <div style="font-size: 32px; width: 50%; padding: 2.5%; margin: 2.5%; border: 1px solid blue;">
-        <div style="width: 5em;  font-size: 1rem; background-color: red; color: white; margin: 1em 0;">5em</div>
-        <div style="width: 5rem; font-size: 1rem; background-color: red; color: white; margin: 1em 0;">5rem</div>
-        <div style="width: 50px; font-size: 1rem; background-color: red; color: white; margin: 1em 0;">50px</div>
-        <div style="width: 50%;  font-size: 1rem; background-color: red; color: white;">50%</div>
-    </div>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/lugar--paso-3?path=index.html&previewSize=33"
+      alt="lugar--paso-3 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 El div padre ahora ocupa el 50% del ancho de la pagina, por lo que el ancho del
 ultimo div hijo debería ser la mitad de los anteriores, para "estandarizar" em
