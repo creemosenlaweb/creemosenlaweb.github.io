@@ -38,7 +38,14 @@ Un ejemplo que algunos de los atributos listados:
 
 .. raw:: html
 
-	<span style="border: 1px solid; text-decoration: underline; color: red; background-color: lightgrey; border-color: blue; text-decoration-color: green; text-shadow: yellow 0.6em 0.6em; padding: 1em; display: inline-block;">Hello Color</span>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/colores--paso-1?path=index.html&previewSize=33"
+      alt="colores--paso-1 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 
 Colores con nombres
@@ -60,156 +67,15 @@ A continuación la lista de colores
 
 .. raw:: html
 
-	<table class="table table-bordered table-hover">
-	<tr><td>black</td><td style="background-color: #000000; width: 5em;"></td></tr>
-	<tr><td>silver</td><td style="background-color: #c0c0c0"</td></tr>
-	<tr><td>gray</td><td style="background-color: #808080"</td></tr>
-	<tr><td>white</td><td style="background-color: #ffffff"</td></tr>
-	<tr><td>maroon</td><td style="background-color: #800000"</td></tr>
-	<tr><td>red</td><td style="background-color: #ff0000"</td></tr>
-	<tr><td>purple</td><td style="background-color: #800080"</td></tr>
-	<tr><td>fuchsia</td><td style="background-color: #ff00ff"</td></tr>
-	<tr><td>green</td><td style="background-color: #008000"</td></tr>
-	<tr><td>lime</td><td style="background-color: #00ff00"</td></tr>
-	<tr><td>olive</td><td style="background-color: #808000"</td></tr>
-	<tr><td>yellow</td><td style="background-color: #ffff00"</td></tr>
-	<tr><td>navy</td><td style="background-color: #000080"</td></tr>
-	<tr><td>blue</td><td style="background-color: #0000ff"</td></tr>
-	<tr><td>teal</td><td style="background-color: #008080"</td></tr>
-	<tr><td>aqua</td><td style="background-color: #00ffff"</td></tr>
-	<tr><td>orange</td><td style="background-color: #ffa500"</td></tr>
-	<tr><td>aliceblue</td><td style="background-color: #f0f8ff"</td></tr>
-	<tr><td>antiquewhite</td><td style="background-color: #faebd7"</td></tr>
-	<tr><td>aquamarine</td><td style="background-color: #7fffd4"</td></tr>
-	<tr><td>azure</td><td style="background-color: #f0ffff"</td></tr>
-	<tr><td>beige</td><td style="background-color: #f5f5dc"</td></tr>
-	<tr><td>bisque</td><td style="background-color: #ffe4c4"</td></tr>
-	<tr><td>blanchedalmond</td><td style="background-color: #ffebcd"</td></tr>
-	<tr><td>blueviolet</td><td style="background-color: #8a2be2"</td></tr>
-	<tr><td>brown</td><td style="background-color: #a52a2a"</td></tr>
-	<tr><td>burlywood</td><td style="background-color: #deb887"</td></tr>
-	<tr><td>cadetblue</td><td style="background-color: #5f9ea0"</td></tr>
-	<tr><td>chartreuse</td><td style="background-color: #7fff00"</td></tr>
-	<tr><td>chocolate</td><td style="background-color: #d2691e"</td></tr>
-	<tr><td>coral</td><td style="background-color: #ff7f50"</td></tr>
-	<tr><td>cornflowerblue</td><td style="background-color: #6495ed"</td></tr>
-	<tr><td>cornsilk</td><td style="background-color: #fff8dc"</td></tr>
-	<tr><td>crimson</td><td style="background-color: #dc143c"</td></tr>
-	<tr><td>cyan (synonym of aqua)</td><td style="background-color: #00ffff"</td></tr>
-	<tr><td>darkblue</td><td style="background-color: #00008b"</td></tr>
-	<tr><td>darkcyan</td><td style="background-color: #008b8b"</td></tr>
-	<tr><td>darkgoldenrod</td><td style="background-color: #b8860b"</td></tr>
-	<tr><td>darkgray</td><td style="background-color: #a9a9a9"</td></tr>
-	<tr><td>darkgreen</td><td style="background-color: #006400"</td></tr>
-	<tr><td>darkgrey</td><td style="background-color: #a9a9a9"</td></tr>
-	<tr><td>darkkhaki</td><td style="background-color: #bdb76b"</td></tr>
-	<tr><td>darkmagenta</td><td style="background-color: #8b008b"</td></tr>
-	<tr><td>darkolivegreen</td><td style="background-color: #556b2f"</td></tr>
-	<tr><td>darkorange</td><td style="background-color: #ff8c00"</td></tr>
-	<tr><td>darkorchid</td><td style="background-color: #9932cc"</td></tr>
-	<tr><td>darkred</td><td style="background-color: #8b0000"</td></tr>
-	<tr><td>darksalmon</td><td style="background-color: #e9967a"</td></tr>
-	<tr><td>darkseagreen</td><td style="background-color: #8fbc8f"</td></tr>
-	<tr><td>darkslateblue</td><td style="background-color: #483d8b"</td></tr>
-	<tr><td>darkslategray</td><td style="background-color: #2f4f4f"</td></tr>
-	<tr><td>darkslategrey</td><td style="background-color: #2f4f4f"</td></tr>
-	<tr><td>darkturquoise</td><td style="background-color: #00ced1"</td></tr>
-	<tr><td>darkviolet</td><td style="background-color: #9400d3"</td></tr>
-	<tr><td>deeppink</td><td style="background-color: #ff1493"</td></tr>
-	<tr><td>deepskyblue</td><td style="background-color: #00bfff"</td></tr>
-	<tr><td>dimgray</td><td style="background-color: #696969"</td></tr>
-	<tr><td>dimgrey</td><td style="background-color: #696969"</td></tr>
-	<tr><td>dodgerblue</td><td style="background-color: #1e90ff"</td></tr>
-	<tr><td>firebrick</td><td style="background-color: #b22222"</td></tr>
-	<tr><td>floralwhite</td><td style="background-color: #fffaf0"</td></tr>
-	<tr><td>forestgreen</td><td style="background-color: #228b22"</td></tr>
-	<tr><td>gainsboro</td><td style="background-color: #dcdcdc"</td></tr>
-	<tr><td>ghostwhite</td><td style="background-color: #f8f8ff"</td></tr>
-	<tr><td>gold</td><td style="background-color: #ffd700"</td></tr>
-	<tr><td>goldenrod</td><td style="background-color: #daa520"</td></tr>
-	<tr><td>greenyellow</td><td style="background-color: #adff2f"</td></tr>
-	<tr><td>grey</td><td style="background-color: #808080"</td></tr>
-	<tr><td>honeydew</td><td style="background-color: #f0fff0"</td></tr>
-	<tr><td>hotpink</td><td style="background-color: #ff69b4"</td></tr>
-	<tr><td>indianred</td><td style="background-color: #cd5c5c"</td></tr>
-	<tr><td>indigo</td><td style="background-color: #4b0082"</td></tr>
-	<tr><td>ivory</td><td style="background-color: #fffff0"</td></tr>
-	<tr><td>khaki</td><td style="background-color: #f0e68c"</td></tr>
-	<tr><td>lavender</td><td style="background-color: #e6e6fa"</td></tr>
-	<tr><td>lavenderblush</td><td style="background-color: #fff0f5"</td></tr>
-	<tr><td>lawngreen</td><td style="background-color: #7cfc00"</td></tr>
-	<tr><td>lemonchiffon</td><td style="background-color: #fffacd"</td></tr>
-	<tr><td>lightblue</td><td style="background-color: #add8e6"</td></tr>
-	<tr><td>lightcoral</td><td style="background-color: #f08080"</td></tr>
-	<tr><td>lightcyan</td><td style="background-color: #e0ffff"</td></tr>
-	<tr><td>lightgoldenrodyellow</td><td style="background-color: #fafad2"</td></tr>
-	<tr><td>lightgray</td><td style="background-color: #d3d3d3"</td></tr>
-	<tr><td>lightgreen</td><td style="background-color: #90ee90"</td></tr>
-	<tr><td>lightgrey</td><td style="background-color: #d3d3d3"</td></tr>
-	<tr><td>lightpink</td><td style="background-color: #ffb6c1"</td></tr>
-	<tr><td>lightsalmon</td><td style="background-color: #ffa07a"</td></tr>
-	<tr><td>lightseagreen</td><td style="background-color: #20b2aa"</td></tr>
-	<tr><td>lightskyblue</td><td style="background-color: #87cefa"</td></tr>
-	<tr><td>lightslategray</td><td style="background-color: #778899"</td></tr>
-	<tr><td>lightslategrey</td><td style="background-color: #778899"</td></tr>
-	<tr><td>lightsteelblue</td><td style="background-color: #b0c4de"</td></tr>
-	<tr><td>lightyellow</td><td style="background-color: #ffffe0"</td></tr>
-	<tr><td>limegreen</td><td style="background-color: #32cd32"</td></tr>
-	<tr><td>linen</td><td style="background-color: #faf0e6"</td></tr>
-	<tr><td>magenta (synonym of fuchsia)</td><td style="background-color: #ff00ff"</td></tr>
-	<tr><td>mediumaquamarine</td><td style="background-color: #66cdaa"</td></tr>
-	<tr><td>mediumblue</td><td style="background-color: #0000cd"</td></tr>
-	<tr><td>mediumorchid</td><td style="background-color: #ba55d3"</td></tr>
-	<tr><td>mediumpurple</td><td style="background-color: #9370db"</td></tr>
-	<tr><td>mediumseagreen</td><td style="background-color: #3cb371"</td></tr>
-	<tr><td>mediumslateblue</td><td style="background-color: #7b68ee"</td></tr>
-	<tr><td>mediumspringgreen</td><td style="background-color: #00fa9a"</td></tr>
-	<tr><td>mediumturquoise</td><td style="background-color: #48d1cc"</td></tr>
-	<tr><td>mediumvioletred</td><td style="background-color: #c71585"</td></tr>
-	<tr><td>midnightblue</td><td style="background-color: #191970"</td></tr>
-	<tr><td>mintcream</td><td style="background-color: #f5fffa"</td></tr>
-	<tr><td>mistyrose</td><td style="background-color: #ffe4e1"</td></tr>
-	<tr><td>moccasin</td><td style="background-color: #ffe4b5"</td></tr>
-	<tr><td>navajowhite</td><td style="background-color: #ffdead"</td></tr>
-	<tr><td>oldlace</td><td style="background-color: #fdf5e6"</td></tr>
-	<tr><td>olivedrab</td><td style="background-color: #6b8e23"</td></tr>
-	<tr><td>orangered</td><td style="background-color: #ff4500"</td></tr>
-	<tr><td>orchid</td><td style="background-color: #da70d6"</td></tr>
-	<tr><td>palegoldenrod</td><td style="background-color: #eee8aa"</td></tr>
-	<tr><td>palegreen</td><td style="background-color: #98fb98"</td></tr>
-	<tr><td>paleturquoise</td><td style="background-color: #afeeee"</td></tr>
-	<tr><td>palevioletred</td><td style="background-color: #db7093"</td></tr>
-	<tr><td>papayawhip</td><td style="background-color: #ffefd5"</td></tr>
-	<tr><td>peachpuff</td><td style="background-color: #ffdab9"</td></tr>
-	<tr><td>peru</td><td style="background-color: #cd853f"</td></tr>
-	<tr><td>pink</td><td style="background-color: #ffc0cb"</td></tr>
-	<tr><td>plum</td><td style="background-color: #dda0dd"</td></tr>
-	<tr><td>powderblue</td><td style="background-color: #b0e0e6"</td></tr>
-	<tr><td>rosybrown</td><td style="background-color: #bc8f8f"</td></tr>
-	<tr><td>royalblue</td><td style="background-color: #4169e1"</td></tr>
-	<tr><td>saddlebrown</td><td style="background-color: #8b4513"</td></tr>
-	<tr><td>salmon</td><td style="background-color: #fa8072"</td></tr>
-	<tr><td>sandybrown</td><td style="background-color: #f4a460"</td></tr>
-	<tr><td>seagreen</td><td style="background-color: #2e8b57"</td></tr>
-	<tr><td>seashell</td><td style="background-color: #fff5ee"</td></tr>
-	<tr><td>sienna</td><td style="background-color: #a0522d"</td></tr>
-	<tr><td>skyblue</td><td style="background-color: #87ceeb"</td></tr>
-	<tr><td>slateblue</td><td style="background-color: #6a5acd"</td></tr>
-	<tr><td>slategray</td><td style="background-color: #708090"</td></tr>
-	<tr><td>slategrey</td><td style="background-color: #708090"</td></tr>
-	<tr><td>snow</td><td style="background-color: #fffafa"</td></tr>
-	<tr><td>springgreen</td><td style="background-color: #00ff7f"</td></tr>
-	<tr><td>steelblue</td><td style="background-color: #4682b4"</td></tr>
-	<tr><td>tan</td><td style="background-color: #d2b48c"</td></tr>
-	<tr><td>thistle</td><td style="background-color: #d8bfd8"</td></tr>
-	<tr><td>tomato</td><td style="background-color: #ff6347"</td></tr>
-	<tr><td>turquoise</td><td style="background-color: #40e0d0"</td></tr>
-	<tr><td>violet</td><td style="background-color: #ee82ee"</td></tr>
-	<tr><td>wheat</td><td style="background-color: #f5deb3"</td></tr>
-	<tr><td>whitesmoke</td><td style="background-color: #f5f5f5"</td></tr>
-	<tr><td>yellowgreen</td><td style="background-color: #9acd32"</td></tr>
-	<tr><td>rebeccapurple</td><td style="background-color: #663399"</td></tr>
-	</table>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/colores--paso-2?path=index.html&previewSize=33"
+      alt="colores--paso-2 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
+
 
 RGB: Combinando Rojo, Verde y Azul
 ----------------------------------
@@ -250,52 +116,15 @@ Veamos algunos ejemplos
 
 .. raw:: html
 
-	<table class="table table-bordered table-hover">
-	<thead>
-		<tr>
-            <th>R</th>
-            <th>G</th>
-            <th>B</th>
-            <th>Formato</th>
-            <th>Color</th>
-		</tr>
-	</thead>
-    <tbody>
-        <tr><td>0</td><td>0</td><td>0</td><td>rgb(0, 0, 0)</td><td style="background-color: rgb(0, 0, 0); width: 2em"></td></tr>
-        <tr><td>255</td><td>255</td><td>255</td><td>rgb(255, 255, 255)</td><td style="background-color: rgb(255, 255, 255); width: 2em"></td></tr>
-        <tr><td>255</td><td>0</td><td>0</td><td>rgb(255, 0, 0)</td><td style="background-color: rgb(255, 0, 0); width: 2em"></td></tr>
-        <tr><td>0</td><td>255</td><td>0</td><td>rgb(0, 255, 0)</td><td style="background-color: rgb(0, 255, 0); width: 2em"></td></tr>
-        <tr><td>0</td><td>0</td><td>255</td><td>rgb(0, 0, 255)</td><td style="background-color: rgb(0, 0, 255); width: 2em"></td></tr>
-        <tr><td>255</td><td>255</td><td>0</td><td>rgb(255, 255, 0)</td><td style="background-color: rgb(255, 255, 0); width: 2em"></td></tr>
-        <tr><td>255</td><td>0</td><td>255</td><td>rgb(255, 0, 255)</td><td style="background-color: rgb(255, 0, 255); width: 2em"></td></tr>
-        <tr><td>0</td><td>255</td><td>255</td><td>rgb(0, 255, 255)</td><td style="background-color: rgb(0, 255, 255); width: 2em"></td></tr>
-        <tr><td>128</td><td>128</td><td>128</td><td>rgb(128, 128, 128)</td><td style="background-color: rgb(128, 128, 128); width: 2em"></td></tr>
-        <tr><td>128</td><td>0</td><td>0</td><td>rgb(128, 0, 0)</td><td style="background-color: rgb(128, 0, 0); width: 2em"></td></tr>
-        <tr><td>0</td><td>128</td><td>0</td><td>rgb(0, 128, 0)</td><td style="background-color: rgb(0, 128, 0); width: 2em"></td></tr>
-        <tr><td>0</td><td>0</td><td>128</td><td>rgb(0, 0, 128)</td><td style="background-color: rgb(0, 0, 128); width: 2em"></td></tr>
-        <tr><td>80</td><td>160</td><td>255</td><td>rgb(80, 160, 255)</td><td style="background-color: rgb(80, 160, 255); width: 2em"></td></tr>
-        <tr><td>80</td><td>255</td><td>160</td><td>rgb(80, 255, 160)</td><td style="background-color: rgb(80, 255, 160); width: 2em"></td></tr>
-        <tr><td>255</td><td>160</td><td>80</td><td>rgb(255, 160, 80)</td><td style="background-color: rgb(255, 160, 80); width: 2em"></td></tr>
-        <tr><td>160</td><td>255</td><td>80</td><td>rgb(160, 255, 80)</td><td style="background-color: rgb(160, 255, 80); width: 2em"></td></tr>
-        <tr><td>160</td><td>80</td><td>255</td><td>rgb(160, 80, 255)</td><td style="background-color: rgb(160, 80, 255); width: 2em"></td></tr>
-        <tr><td>255</td><td>80</td><td>160</td><td>rgb(255, 80, 160)</td><td style="background-color: rgb(255, 80, 160); width: 2em"></td></tr>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/colores--paso-3?path=index.html&previewSize=33"
+      alt="colores--paso-3 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
-        <tr><td>0%</td><td>0%</td><td>0%</td><td>rgb(0%, 0%, 0%)</td><td style="background-color: rgb(0%, 0%, 0%); width: 2em"></td></tr>
-        <tr><td>100%</td><td>100%</td><td>100%</td><td>rgb(100%, 100%, 100%)</td><td style="background-color: rgb(100%, 100%, 100%); width: 2em"></td></tr>
-        <tr><td>100%</td><td>0%</td><td>0%</td><td>rgb(100%, 0%, 0%)</td><td style="background-color: rgb(100%, 0%, 0%); width: 2em"></td></tr>
-        <tr><td>0%</td><td>100%</td><td>0%</td><td>rgb(0%, 100%, 0%)</td><td style="background-color: rgb(0%, 100%, 0%); width: 2em"></td></tr>
-        <tr><td>0%</td><td>0%</td><td>100%</td><td>rgb(0%, 0%, 100%)</td><td style="background-color: rgb(0%, 0%, 100%); width: 2em"></td></tr>
-        <tr><td>100%</td><td>100%</td><td>0%</td><td>rgb(100%, 100%, 0%)</td><td style="background-color: rgb(100%, 100%, 0%); width: 2em"></td></tr>
-        <tr><td>100%</td><td>0%</td><td>100%</td><td>rgb(100%, 0%, 100%)</td><td style="background-color: rgb(100%, 0%, 100%); width: 2em"></td></tr>
-        <tr><td>0%</td><td>0%</td><td>0%</td><td>rgb(0%, 0%, 0%)</td><td style="background-color: rgb(0%, 0%, 0%); width: 2em"></td></tr>
-        <tr><td>50%</td><td>50%</td><td>50%</td><td>rgb(50%, 50%, 50%)</td><td style="background-color: rgb(50%, 50%, 50%); width: 2em"></td></tr>
-        <tr><td>50%</td><td>0%</td><td>0%</td><td>rgb(50%, 0%, 0%)</td><td style="background-color: rgb(50%, 0%, 0%); width: 2em"></td></tr>
-        <tr><td>0%</td><td>50%</td><td>0%</td><td>rgb(0%, 50%, 0%)</td><td style="background-color: rgb(0%, 50%, 0%); width: 2em"></td></tr>
-        <tr><td>0%</td><td>0%</td><td>50%</td><td>rgb(0%, 0%, 50%)</td><td style="background-color: rgb(0%, 0%, 50%); width: 2em"></td></tr>
-        <tr><td>50%</td><td>50%</td><td>0%</td><td>rgb(50%, 50%, 0%)</td><td style="background-color: rgb(50%, 50%, 0%); width: 2em"></td></tr>
-        <tr><td>50%</td><td>0%</td><td>50%</td><td>rgb(50%, 0%, 50%)</td><td style="background-color: rgb(50%, 0%, 50%); width: 2em"></td></tr>
-    </tbody>
-    </table>
 
 Alternativa: Hexadecimal
 ........................
@@ -325,31 +154,14 @@ Algunos ejemplos de la sección anterior convertidos a formato hexadecimal:
 
 .. raw:: html
 
-	<table class="table table-bordered table-hover">
-	<thead>
-		<tr>
-            <th>R</th>
-            <th>G</th>
-            <th>B</th>
-            <th>Formato</th>
-            <th>Color</th>
-		</tr>
-	</thead>
-    <tbody>
-        <tr><td>00</td><td>00</td><td>00</td><td>#000000</td><td style="background-color: #000000; width: 2em"></td></tr>
-        <tr><td>FF</td><td>FF</td><td>FF</td><td>#FFFFFF</td><td style="background-color: #FFFFFF; width: 2em"></td></tr>
-        <tr><td>FF</td><td>00</td><td>00</td><td>#FF0000</td><td style="background-color: #FF0000; width: 2em"></td></tr>
-        <tr><td>00</td><td>FF</td><td>00</td><td>#00FF00</td><td style="background-color: #00FF00; width: 2em"></td></tr>
-        <tr><td>00</td><td>00</td><td>FF</td><td>#0000FF</td><td style="background-color: #0000FF; width: 2em"></td></tr>
-        <tr><td>FF</td><td>FF</td><td>00</td><td>#FFFF00</td><td style="background-color: #FFFF00; width: 2em"></td></tr>
-        <tr><td>FF</td><td>00</td><td>FF</td><td>#FF00FF</td><td style="background-color: #FF00FF; width: 2em"></td></tr>
-        <tr><td>00</td><td>FF</td><td>FF</td><td>#00FFFF</td><td style="background-color: #00FFFF; width: 2em"></td></tr>
-        <tr><td>80</td><td>80</td><td>80</td><td>#808080</td><td style="background-color: #808080; width: 2em"></td></tr>
-        <tr><td>80</td><td>00</td><td>00</td><td>#800000</td><td style="background-color: #800000; width: 2em"></td></tr>
-        <tr><td>00</td><td>80</td><td>00</td><td>#008000</td><td style="background-color: #008000; width: 2em"></td></tr>
-        <tr><td>00</td><td>00</td><td>80</td><td>#000080</td><td style="background-color: #000080; width: 2em"></td></tr>
-    </tbody>
-    </table>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/colores--paso-4?path=index.html&previewSize=33"
+      alt="colores--paso-4 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 HSL: Tono, Saturación y "Liviandad/Brillo"
 ------------------------------------------
@@ -365,55 +177,16 @@ L
     Porcentaje de liviandad/brillo del color elegido, 0% va a ser negro, 100% va a
     ser blanco, 50% (y 100% de saturación) va a ser el color puro.
 
-Algunos colores "puros":
-
 .. raw:: html
 
-	<table class="table table-bordered table-hover">
-	<tbody>
-		<tr><td>hsl(0, 100%, 50%)</td><td style="width: 2em; background-color: hsl(0, 100%, 50%)"></td></tr>
-		<tr><td>hsl(30, 100%, 50%)</td><td style="width: 2em; background-color: hsl(30, 100%, 50%)"></td></tr>
-		<tr><td>hsl(60, 100%, 50%)</td><td style="width: 2em; background-color: hsl(60, 100%, 50%)"></td></tr>
-		<tr><td>hsl(90, 100%, 50%)</td><td style="width: 2em; background-color: hsl(90, 100%, 50%)"></td></tr>
-		<tr><td>hsl(120, 100%, 50%)</td><td style="width: 2em; background-color: hsl(120, 100%, 50%)"></td></tr>
-		<tr><td>hsl(150, 100%, 50%)</td><td style="width: 2em; background-color: hsl(150, 100%, 50%)"></td></tr>
-		<tr><td>hsl(180, 100%, 50%)</td><td style="width: 2em; background-color: hsl(180, 100%, 50%)"></td></tr>
-		<tr><td>hsl(210, 100%, 50%)</td><td style="width: 2em; background-color: hsl(210, 100%, 50%)"></td></tr>
-		<tr><td>hsl(240, 100%, 50%)</td><td style="width: 2em; background-color: hsl(240, 100%, 50%)"></td></tr>
-		<tr><td>hsl(270, 100%, 50%)</td><td style="width: 2em; background-color: hsl(270, 100%, 50%)"></td></tr>
-		<tr><td>hsl(300, 100%, 50%)</td><td style="width: 2em; background-color: hsl(300, 100%, 50%)"></td></tr>
-		<tr><td>hsl(330, 100%, 50%)</td><td style="width: 2em; background-color: hsl(330, 100%, 50%)"></td></tr>
-		<tr><td>hsl(360, 100%, 50%)</td><td style="width: 2em; background-color: hsl(360, 100%, 50%)"></td></tr>
-    </tbody>
-    </table>
-
-Cambiando la saturación:
-
-.. raw:: html
-
-	<table class="table table-bordered table-hover">
-	<tbody>
-		<tr><td>hsl(0, 0%, 50%)</td><td style="width: 2em; background-color: hsl(0, 0%, 50%)"></td></tr>
-		<tr><td>hsl(0, 25%, 50%)</td><td style="width: 2em; background-color: hsl(0, 25%, 50%)"></td></tr>
-		<tr><td>hsl(0, 50%, 50%)</td><td style="width: 2em; background-color: hsl(0, 50%, 50%)"></td></tr>
-		<tr><td>hsl(0, 75%, 50%)</td><td style="width: 2em; background-color: hsl(0, 75%, 50%)"></td></tr>
-		<tr><td>hsl(0, 100%, 50%)</td><td style="width: 2em; background-color: hsl(0, 100%, 50%)"></td></tr>
-	</tbody>
-	</table>
-
-Cambiando el "brillo":
-
-.. raw:: html
-
-	<table class="table table-bordered table-hover">
-	<tbody>
-		<tr><td>hsl(0, 100%, 0%)</td><td style="width: 2em; background-color: hsl(0, 100%, 0%)"></td></tr>
-		<tr><td>hsl(0, 100%, 25%)</td><td style="width: 2em; background-color: hsl(0, 100%, 25%)"></td></tr>
-		<tr><td>hsl(0, 100%, 50%)</td><td style="width: 2em; background-color: hsl(0, 100%, 50%)"></td></tr>
-		<tr><td>hsl(0, 100%, 75%)</td><td style="width: 2em; background-color: hsl(0, 100%, 75%)"></td></tr>
-		<tr><td>hsl(0, 100%, 100%)</td><td style="width: 2em; background-color: hsl(0, 100%, 100%)"></td></tr>
-	</tbody>
-	</table>
+  <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+    <iframe
+      allow="geolocation; microphone; camera; midi; encrypted-media"
+      src="https://glitch.com/embed/#!/embed/colores--paso-5?path=index.html&previewSize=33"
+      alt="colores--paso-5 on Glitch"
+      style="height: 100%; width: 100%; border: 0;">
+    </iframe>
+  </div>
 
 Alpha: Transparencia/Opacidad
 -----------------------------

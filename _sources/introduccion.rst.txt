@@ -14,16 +14,16 @@ aprender a hacer paginas web para personas sin ningún conocimiento previo de
 tecnología o programación.
 
 Si sabes de tecnología recomendaselo a la mayor cantidad de personas posible,
-no sabemos cuantos grandes diseñadores y programadores web se encuentran
-escondidos por ahí.
+no sabemos cuantas grandes diseñadoras y programadoras web se encuentran
+escondidas por ahí.
 
 Si te recomendaron esto y pensás que no es para vos, la cuestión es que si es
 para vos, y si algo es confuso no es tu culpa, es miá, así que contactame y
-decime que parte no esta clara así mejoramos esta guiá para todos.
+decime que parte no esta clara así mejoramos esta guiá para todas.
 
 Este articulo es una introducción a la herramienta que vamos a usar para los
 siguientes ejemplos, un proyecto llamado `Glitch <https://glitch.com>`_, el
-cual facilita el proceso de crear, compartir y remixar paginas de otros.
+cual facilita el proceso de crear, compartir y remixar paginas.
 
 Lo primero que vamos a necesitar hacer es crear una cuenta en Glitch, visitando
 https://glitch.com, vamos a ver algo similar a la siguiente imagen:
