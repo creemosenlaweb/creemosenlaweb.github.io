@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Una potente calculadora" href="una-potente-calculadora.html" />
     <link rel="prev" title="Un poco de lógica a la vista" href="un-poco-de-logica-a-la-vista.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -99,12 +91,12 @@ derecha.</p>
 <p>Un tipo de dato muy usado, tenemos dos tipos, los enteros (integer en ingles),
 son números sin coma decimal, veamos algunos:</p>
 <p>Escribiendo lo siguiente:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
 </pre></div>
 </div>
 <p>Si apretamos enter en la consola del navegador o Ctrl+Enter en repl.it el
 resultado que nos va a devolver es:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Nada mágico, decimos que javascript evaluó el código <cite>1</cite> y el resultado fue
@@ -112,36 +104,36 @@ resultado que nos va a devolver es:</p>
 <p>Veamos otros números, de ahora en mas voy a poner el código y el resultado, se
 entiende que tenes que escribirlo y apretar enter o Ctrl+enter según donde
 estés escribiendo el código para ver el resultado.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">42</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">42</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">42</span>
 </pre></div>
 </div>
 <p>También se pueden números negativos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">42</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">42</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">42</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mi">42</span>
 </pre></div>
 </div>
 <p>Números grandes</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mi">1234567890</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mi">1234567890</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1234567890</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1234567890</span>
 </pre></div>
 </div>
 </div>
@@ -150,22 +142,22 @@ estés escribiendo el código para ver el resultado.</p>
 <p>También podemos escribir números con decimales, en programación los vas a
 escuchar nombrar como &quot;float&quot;, &quot;floating point number&quot;, o &quot;double&quot;, en lugar de
 una coma se usa un punto:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mf">0.5</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mf">0.5</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">0.5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">0.5</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="mf">10.5</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="mf">10.5</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">10.5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">10.5</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">0.5</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">0.5</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.5</span>
 </pre></div>
 </div>
 </div>
@@ -179,25 +171,25 @@ de texto, en ingles &quot;string&quot;.</p>
 <p>En javascript el texto es cualquier cosa envuelta en comillas simples <cite>'</cite> o
 dobles, <cite>&quot;</cite>, a la computadora le da igual cual uses.</p>
 <p>Empecemos con el texto mas simple, texto vacío:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 <p>En Firefox cuando escribo con comillas simples me lo muestra de vuelta en
 comillas dobles, así que parece que tiene una preferencia :)</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
 <p>El texto mas común que vas a encontrar en <a class="reference external" href="https://es.wikipedia.org/wiki/Hola_mundo">introducciones a programación</a>:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Hola mundo!&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hola mundo!&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Hola mundo!&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Hola mundo!&quot;</span>
 </pre></div>
 </div>
 <p>Si queremos tener comillas dentro del texto, tenemos que &quot;escaparlas&quot; con una
@@ -205,30 +197,30 @@ barra invertida antes de la comilla si es del mismo tipo que estamos usando
 para envolver el texto, así la computadora sabe que no se termina el texto aun,
 esta es una buena razón para usar un tipo de comillas sobre el otro, para evitar
 tener que escapar las comillas internas:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es &quot;texto&quot;&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es &quot;texto&quot;&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>Si queremos usar el mismo tipo de comillas las tenemos que escapar:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es \&quot;texto\&quot;&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es \&quot;texto\&quot;&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es </span><span class="se">\&quot;</span><span class="s2">texto</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>Igual para comillas simples:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es \&#39;texto\&#39;&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Esto es \&#39;texto\&#39;&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s2">&quot;Esto es &#39;texto&#39;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -243,17 +235,17 @@ lo vas a encontrar usualmente mencionado como booleano (pronunciado buleano) o d
 en honor a <a class="reference external" href="https://es.wikipedia.org/wiki/George_Boole">George Boole</a></p>
 <p>Hay solo dos valores para este tipo de datos:</p>
 <p>Verdadero:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">true</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kc">true</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">true</span>
 </pre></div>
 </div>
 <p>Falso:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">false</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kc">false</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">false</span>
 </pre></div>
 </div>
 </div>
@@ -263,10 +255,10 @@ en honor a <a class="reference external" href="https://es.wikipedia.org/wiki/Geo
 <p>Un tal Tony Hoare se pregunto lo mismo en 1965 y tuvo una idea, un tipo de dato
 al cual luego iba a llamar <a class="reference external" href="https://es.wikipedia.org/wiki/C._A._R._Hoare#cite_ref-4">&quot;El error de los mil millones de dólares&quot;</a> , este es el tipo
 de dato nulo, el cual tiene un solo valor:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kc">null</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kc">null</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">null</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">null</span>
 </pre></div>
 </div>
 <p>El problema surge cuando pensamos que vamos a recibir un número, texto u otro
@@ -288,38 +280,38 @@ lista y <cite>]</cite> para terminarla.</p>
 <p>Por razones históricas el tipo de dato lista también suele llamarse en ingles
 <a class="reference external" href="https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica)">&quot;array&quot;</a>.</p>
 <p>Empecemos por la lista mas simple, una lista sin elementos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[]</span>
 </pre></div>
 </div>
 <p>Firefox me lo muestra así:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[]</span>
 </pre></div>
 </div>
 <p>Una lista de un elemento:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Una lista de dos elementos, separamos cada elemento con una coma <cite>,</cite>:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="n">true</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">Array</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="n">true</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Como veras una lista puede contener cualquier tipo de dato, no hace falta que
 todos sean del mismo tipo, veamos un caso extremo con todos los tipos de datos
 que aprendimos hasta ahora, te desafío a escribirlo sin cometer un error al
 primero intento, yo cometí uno (pista: me olvide de cerrar un corchete :).</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;hola&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[[</span><span class="s2">&quot;si, listas dentro de listas&quot;</span><span class="p">]]]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;hola&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[[</span><span class="s2">&quot;si, listas dentro de listas&quot;</span><span class="p">]]]</span>
 </pre></div>
 </div>
 <p>Firefox me lo muestra indicándome que tiene 12 elementos y me muestra algunos,
 no todos, no te preocupes, todos los elementos están ahí, si hago click en la
 flecha <cite>&gt;</cite> me expande los elementos así los puedo explorar:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&lt; Array(12) [ -1, 0, 1, 42, 0.5, true, false, null, &quot;&quot;, &quot;hola&quot;, … ]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt; Array(12) [ -1, 0, 1, 42, 0.5, true, false, null, &quot;&quot;, &quot;hola&quot;, … ]
 </pre></div>
 </div>
 </div>
@@ -334,16 +326,16 @@ contiene, entonces si queremos, por ejemplo, tener un valor que represente un
 personaje en una serie y queremos tener su nombre, su tipo y su color, podemos
 hacerlo con un objeto, pero no nos adelantemos, empecemos con el objeto mas
 simple, uno que no tiene ningún valor, sí, aunque no lo creas es muy útil.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{}</span>
 </pre></div>
 </div>
 <p>Por razones que aprenderemos mas adelante, firefox se piensa que estoy
 intentando hacer otra cosa y me devuelve:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">undefined</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="n">undefined</span>
 </pre></div>
 </div>
 <p>Quizás cuando pruebes esto ya no se comporte así, Chrome no se confunde y devuelve:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{}</span>
 </pre></div>
 </div>
 <p>Te preguntaras que es ese <cite>undefined</cite> que devolvió?</p>
@@ -357,17 +349,17 @@ esta definido, en esos casos obtenemos a su primo: <cite>undefined</cite>.</p>
 <p>No hace falta que entiendas el significado de undefined aun, ya vas a
 encontrartelo mas seguido de lo deseado.</p>
 <p>Sigamos con un objeto con un solo campo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Para tener mas de un campo separamos los pares clave valor (los recordaras de CSS) con comas:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="s2">&quot;tipo&quot;</span><span class="o">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;nombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="s2">&quot;tipo&quot;</span><span class="o">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="n">tipo</span><span class="p">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">{</span><span class="n">nombre</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="s2">&quot;amarillo&quot;</span><span class="p">,</span> <span class="n">tipo</span><span class="p">:</span> <span class="s2">&quot;esponja&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Listo! ya sabes todos los tipos de datos necesarios para programar en
@@ -403,7 +395,7 @@ anterior.</p>
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Datos con Javascript" href="datos-con-javascript.html" />
     <link rel="prev" title="Recursos online" href="recursos-online.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -94,7 +86,7 @@ actualizan su contenido.</p>
 indica cuantas veces se apretó un botón, es decir, un contador.</p>
 <p>Cuando el usuario hace click en el botón, incrementamos en 1 el contador.</p>
 <p>Empecemos con el HTML que ya conocemos:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -125,7 +117,7 @@ Para lo segundo necesitamos indicarle:</p>
 nos permite hacer esto y mucho mas.</p>
 <p>Primero tenemos que incluir vuejs en nuestra pagina, así su funcionalidad esta
 disponible, esto lo hacemos con un tag <cite>script</cite> dentro del <cite>head</cite> de nuestra pagina:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script><p>Lo segundo que necesitamos hacer, es indicarle a vuejs, que parte de nuestro HTML
@@ -133,7 +125,7 @@ es su responsabilidad, ya que podemos tener distintas partes de la pagina maneja
 por distintas aplicaciones. Esto se lo indicamos agregando un identificador al tag
 raíz de nuestra aplicación e indicando ese identificador cuando inicializamos la
 aplicación.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
     <span class="c">&lt;!-- nuestra aplicación va acá --&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
@@ -142,7 +134,7 @@ aplicación.</p>
 estado inicial y cual es el id de la raíz del HTML de nuestra app.</p>
 <p>Esta parte va a requerir bastante explicación ya que vamos a usar un nuevo
 lenguaje que quizás hayas oído mencionar: javascript.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#mi-app-1&#39;</span><span class="p">,</span>
     <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="mi">0</span><span class="p">}</span>
@@ -185,7 +177,7 @@ por suerte es bastante simple.</p>
 un lenguaje de plantillas) es suficiente para hacer cualquier tipo de
 aplicación como las que usas día a día en internet.</p>
 <p>Para indicar los &quot;huecos&quot; donde van los datos, usamos el siguiente formato:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{count}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -205,10 +197,10 @@ aplicación como las que usas día a día en internet.</p>
 <p>Lo que le queremos indicar es &quot;cuando el usuario haga click, hace esto&quot;,
 lo cual se logra agregando un atributo especial al botón, especial porque
 lo entiende vuejs, ese atributo se llama <cite>&#64;click</cite>:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mi-app-1&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contador: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{count}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;count = count + 1&quot;</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;div id=&quot;mi-app-1&quot;&gt;
+    &lt;p&gt;Contador: &lt;span&gt;{{count}}&lt;/span&gt;&lt;/p&gt;
+    &lt;button @click=&quot;count = count + 1&quot;&gt;Incrementar&lt;/button&gt;
+&lt;/div&gt;
 </pre></div>
 </div>
 <div id="mi-app-2">
@@ -221,7 +213,7 @@ lo entiende vuejs, ese atributo se llama <cite>&#64;click</cite>:</p>
     data: {count: 0}
   })
 </script><p>La magia esta acá:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;count = count + 1&quot;</span><span class="p">&gt;</span>Incrementar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;button @click=&quot;count = count + 1&quot;&gt;Incrementar&lt;/button&gt;
 </pre></div>
 </div>
 <p>Le decimos &quot;cuando el usuario haga click en este botón, corre el código
@@ -239,7 +231,7 @@ inicial, mostrar los datos y agregar interactividad.</p>
 <p>Nuestro estado inicial va a ser una lista con 0 o mas datos de tipo texto
 indicando la tarea a realizar, empecemos con un par de tareas iniciales así
 podemos practicar repetición antes de agregar interactividad:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
     <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
     <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
@@ -258,7 +250,7 @@ tres valores, los tres son de tipo texto (otro tipo que vimos es el tipo
 numérico para el contador)</p>
 <p>Ahora con nuestra lista de tareas inicializada, podemos mostrarla en la pantalla,
 si fuéramos a hacerlo a la vieja usanza, haríamos algo así:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Conquistar el mundo<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Abolir el patriarcado<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Comprar pan<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -272,7 +264,7 @@ si fuéramos a hacerlo a la vieja usanza, haríamos algo así:</p>
     <li>Comprar pan</li>
 </ul><p>Pero obviamente esto no nos sirve, queremos listar las tareas de nuestra lista
 de datos, con lo que aprendimos hasta ahora podríamos intentar:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </pre></div>
@@ -280,7 +272,7 @@ de datos, con lo que aprendimos hasta ahora podríamos intentar:</p>
 <p>Pero esto no funciona porque no tenemos una sola tarea, sino muchas, y el
 identificador tarea no esta definido, tenemos el identificador tareas, sin embargo, estamos bastante cerca..., para repetir un fragmento de HTML cuyo contenido
 se encuentra en una lista tenemos que indicarle a vue algo así como &quot;para cada tarea en la lista de tareas, mostrá este HTML&quot;, veamos como se hace:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;tarea in tareas&quot;</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -319,7 +311,7 @@ lugar donde podamos escribir la descripción de la nueva tarea y un botón para
 agregar la tarea a la lista.</p>
 <p>El campo de texto lo creamos con el tag <cite>input</cite>, el botón como ya vimos antes,
 con el tag <cite>button</cite>, probemos un poco el HTML:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -329,27 +321,27 @@ a un campo en mis datos?</p>
 <p>primero necesitamos crear un nuevo campo en nuestros datos iniciales para
 el contenido de la tarea a agregar, luego necesitamos indicarle al tag <cite>input</cite>
 que su contenido es el valor del campo, llamemoslo <cite>tituloNuevo</cite>:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;div id=&quot;todo-app&quot;&gt;
+  &lt;input v-model=&quot;tituloNuevo&quot;&gt;
+  &lt;button @click=&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;&gt;Crear nueva tarea&lt;/button&gt;
 
-  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;tarea in tareas&quot;</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">tituloNuevo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">tareas</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s1">&#39;Conquistar el mundo&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Abolir el patriarcado&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Comprar pan&#39;</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">})</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  &lt;ul&gt;
+    &lt;li v-for=&quot;tarea in tareas&quot;&gt;{{tarea}}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  new Vue({
+    el: &#39;#todo-app&#39;,
+    data: {
+        tituloNuevo: &#39;&#39;,
+        tareas: [
+            &#39;Conquistar el mundo&#39;,
+            &#39;Abolir el patriarcado&#39;,
+            &#39;Comprar pan&#39;
+        ]
+    }
+  })
+&lt;/script&gt;
 </pre></div>
 </div>
 <p>Probemos:</p>
@@ -374,12 +366,12 @@ que su contenido es el valor del campo, llamemoslo <cite>tituloNuevo</cite>:</p>
     }
   })
 </script><p>Vamos por partes:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Agregamos el atributo <cite>v-model</cite> para indicarle a vue &quot;el contenido de este tag
 esta conectado al valor de <cite>tituloNuevo</cite> en nuestros datos.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;button @click=&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;&gt;Crear nueva tarea&lt;/button&gt;
 </pre></div>
 </div>
 <p>Nuestro viejo amigo <cite>&#64;click</cite> en el botón hace dos cosas, primero agrega un
@@ -403,28 +395,28 @@ a agregar un botón que al ser clickeado va a borrar dicha tarea.</p>
 para poder decir &quot;borra el elemento numero 2 de la lista <cite>tareas</cite>&quot;, para
 eso vamos a hacer uso de una variación del atributo <cite>v-for</cite> que nos permite
 obtener la posición (indice) del valor que estamos mostrando, el formato es:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{pos}}: {{tarea}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: right&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;li v-for=&quot;(tarea, pos) in tareas&quot;&gt;
+    &lt;span&gt;{{pos}}: {{tarea}}&lt;/span&gt;
+    &lt;button @click=&quot;$delete(tareas, pos)&quot; style=&quot;float: right&quot;&gt;X&lt;/button&gt;
+&lt;/li&gt;
 </pre></div>
 </div>
 <p>Vamos por partes, primero usamos el formato <cite>(tarea, pos) in tareas</cite> para que vue
 nos devuelva no solo cada elemento en la lista sino si posición (indice), el cual
 vamos a nombrar <cite>pos</cite>.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Luego para ver que estamos haciendo las cosas bien, mostramos el valor de <cite>pos</cite>
 antes de la descripción de cada tarea:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{pos}}: {{tarea}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>{{pos}}: {{tarea}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Finalmente agregamos un botón, que al ser clickeado llama a la función
 <cite>$delete</cite> de vuejs, que recibe dos parámetros, el primero es la lista a la que
 le queremos remover un elemento, el segundo parámetro es la posición o indice
 que queremos remover.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float: right&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;button @click=&quot;$delete(tareas, pos)&quot; style=&quot;float: right&quot;&gt;X&lt;/button&gt;
 </pre></div>
 </div>
 <p>El resultado con un poco mas de formato:</p>
@@ -461,50 +453,50 @@ que queremos remover.</p>
         }
   })
 </script><p>Código completo:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Vue: Lista de Tareas<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;m-3&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todo-app&quot;</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;tituloNuevo&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tareaDesc&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Descripción de tarea&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;Vue: Lista de Tareas&lt;/title&gt;
+        &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body class=&quot;m-3&quot;&gt;
+        &lt;div id=&quot;todo-app&quot;&gt;
+          &lt;input v-model=&quot;tituloNuevo&quot; type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;tareaDesc&quot; placeholder=&quot;Descripción de tarea&quot;&gt;
 
-          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-2 text-center&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;</span>
-                                <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Crear nueva tarea<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          &lt;div class=&quot;my-2 text-center&quot;&gt;
+                &lt;button @click=&quot;tareas.push(tituloNuevo); tituloNuevo = &#39;&#39;;&quot;
+                                class=&quot;btn btn-primary&quot;&gt;Crear nueva tarea&lt;/button&gt;
+          &lt;/div&gt;
 
-          <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-striped table-hover&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
-                  <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;(tarea, pos) in tareas&quot;</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{pos}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{tarea}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-                        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="p">&gt;</span>
-                          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">@click</span><span class="o">=</span><span class="s">&quot;$delete(tareas, pos)&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-danger btn-sm&quot;</span><span class="p">&gt;</span>X<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-                        <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-                  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-                <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
-          <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-          <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-                <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#todo-app&#39;</span><span class="p">,</span>
-                <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-                  <span class="nx">tituloNuevo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-                  <span class="nx">tareas</span><span class="o">:</span> <span class="p">[</span>
-                        <span class="s1">&#39;Conquistar el mundo&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;Abolir el patriarcado&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;Comprar pan&#39;</span>
-                  <span class="p">]</span>
-                <span class="p">}</span>
-          <span class="p">})</span>
-        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+          &lt;table class=&quot;table table-bordered table-striped table-hover&quot;&gt;
+                &lt;tbody&gt;
+                  &lt;tr v-for=&quot;(tarea, pos) in tareas&quot;&gt;
+                        &lt;td&gt;{{pos}}&lt;/td&gt;
+                        &lt;td&gt;{{tarea}}&lt;/td&gt;
+                        &lt;td class=&quot;text-center&quot;&gt;
+                          &lt;button @click=&quot;$delete(tareas, pos)&quot; class=&quot;btn btn-danger btn-sm&quot;&gt;X&lt;/button&gt;
+                        &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          new Vue({
+                el: &#39;#todo-app&#39;,
+                data: {
+                  tituloNuevo: &#39;&#39;,
+                  tareas: [
+                        &#39;Conquistar el mundo&#39;,
+                        &#39;Abolir el patriarcado&#39;,
+                        &#39;Comprar pan&#39;
+                  ]
+                }
+          })
+        &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </pre></div>
 </div>
 </div>
@@ -533,7 +525,7 @@ que queremos remover.</p>
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

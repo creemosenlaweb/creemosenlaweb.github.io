@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="No nos llames, nosotros te llamamos" href="no-nos-llames-nosotros-te-llamamos.html" />
     <link rel="prev" title="Ver o no ver, también es una cuestión" href="ver-o-no-ver.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -84,19 +76,19 @@ para ver el resultado.</p>
 elemento se accede por su posición en la lista, empezando desde la posición
 <strong>cero</strong>.</p>
 <p>Una lista vacía (sin elementos):</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaVacia</span> <span class="o">=</span> <span class="p">[];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaVacia</span> <span class="o">=</span> <span class="p">[];</span>
 </pre></div>
 </div>
 <p>Una lista con un elemento:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Una lista con números:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaNumeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">9001</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaNumeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">9001</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Una lista con valores de distinto tipo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaTipos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="p">[]];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">listaTipos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="p">[]];</span>
 </pre></div>
 </div>
 </div>
@@ -106,18 +98,18 @@ elemento se accede por su posición en la lista, empezando desde la posición
 elemento se accede por su <cite>clave</cite>, que es el nombre que le damos a ese campo,
 también llamado <cite>atributo</cite> del objeto.</p>
 <p>Un objeto vacío:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoVacio</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoVacio</span> <span class="o">=</span> <span class="p">{};</span>
 </pre></div>
 </div>
 <p>Un objeto con un campo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoCampo</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s1">&#39;bob&#39;</span><span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoCampo</span> <span class="o">=</span> <span class="p">{</span><span class="nx">nombre</span><span class="o">:</span> <span class="s1">&#39;bob&#39;</span><span class="p">};</span>
 <span class="c1">// es lo mismo que lo siguiente, siempre y cuando la clave (key)</span>
 <span class="c1">// sea un identificador valido, sino siempre hay que usar comillas</span>
 <span class="kd">let</span> <span class="nx">objetoCampo1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="o">:</span> <span class="s1">&#39;bob&#39;</span><span class="p">};</span>
 </pre></div>
 </div>
 <p>Un objeto con valores de distinto tipo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoTipos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">null</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">booleano</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">texto</span><span class="o">:</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="nx">lista</span><span class="o">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">objeto</span><span class="o">:</span> <span class="p">{</span><span class="nx">clave</span><span class="o">:</span> <span class="s1">&#39;valor&#39;</span><span class="p">},</span> <span class="s1">&#39;clave rara!&#39;</span><span class="o">:</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">100</span><span class="o">:</span> <span class="s1">&#39;cien&#39;</span><span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">objetoTipos</span> <span class="o">=</span> <span class="p">{</span><span class="nx">numero</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">null</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">booleano</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">texto</span><span class="o">:</span> <span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="nx">lista</span><span class="o">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">objeto</span><span class="o">:</span> <span class="p">{</span><span class="nx">clave</span><span class="o">:</span> <span class="s1">&#39;valor&#39;</span><span class="p">},</span> <span class="s1">&#39;clave rara!&#39;</span><span class="o">:</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">100</span><span class="o">:</span> <span class="s1">&#39;cien&#39;</span><span class="p">};</span>
 </pre></div>
 </div>
 <p>Vale aclarar que las claves de los objetos son siempre de tipo texto (strings),
@@ -146,11 +138,11 @@ primer elemento de la lista vacía, que seria el elemento con indice <cite>0</ci
 acceder a un elemento de una colección usamos los corchetes después del nombre
 de la colección y entre corchetes ponemos el identificador del valor que
 queremos acceder:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>El resultado me da:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
 </pre></div>
 </div>
 <p>Es decir que cuando le pedimos un elemento que no tiene nos devuelve <cite>undefined</cite>.</p>
@@ -159,20 +151,20 @@ queremos acceder:</p>
 funciones asociadas para operar sobre sus valores, esto quiere decir que le podemos
 preguntar a una lista cuantos elementos tiene accediendo a su <cite>atributo</cite> <cite>length</cite> (que es &quot;longitud&quot; o &quot;largo&quot; en ingles).</p>
 <p>Probemos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>Nos dice que tiene 0 elementos, osea que es una lista vacía.</p>
 <p>Como habrás visto usamos otra forma de acceder a un atributo de la lista, esta
 vez con un punto, esta forma se puede usar cuando el valor del atributo es un
 identificador valido, esto no quita que podamos hacer:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">listaVacia</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>Lo que no es muy útil si el atributo al que queremos acceder es &quot;fijo&quot;, pero
@@ -180,37 +172,37 @@ nos va a ser útil para cuando queramos acceder a atributos que no conocemos
 cuando estamos escribiendo el programa, para darte una idea de lo que seria,
 imaginemos que tenemos una función que recibe dos parámetros, un valor y
 un nombre de un atributo de ese valor y devuelve el valor de ese atributo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">devolverValor</span><span class="p">(</span><span class="nx">valor</span><span class="p">,</span> <span class="nx">atributo</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">devolverValor</span><span class="p">(</span><span class="nx">valor</span><span class="p">,</span> <span class="nx">atributo</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">valor</span><span class="p">[</span><span class="nx">atributo</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>La función no sabe cual es el valor de atributo, ya que es una variable, puede
 ser cualquier cosa, probemos con listaVacia y 'length':</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>Probemos con un indice de la lista:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
 </pre></div>
 </div>
 <p>Probemos con <cite>lista1</cite>:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">lista1</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">lista1</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">lista1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">devolverValor</span><span class="p">(</span><span class="nx">lista1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">42</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">42</span>
 </pre></div>
 </div>
 </div>
@@ -220,49 +212,49 @@ ser cualquier cosa, probemos con listaVacia y 'length':</p>
 son las mismas, con corchetes si la clave no es un identificador valido y con
 punto si lo es, empecemos rompiendo, tratemos de acceder a un atributo que no
 esta definido en el objeto:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoVacio</span><span class="p">.</span><span class="nx">yoNoExisto</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoVacio</span><span class="p">.</span><span class="nx">yoNoExisto</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">undefined</span>
 </pre></div>
 </div>
 <p>Como la lista, si no esta definido devuelve undefined. Ahora probemos con uno
 que si exista:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoCampo</span><span class="p">.</span><span class="nx">nombre</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoCampo</span><span class="p">.</span><span class="nx">nombre</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;bob&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;bob&#39;</span>
 </pre></div>
 </div>
 <p>Como ya vimos, se puede acceder con corchetes, cosa que no es necesaria en
 este caso pero probemos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoCampo</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoCampo</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;bob&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;bob&#39;</span>
 </pre></div>
 </div>
 <p>En donde si la vamos a necesitar es con nuestra 'clave rara!', que no podemos
 acceder con punto ya que no es un identificador valido:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="s1">&#39;clave rara!&#39;</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="s1">&#39;clave rara!&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">12.5</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mf">12.5</span>
 </pre></div>
 </div>
 <p>Como habíamos dicho, las claves de los objetos son siempre de tipo texto (string),
 probemos que es cierto:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;cien&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;cien&#39;</span>
 </pre></div>
 </div>
 <p>Eso no demuestra nada... pero esto si:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="s1">&#39;100&#39;</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">objetoTipos</span><span class="p">[</span><span class="s1">&#39;100&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;cien&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="s1">&#39;cien&#39;</span>
 </pre></div>
 </div>
 <p>Como veras también funciona, porque si le pasamos el numero, javascript lo
@@ -303,14 +295,14 @@ principio (Inicialización) y una que se ejecuta por cada elemento de la lista,
 hasta que una condición deje de cumplirse (que el indice este dentro del largo
 de la lista).</p>
 <p>Esto se suele llamar &quot;ciclo for&quot;, veamos la sintaxis a grandes rasgos, no es la sintaxis valida pero para darte una idea:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">inicializarVariables</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="nx">condicionDeCorte</span> <span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="nx">siguiente</span> <span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nx">inicializarVariables</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="nx">condicionDeCorte</span> <span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="nx">siguiente</span> <span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="p">{</span>
     <span class="c1">// lógica por cada paso (4)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Veamoslo con código valido, no hace falta que lo entiendas entero, es para
 que te des una idea:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;elemento&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="s1">&#39;de lista es &#39;</span><span class="p">,</span> <span class="nx">elemento</span><span class="p">);</span>
 <span class="p">}</span>
@@ -328,7 +320,7 @@ otras cosas.</p>
 <p>Luego de evaluar <cite>siguiente</cite> (3), se repite el ciclo.</p>
 <p>Probemoslo con varias listas de largos distintos, para eso pongamos nuestro
 ciclo for en una función:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">lista</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">lista</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;antes del ciclo for para&#39;</span><span class="p">,</span> <span class="nx">lista</span><span class="p">);</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -341,18 +333,18 @@ ciclo for en una función:</p>
 </pre></div>
 </div>
 <p>Probemoslo con una lista vacía:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">listaVacia</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Imprime lo siguiente:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[]</span>
 <span class="n">después</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span>
 </pre></div>
 </div>
 <p>Como podemos ver, el paso (4) nunca se ejecuto, porque la condición de corte
 (2) evaluó a <cite>false</cite> la primera vez.</p>
 <p>La secuencia completa para <cite>listaVacia</cite> es:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
 <span class="c1">// (1)</span>
 <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="nx">len</span> <span class="o">=</span> <span class="mi">0</span>
@@ -365,17 +357,17 @@ ciclo for en una función:</p>
 </pre></div>
 </div>
 <p>Probemos con una lista de un elemento:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">lista1</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">(</span><span class="nx">lista1</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[</span> <span class="mi">42</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[</span> <span class="mi">42</span> <span class="p">]</span>
 <span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span>  <span class="mi">42</span>
 <span class="n">después</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span>
 </pre></div>
 </div>
 <p>Ahora el paso (4) y (3) se ejecutaron 1 vez, veamos la secuencia:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
 <span class="c1">// (1)</span>
 <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="nx">len</span> <span class="o">=</span> <span class="mi">1</span>
@@ -397,17 +389,17 @@ ciclo for en una función:</p>
 </pre></div>
 </div>
 <p>Ultima, con dos elementos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementos</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="p">]</span>
 <span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span>  <span class="mi">10</span>
 <span class="n">elemento</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span>  <span class="mi">20</span>
 <span class="n">después</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Inicialización</span>
 <span class="c1">// (1)</span>
 <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="nx">len</span> <span class="o">=</span> <span class="mi">2</span>
@@ -444,7 +436,7 @@ ciclo for en una función:</p>
 <p>Iterar listas es lo mas común, pero algunas veces necesitamos iterar por todas
 las claves de un objeto, para eso usamos una versión distinta (y por suerte mas
 simple) del ciclo for, veamoslo directamente en una función:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementosObjeto</span><span class="p">(</span><span class="nx">objeto</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementosObjeto</span><span class="p">(</span><span class="nx">objeto</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;antes del ciclo for para&#39;</span><span class="p">,</span> <span class="nx">objeto</span><span class="p">);</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">objeto</span><span class="p">)</span> <span class="p">{</span>
@@ -459,20 +451,20 @@ simple) del ciclo for, veamoslo directamente en una función:</p>
 <p>Esta versión es mas simple, asigna a <cite>key</cite> cada clave en <cite>objeto</cite> y ejecuta
 la lógica.</p>
 <p>Probemos con un objeto vacío:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto</span><span class="p">({});</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto</span><span class="p">({});</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">{}</span>
 <span class="n">después</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span>
 </pre></div>
 </div>
 <p>Con varios elementos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>antes del ciclo for para { &#39;100&#39;: &#39;cien&#39;,
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>antes del ciclo for para { &#39;100&#39;: &#39;cien&#39;,
   numero: 42,
   null: null,
   undefined: undefined,
@@ -496,22 +488,22 @@ después del ciclo for
 </pre></div>
 </div>
 <p>Para saber cuantos atributos tiene un objeto, podemos usar una función llamada <cite>Object.keys</cite> que nos devuelve una lista de las claves de un objeto, probemosla:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoVacio</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoVacio</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoCampo</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoCampo</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="s1">&#39;nombre&#39;</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="s1">&#39;nombre&#39;</span> <span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
   <span class="s1">&#39;numero&#39;</span><span class="p">,</span>
   <span class="s1">&#39;null&#39;</span><span class="p">,</span>
   <span class="s1">&#39;undefined&#39;</span><span class="p">,</span>
@@ -524,7 +516,7 @@ después del ciclo for
 </div>
 <p>Veamos como podríamos iterar sobre las claves de un objeto usando <cite>Object.keys</cite>
 y lo que aprendimos sobre listas:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementosObjeto1</span><span class="p">(</span><span class="nx">objeto</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">mostrarElementosObjeto1</span><span class="p">(</span><span class="nx">objeto</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;antes del ciclo for para&#39;</span><span class="p">,</span> <span class="nx">objeto</span><span class="p">);</span>
 
     <span class="kd">let</span> <span class="nx">keys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">objeto</span><span class="p">);</span>
@@ -539,20 +531,20 @@ y lo que aprendimos sobre listas:</p>
 </pre></div>
 </div>
 <p>Probemoslo:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto1</span><span class="p">({});</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto1</span><span class="p">({});</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">{}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antes</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span> <span class="n">para</span> <span class="p">{}</span>
 <span class="n">después</span> <span class="k">del</span> <span class="n">ciclo</span> <span class="k">for</span>
 </pre></div>
 </div>
 <p>Con varios elementos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto1</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">mostrarElementosObjeto1</span><span class="p">(</span><span class="nx">objetoTipos</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>antes del ciclo for para { &#39;100&#39;: &#39;cien&#39;,
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>antes del ciclo for para { &#39;100&#39;: &#39;cien&#39;,
   numero: 42,
   null: null,
   undefined: undefined,
@@ -602,7 +594,7 @@ después del ciclo for
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

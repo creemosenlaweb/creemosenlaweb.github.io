@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="HTML atributos y meta datos" href="html-atributos-y-metadatos.html" />
     <link rel="prev" title="Introducción" href="introduccion.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -94,7 +86,7 @@ a mano con editores de texto, y eso es lo que vamos a hacer.</p>
 <div class="section" id="la-pagina-mas-simple-del-mundo">
 <h2>La pagina mas simple del mundo<a class="headerlink" href="#la-pagina-mas-simple-del-mundo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Escribí lo siguiente en la barra de dirección de tu navegador:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, hola mundo
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>data:text/html, hola mundo
 </pre></div>
 </div>
 <p>Felicitaciones! acabas de crear tu primera pagina web!</p>
@@ -110,15 +102,15 @@ esta en formato HTML, luego escribimos el contenido de la misma.</p>
 <p>Si bien no es una forma ideal de crear paginas web, a veces es útil para tareas
 especificas, por ejemplo:</p>
 <p>Selector de colores:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Calendario:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Bloc de notas:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">body</span> <span class="na">contenteditable</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;max-width:60rem;margin:0 auto;padding:4rem;&quot;</span><span class="p">&gt;</span>bloc de notas
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>data:text/html, <span class="p">&lt;</span><span class="nt">body</span> <span class="na">contenteditable</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;max-width:60rem;margin:0 auto;padding:4rem;&quot;</span><span class="p">&gt;</span>bloc de notas
 </pre></div>
 </div>
 <p>No te preocupes por la parte <cite>style=&quot;max-width:60rem;margin:0 auto;padding:4rem;&quot;</cite> eso es el segundo lenguaje que vamos a ver en la próxima sección.</p>
@@ -132,7 +124,7 @@ HTML.</p>
 revisa la sección anterior que contiene una introducción a glitch.</p>
 <p>El nuevo proyecto comienza con pagina de ejemplo y varios archivos mas:</p>
 <p>Lo vamos a borrar y escribir el siguiente texto:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un título
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Esto es un título
 
 Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica
 
@@ -166,7 +158,7 @@ copiarlo en tu usuario y que los cambios se mantengan en tu copia.</p>
 </div><p>Si la vista previa no se actualiza automáticamente podes hacer click en el
 botón de refrescar vista previa.</p>
 <p>Como podemos ver la vista previa muestra todo el texto junto y sin formato, algo así:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">título</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">párrafo</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">palabra</span> <span class="n">es</span> <span class="n">en</span> <span class="n">negrita</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">en</span> <span class="n">itálica</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">otro</span> <span class="n">párrafo</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">no</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Manzana</span> <span class="n">Durazno</span> <span class="n">Banana</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Uno</span> <span class="n">Dos</span> <span class="n">Tres</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">título</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">párrafo</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">palabra</span> <span class="n">es</span> <span class="n">en</span> <span class="n">negrita</span><span class="p">,</span> <span class="n">la</span> <span class="n">siguiente</span> <span class="n">en</span> <span class="n">itálica</span> <span class="n">Esto</span> <span class="n">es</span> <span class="n">otro</span> <span class="n">párrafo</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">no</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Manzana</span> <span class="n">Durazno</span> <span class="n">Banana</span> <span class="n">Una</span> <span class="n">lista</span> <span class="n">ordenada</span><span class="p">:</span> <span class="n">Uno</span> <span class="n">Dos</span> <span class="n">Tres</span>
 </pre></div>
 </div>
 <p>Sin formato es esperable ya que no le indicamos ninguno, pero porque todo junto?</p>
@@ -189,11 +181,11 @@ esa operación.</p>
 <p>Pero eso no funciona porque todavía tenemos que indicar que operación aplicar al texto entre &lt;&gt; y &lt;/&gt;, para eso escribimos la operación entre el &lt; y el &gt;.</p>
 <p>Empecemos con el titulo, si notas en la animación de Google Docs, la operación se llama <strong>Heading 1</strong>, es medio largo para escribir todo eso cada vez que queremos un titulo de nivel 1, así que lo acortamos a <cite>h1</cite>.</p>
 <p>Cambiemos</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un título
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Esto es un título
 </pre></div>
 </div>
 <p>Por</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>El resultado debería verse algo así:</p>
@@ -216,11 +208,11 @@ un titulo de un nivel mas alto.</p>
 <p>En HTML tenemos 6 niveles: h1, h2, h3, h4, h5, h6.</p>
 <p>Continuemos.</p>
 <p>La siguiente linea dice:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica
 </pre></div>
 </div>
 <p>Como le indicamos que es un párrafo? como con el titulo, lo rodeamos de una etiqueta de apertura y una de cierre y le indicamos que es un párrafo, pero de nuevo, escribir párrafo en español o ingles por cada párrafo es bastante largo así que lo vamos a abreviar a <strong>p</strong></p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>El resultado debería verse similar al siguiente:</p>
@@ -233,7 +225,7 @@ un titulo de un nivel mas alto.</p>
   </iframe>
 </div><p>Notaras que ahora el primer párrafo tiene espacio con respecto al titulo y al
 resto del texto, ahora hacemos lo mismo con los siguientes párrafos:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en negrita, la siguiente en itálica<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
@@ -270,7 +262,7 @@ Tres
 formatear y le indicamos que formato queremos aplicarle.</p>
 <p>A ver si te podes imaginar que identificador lleva negrita (<strong>b</strong> old en ingles)
 e itálica (<strong>i</strong> talic en ingles)?</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, la siguiente en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>itálica<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, la siguiente en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>itálica<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>El resultado debería verse algo así:</p>
@@ -297,7 +289,7 @@ e itálica (<strong>i</strong> talic en ingles)?</p>
 </li>
 </ol>
 <p>Empecemos con la lista no ordenada, en ingles <strong>u</strong> nordered <strong>l</strong> ist, ya te podes imaginar como se identifica el tag:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
 Manzana
 Durazno
 Banana
@@ -305,7 +297,7 @@ Banana
 </pre></div>
 </div>
 <p>Pero esto no es suficiente, todavía le tenemos que decir cuales son los elementos de la lista (<strong>l</strong> ist <strong>i</strong> tem en ingles):</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Manzana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Durazno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -316,7 +308,7 @@ Banana
 item) dentro del tag <strong>ul</strong> (unordered list)</p>
 <p>Para la lista ordenada es igual, pero en lugar de indicar que queremos una lista
 no ordenada, le indicamos que queremos una ordenada (<strong>o</strong> rdered <strong>l</strong> list en ingles)</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Uno<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Dos<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Tres<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -324,7 +316,7 @@ no ordenada, le indicamos que queremos una ordenada (<strong>o</strong> rdered <
 </pre></div>
 </div>
 <p>El código completo:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Esto es un título<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Esto es un párrafo, la siguiente palabra es en <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>negrita<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>, la siguiente en <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>itálica<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
@@ -393,7 +385,7 @@ del formato texto, que preferimos los humanos :)</p>
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Estructura de un proyecto real &#8212; documentación de Creemos en la Web - 1.0.0</title>
+
+    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Datos por favor, es promesa" href="promesas.html" /> 
+  </head><body>
+
+
+    <div class="row related" role="navigation" aria-label="related navigation">
+       <div class="col-md-8">
+        <ol class="related breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Creemos en la Web</a></li>
+            <li class="breadcrumb-item active">Estructura de un proyecto real</li>
+        </ol>
+       </div>
+       <div class="relation col-md-4">
+           <div style="margin: .75rem 1rem">
+               <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+               <a href="promesas.html" title="Previous Chapter: Datos por favor, es promesa" class="btn btn-primary" role="botton" accesskey="P">
+                   &laquo; Datos por fav...
+               </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+  <div class="main">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="estructura-de-un-proyecto-real">
+<h1>Estructura de un proyecto real<a class="headerlink" href="#estructura-de-un-proyecto-real" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Hasta ahora hemos usado herramientas online para probar nuestros proyectos, en
+este capitulo vamos a ver como crear un proyecto completo en nuestra
+computadora.</p>
+<p>Para empezar necesitamos crear una carpeta para nuestro proyecto, yo le voy a
+llamar <cite>miapp</cite> pero el nombre puede ser cualquiera que prefieras.</p>
+<p>Para crear una carpeta hace click derecho en la carpeta donde querés crear tu
+proyecto y elegí del menú &quot;Nueva Carpeta&quot; o similar, renombrala a gusto y entra
+a la carpeta haciendole doble click.</p>
+<p>Ahora necesitamos crear nuestro <cite>index.html</cite>, el archivo de entrada de nuestra
+aplicación, podes crearlo desde tu editor de texto preferido, si no tenes uno
+podes probar instalar <a class="reference external" href="https://notepad-plus-plus.org/">notepad++</a> si estas en
+Windows y querés un editor liviano pero potente, si estas en linux fijate si
+tenes instalado <cite>gedit</cite>, <cite>kedit</cite> o <cite>kate</cite>, podes buscarlos escribiendo &quot;editor&quot;
+en el lanzador de aplicaciones.</p>
+<p>Si querés algo mas potente podes instalar <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>, va a tomar un poco mas de tiempo acostumbrarse a el y consume mas recursos pero es un editor completo usado por una gran parte de los programadores.</p>
+<p>Volviendo a nuestro <cite>index.html</cite>, podes crearlo haciendo click derecho en la carpeta de proyecto y eligiendo &quot;Nuevo Archivo&quot; o similar y renombrandolo a <cite>index.html</cite> o podes crear un archivo nuevo desde tu editor y elegir &quot;Guardar Como&quot; y nombrarlo <cite>index.html</cite> en la carpeta de tu proyecto.</p>
+<p>El contenido de <cite>index.html</cite> va a ser:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, minimum-scale=1.0, initial-scale=1, maximum-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Mi App&lt;/title&gt;
+    &lt;script src=&quot;./lib/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;module&quot; src=&quot;./js/app.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.css&quot; media=&quot;all&quot;/&gt;
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;img/favicon.png&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+       &lt;p&gt;Contador: &lt;span&gt;{{count}}&lt;/span&gt;&lt;/p&gt;
+       &lt;button @click=&quot;count = count + 1&quot;&gt;Incrementar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>Ahora dentro de la carpeta del proyecto crea los siguientes directorios:</p>
+<dl class="docutils">
+<dt>js</dt>
+<dd>donde vamos a escribir nuestro código javascript</dd>
+<dt>lib</dt>
+<dd>donde vamos a poner archivos javascript de otros que vamos a usar</dd>
+<dt>css</dt>
+<dd>donde vamos a poner nuestro código CSS</dd>
+<dt>img</dt>
+<dd>donde vamos a poner imagenes y otros archivos que necesitemos</dd>
+</dl>
+<p>Abri tu navegador y visita <a class="reference external" href="https://cdnjs.com/">https://cdnjs.com/</a> en la barra de búsqueda de la pagina escribí &quot;vue&quot; te va a aparecer algo parecido a esto:</p>
+<div class="figure align-center">
+<img alt="_images/vue-cdnjs.png" src="_images/vue-cdnjs.png" />
+</div>
+<p>Hace click en el botón &quot;Copy&quot; que aparece a la derecha cuando acercas el mouse, abrí una pestaña nueva y pega la dirección
+(tecla Control y tecla v a la vez o click derecho y &quot;Pegar&quot;), apretá enter y te
+va a aparecer algo no muy legible, no importa, en el menú de tu navegador anda
+a &quot;Archivo&quot; y &quot;Guardar pagina como&quot; (o similar), elegí el directorio <cite>lib</cite> dentro
+de tu proyecto y nombra el archivo <cite>vue.js</cite>.</p>
+<p>Este procedimiento sirve para cualquier otra biblioteca de funcionalidad que
+quieras usar en tu proyecto, guardas el archivo en el directorio lib y agregas
+el tag <cite>script</cite> en <cite>index.html</cite>, podes también poner la dirección directamente
+en el tag <cite>script</cite> como hemos hecho antes, solo que de esta forma podes
+programar incluso cuando no tenes acceso a internet.</p>
+<p>Hagamos lo mismo con <a class="reference external" href="https://getbootstrap.com/">bootstrap</a> anda a <a class="reference external" href="https://getbootstrap.com/">https://getbootstrap.com/</a> hace click en &quot;Download&quot;, baja hasta la sección &quot;BootstrapCDN&quot;, copia la dirección en el primer tag, en mi caso es &quot;<a class="reference external" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css</a>&quot;, pegala en la barra de direcciones y guardala dentro del directorio <cite>css</cite> de tu proyecto como <cite>bootstrap.css</cite>.</p>
+<p>Crea un archivo llamado <cite>app.js</cite> en el directorio <cite>js</cite>, pone el siguiente
+contenido dentro:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">let</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+      <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">count</span><span class="o">:</span> <span class="mi">0</span><span class="p">}</span>
+   <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// llamar a la funcion main cuando la pagina termine de cargar</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="nx">main</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ahora para poder abrir nuestra aplicación en el navegador necesitamos un
+&quot;servidor&quot; web que le provea los archivos al navegador cuando este los pida,
+vamos a usar un servidor simple con una herramienta que vamos a necesitar de
+todas formas en los siguientes pasos.</p>
+<p>Abrí tu navegador y visita <a class="reference external" href="https://nodejs.org/es/">https://nodejs.org/es/</a> hace click en el botón de
+descarga y seguí las instrucciones del instalador.</p>
+<p>una vez instalado crea un archivo llamado <cite>miserver.js</cite> en el directorio del
+proyecto con el siguiente contenido:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;request &#39;</span><span class="p">,</span> <span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">filePath</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">filePath</span> <span class="o">==</span> <span class="s1">&#39;./&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">filePath</span> <span class="o">=</span> <span class="s1">&#39;./index.html&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">extname</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">extname</span><span class="p">(</span><span class="nx">filePath</span><span class="p">)).</span><span class="nx">toLowerCase</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">mimeTypes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;.html&#39;</span><span class="o">:</span> <span class="s1">&#39;text/html&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.js&#39;</span><span class="o">:</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.css&#39;</span><span class="o">:</span> <span class="s1">&#39;text/css&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.json&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.png&#39;</span><span class="o">:</span> <span class="s1">&#39;image/png&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.jpg&#39;</span><span class="o">:</span> <span class="s1">&#39;image/jpg&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.gif&#39;</span><span class="o">:</span> <span class="s1">&#39;image/gif&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.wav&#39;</span><span class="o">:</span> <span class="s1">&#39;audio/wav&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.mp4&#39;</span><span class="o">:</span> <span class="s1">&#39;video/mp4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.woff&#39;</span><span class="o">:</span> <span class="s1">&#39;application/font-woff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.ttf&#39;</span><span class="o">:</span> <span class="s1">&#39;application/font-ttf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.eot&#39;</span><span class="o">:</span> <span class="s1">&#39;application/vnd.ms-fontobject&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.otf&#39;</span><span class="o">:</span> <span class="s1">&#39;application/font-otf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.svg&#39;</span><span class="o">:</span> <span class="s1">&#39;application/image/svg+xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.wasm&#39;</span><span class="o">:</span> <span class="s1">&#39;application/wasm&#39;</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">contentType</span> <span class="o">=</span> <span class="nx">mimeTypes</span><span class="p">[</span><span class="nx">extname</span><span class="p">]</span> <span class="o">||</span> <span class="s1">&#39;application/octet-stream&#39;</span><span class="p">;</span>
+
+    <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span> <span class="o">==</span> <span class="s1">&#39;ENOENT&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;./404.html&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="nx">contentType</span> <span class="p">});</span>
+                    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+                <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Sorry, check with the site admin for error: &#39;</span><span class="o">+</span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span><span class="o">+</span><span class="s1">&#39; ..\n&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="nx">contentType</span> <span class="p">});</span>
+            <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8125</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at http://127.0.0.1:8125/&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Mas adelante vamos a ver que significa ese código en detalle, por ahora a
+grandes rasgos implementamos nuestro propio servidor web usando javascript, que
+no es poca cosa :)</p>
+<p>Guarda el archivo y abrí una terminal y escribí algo como:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> miapp
+node miserver.js
+</pre></div>
+</div>
+<p>Vas a tener que cambiar &quot;miapp&quot; en <cite>cd miapp</cite> por el camino a la carpeta de tu
+proyecto, para saber donde estas podes correr el comando <cite>dir</cite> que te va a
+mostrar el contenido de la carpeta actual en la que estas.</p>
+<p>Una vez que corrimos el comando <cite>node miserver.js</cite> tendría que mostrar lo siguiente:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Server running at http://127.0.0.1:8125/
+</pre></div>
+</div>
+<p>Abrí tu navegador y visita esa dirección, debería abrirse nuestra aplicación.</p>
+<p>Para seguir desarrollando simplemente cambia los archivos y recarga la pagina.</p>
+<p>Eso es todo, así se desarrollan proyectos reales, no te preocupes si algunas
+cosas parecen complicadas, las vas a ir aprendiendo con el tiempo.</p>
+<p>Cuando tengas algo listo para publicar simplemente copia la carpeta al sitio
+que aloje tu contenido, en capitulos siguientes vamos a ver algunas alternativas
+para alojar contenido.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131588591-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131588591-2');
+</script>
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="text-xs-left col-md-9 copyright">
+        <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>

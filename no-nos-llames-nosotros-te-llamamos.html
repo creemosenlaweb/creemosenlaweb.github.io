@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Datos por favor, pero validos" href="datos-por-favor.html" />
     <link rel="prev" title="Uno, dos, muchos" href="uno-dos-muchos.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -80,23 +72,23 @@ usando su nombre, paréntesis y una lista de argumentos.</p>
 cualquier otra variable, que pasa si intentamos <strong>usarla</strong> como cualquier otra
 variable?</p>
 <p>Probemos con una función simple:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">incrementar</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">incrementar</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">valor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Probemosla:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">11</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">11</span>
 </pre></div>
 </div>
 <p>Que pasa si solo la nombramos?:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">incrementar</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">incrementar</span><span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">incrementar</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>nada muy útil, pero nos indica que las funciones son valores como cualquier
@@ -104,16 +96,16 @@ otra cosa y como cualquier otra cosa en javascript podemos pasarla como
 parámetro a funciones y devolverla de funciones.</p>
 <p>Probemos pasarla como parámetro a una función, pero, para que la usaríamos?
 lo único que sabemos hacer con una función es llamarla, así que hagamos eso:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">llamar</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">llamar</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">valor</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Probemos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">llamar</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">llamar</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">26</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="mi">26</span>
 </pre></div>
 </div>
 <p>Funciona, pero no es muy útil que digamos, que mas podríamos hacer?</p>
@@ -126,7 +118,7 @@ lugar para evitar errores y hacer mas simple el resto del código.</p>
 y si en lugar de <cite>&lt;</cite> por error escribimos <cite>&lt;=</cite> tenemos un error que va a ser
 difícil de detectar, probemos escribir una función que nos evite escribir el
 for cada vez:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">porCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">porCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nx">elemento</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
         <span class="nx">fn</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">);</span>
@@ -138,24 +130,24 @@ for cada vez:</p>
 como parámetros y llamar a la función porCadaElemento de la lista pasandole
 dos parámetros, el elemento y el indice del elemento en la lista.</p>
 <p>Para probarlo vamos a necesitar una función, empecemos imprimiendo los elementos de la lista:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">imprimirElemento</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">imprimirElemento</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;elemento&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="s1">&#39;de lista es&#39;</span><span class="p">,</span> <span class="nx">elemento</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Ahora llamemos a porCadaElemento con una lista y esta función:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">porCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">imprimirElemento</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">porCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">imprimirElemento</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>El resultado es:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">10</span>
 <span class="n">elemento</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">20</span>
 <span class="n">elemento</span> <span class="mi">2</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">30</span>
 </pre></div>
 </div>
 <p>Funciona, pero que pasa si queremos hacer algo en cada elemento y acumularlo?
 creemos una función para eso:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">aCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">aCadaElemento</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="p">[];</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -173,10 +165,10 @@ creemos una función para eso:</p>
 que devuelva se agrega a una nueva lista que devolvemos cuando llamamos a la
 función para todos los elementos de la lista de entrada, probemos un caso
 para entenderlo mejor:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">incrementar</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="nx">incrementar</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>A cada elemento de la lista <cite>[10, 20, 30]</cite> le &quot;aplicamos&quot; la función
@@ -184,7 +176,7 @@ para entenderlo mejor:</p>
 <p>Otra cosa que podemos hacer es &quot;filtrar&quot; elementos de una lista, con una
 función que recibe una lista y una función que le indica si cada elemento debe
 ser descartado de la lista resultado o no.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">filtrar</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">filtrar</span><span class="p">(</span><span class="nx">lista</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">resultado</span> <span class="o">=</span> <span class="p">[];</span>
 
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">lista</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -204,42 +196,42 @@ ser descartado de la lista resultado o no.</p>
 valor y devuelva true si la condición es verdadera y false si es falsa. Este
 tipo de funciones se suelen llamar &quot;predicados&quot;.</p>
 <p>Creemos una que nos diga si un numero es par:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// si el resto de la división es cero, entonces el numero es par</span>
     <span class="k">return</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Probemos nuestro &quot;predicado&quot; <cite>esPar</cite>:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">false</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">false</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">esPar</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="kc">true</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">aCadaElemento</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Ahora probemosla con nuestra función <cite>filtrar</cite>:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="nx">esPar</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Funciona y la intención del código queda mas clara que si tuviéramos todo el
@@ -250,23 +242,23 @@ en el lugar donde la llamamos, así queda todo junto y no se nos llena el códig
 de funciones que se usan una sola vez, como podemos pasar parámetros de valores
 directamente sin declarar variables, podemos pasar funciones directamente sin
 declararlas de antemano:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">elemento</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Estas funciones sin declarar se llaman &quot;funciones anónimas&quot; o &quot;lambda&quot; ya que
 no tienen nombre, pero es buena practica aun cuando nunca la vamos a llamar por
 nombre, de darle un nombre para poder entender mas fácil que es lo que hace:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">filtrar</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">esPar</span><span class="p">(</span><span class="nx">elemento</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">elemento</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">});</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Pero si estas cosas son tan comunes, seguro alguien ya las hizo por nosotros no?</p>
@@ -280,14 +272,14 @@ incluidas en javascript.</p>
 <p>Estas funciones están disponibles como atributos en las listas, un atributo que
 es una función suele llamarse método.</p>
 <p>Probemos con los métodos de las listas lo que ya hicimos:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">imprimirElemento</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">imprimirElemento</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Imprime:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elemento</span> <span class="mi">0</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">0</span>
 <span class="n">elemento</span> <span class="mi">1</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">1</span>
 <span class="n">elemento</span> <span class="mi">2</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">2</span>
 <span class="n">elemento</span> <span class="mi">3</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">3</span>
@@ -299,16 +291,16 @@ es una función suele llamarse método.</p>
 <span class="n">elemento</span> <span class="mi">9</span> <span class="n">de</span> <span class="n">lista</span> <span class="n">es</span> <span class="mi">9</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">incrementar</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span> <span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">esPar</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">lista</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">esPar</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">]</span>
 </pre></div>
 </div>
 <p>Este capitulo es uno de los mas densos de todos hasta ahora, pero con lo
@@ -340,7 +332,7 @@ nuestro código no se vuelva muy complicado.</p>
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

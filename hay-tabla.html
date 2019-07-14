@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Filas, columnas y pantallas de todos los tamaños" href="filas-columnas.html" />
     <link rel="prev" title="Haciendo Lugar" href="haciendo-lugar.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -93,7 +85,7 @@ columnas:</p>
 <p>Si alguna vez usaste una planilla de cálculos, las tablas son una forma de
 presentar información que presentarías en una planilla de cálculos.</p>
 <p>Vamos a ver una tabla de ejemplo:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Arenita<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ardilla<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -159,7 +151,7 @@ de tabla)</p>
 </ul>
 </li>
 </ul>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
@@ -255,7 +247,7 @@ presentando valores que se puedan sumarizar.</p>
 </ul>
 </li>
 </ul>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
@@ -335,14 +327,14 @@ pie de tabla), dentro usamos los mismos tags que en el cuerpo.</p>
 <p>Los ejemplos que vimos hasta ahora tienen un aspecto simple pero agradable,
 eso es porque estaba usando una clase de bootstrap para darle un aspecto
 aceptable, la clase que estaba usando es la clase <cite>table</cite>.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>En esta sección vamos a explorar otras clases que podemos aplicarle a una
 tabla.</p>
 <div class="section" id="con-bordes">
 <h3>Con bordes<a class="headerlink" href="#con-bordes" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <table class="table table-bordered">
@@ -382,7 +374,7 @@ tabla.</p>
 </table></div>
 <div class="section" id="colores-invertidos">
 <h3>Colores invertidos<a class="headerlink" href="#colores-invertidos" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-dark&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-dark&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <table class="table table-dark">
@@ -422,7 +414,7 @@ tabla.</p>
 </table></div>
 <div class="section" id="cabecera-invertida">
 <h3>Cabecera invertida<a class="headerlink" href="#cabecera-invertida" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">thead</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thead-dark&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -466,7 +458,7 @@ tabla.</p>
 <p>Cambiar el color de filas adyacentes es útil para que el usuario pueda seguir
 las columnas de una fila sin perderse o empezar a leer celdas de las filas
 cercanas sin darse cuenta.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <table class="table table-striped">
@@ -509,7 +501,7 @@ cercanas sin darse cuenta.</p>
 <p>Resaltar la fila que tiene el foco del mouse es útil para que el usuario pueda
 seguir las columnas de una fila sin perderse o empezar a leer celdas de las
 filas cercanas sin darse cuenta.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-hover&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-hover&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <table class="table table-hover">
@@ -550,7 +542,7 @@ filas cercanas sin darse cuenta.</p>
 <div class="section" id="compacta">
 <h3>Compacta<a class="headerlink" href="#compacta" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Una tabla con menos espacios, si es necesario mostrar mas datos.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-sm&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-sm&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <table class="table table-sm">
@@ -591,7 +583,7 @@ filas cercanas sin darse cuenta.</p>
 <div class="section" id="resaltando-filas">
 <h3>Resaltando filas<a class="headerlink" href="#resaltando-filas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Si necesitamos indicar algo en una fila lo podemos hacer agregando una clase.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-active&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-active&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Arenita<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Ardilla<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Marron<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -705,7 +697,7 @@ filas cercanas sin darse cuenta.</p>
 </table></div>
 <div class="section" id="todo-junto">
 <h3>Todo junto!<a class="headerlink" href="#todo-junto" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-striped table-sm table-dark table-hover&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered table-striped table-sm table-dark table-hover&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">thead</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thead-light&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nombre<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
@@ -842,7 +834,7 @@ filas cercanas sin darse cuenta.</p>
 <h2>Subtítulo<a class="headerlink" href="#subtitulo" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Es útil indicar que datos se están mostrando en la tabla, para eso hay un tag
 llamado <a class="reference external" href="https://developer.mozilla.org/es/docs/Web/HTML/Elemento/caption">caption</a> que puede ser usado para tal fin.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Personajes de Bob Esponja<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
 
   <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
@@ -923,7 +915,7 @@ llamado <a class="reference external" href="https://developer.mozilla.org/es/doc
 <p>En algunos casos podemos querer dejar algunas filas con menos celdas que otras,
 en otros casos queremos que una celda ocupe mas de una columna.</p>
 <p>Usar menos celdas es fácil, simplemente no las escribimos.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1.1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -959,7 +951,7 @@ en otros casos queremos que una celda ocupe mas de una columna.</p>
 </table><p>Si queremos que una celda ocupe mas de una columna, tenemos que usar el
 atributo <cite>colspan</cite> (extensión de columnas) e indicarle cuantas columnas
 queremos que ocupe, por defecto cada celda tiene un <cite>colspan</cite> de 1.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">3</span><span class="p">&gt;</span>1.1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
@@ -993,7 +985,7 @@ queremos que ocupe, por defecto cada celda tiene un <cite>colspan</cite> de 1.</
     </tr>
   </tbody>
 </table><p>Esto lo podemos usar en la cabecera para crear cabeceras multinivel:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-bordered&quot;</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">thead</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thead-dark&quot;</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">colspan</span><span class="o">=</span><span class="s">3</span><span class="p">&gt;</span>Lugar<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
@@ -1088,7 +1080,7 @@ queremos que ocupe, por defecto cada celda tiene un <cite>colspan</cite> de 1.</
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>

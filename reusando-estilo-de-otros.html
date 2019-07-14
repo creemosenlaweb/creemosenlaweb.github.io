@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,29 +14,20 @@
 
     <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap4/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxbootstrap4.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinxbootstrap4.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Reusando HTML (de otros)" href="reusando-html-de-otros.html" />
     <link rel="prev" title="Lo espacial es invisible a los ojos" href="lo-espacial-es-invisible-a-los-ojos.html" /> 
-  </head>
-  <body>
+  </head><body>
 
 
     <div class="row related" role="navigation" aria-label="related navigation">
@@ -80,7 +72,7 @@
 <h2>Incluyendo Bootstrap<a class="headerlink" href="#incluyendo-bootstrap" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Vamos a ver como usar esto, empecemos con un proyecto nuevo en glitch con una
 pagina básica:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
@@ -128,7 +120,7 @@ pagina básica:</p>
   </iframe>
 </div><p>Ahora agregamos la hoja de estilo de bootstrap en el &lt;head&gt; de la pagina,
 debajo del tag &lt;title&gt;:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Y podemos ver que ya cambio un poco:</p>
@@ -148,7 +140,7 @@ usar, empecemos por las alertas:</p>
 <div class="section" id="alertas">
 <h3>Alertas<a class="headerlink" href="#alertas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Agreguemos el siguiente HTML al &lt;body&gt; de nuestro proyecto:</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Alertas<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Alertas<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-primary&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
   Alerta principal (primary)
@@ -200,7 +192,7 @@ usar, empecemos por las alertas:</p>
 <p>Badges se traduce a medalla o distintivo, es mas fácil entender que son
 viéndolos que por la palabra, así que agreguemos el siguiente HTML a nuestra
 pagina:</p>
-<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Badges<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Badges<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Estandar<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
@@ -261,7 +253,7 @@ nuestra hoja de estilos)</p>
 <p>Otro componente muy útil y versátil son las barras de navegación, suelen usarse
 en la parte superior de la pagina y en cualquier sección que tiene mas de un
 elemento para mostrar, como los tabs del navegador web.</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Barra de Navegacion<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Barra de Navegacion<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Usando tags de lista<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
@@ -392,7 +384,7 @@ cuales partes pensabas que entendías pero todavía algún detalle se escapa.</p
   <div class="container-fluid">
     <div class="text-xs-left col-md-9 copyright">
         <div>&copy; Copyright 2018, Lara Garbero Tais, Mariano Guerra.</div>
-      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.7 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
+      <div>Generated by <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5 using adapted <a href="https://github.com/myyasuda/sphinxbootstrap4theme">sphinxbootstrap4theme</a></div>
     </div>
   </div>
 </footer>
