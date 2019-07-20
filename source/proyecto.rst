@@ -5,6 +5,12 @@ Hasta ahora hemos usado herramientas online para probar nuestros proyectos, en
 este capitulo vamos a ver como crear un proyecto completo en nuestra
 computadora.
 
+Si preferis verlo en video:
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/jo49M8ze4jw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Para empezar necesitamos crear una carpeta para nuestro proyecto, yo le voy a
 llamar `miapp` pero el nombre puede ser cualquiera que prefieras.
 
@@ -19,7 +25,16 @@ Windows y querés un editor liviano pero potente, si estas en linux fijate si
 tenes instalado `gedit`, `kedit` o `kate`, podes buscarlos escribiendo "editor"
 en el lanzador de aplicaciones.
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/7mPvnq0hTZI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 Si querés algo mas potente podes instalar `Visual Studio Code <https://code.visualstudio.com/>`_, va a tomar un poco mas de tiempo acostumbrarse a el y consume mas recursos pero es un editor completo usado por una gran parte de los programadores.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/RL06r9VedSI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Volviendo a nuestro `index.html`, podes crearlo haciendo click derecho en la carpeta de proyecto y eligiendo "Nuevo Archivo" o similar y renombrandolo a `index.html` o podes crear un archivo nuevo desde tu editor y elegir "Guardar Como" y nombrarlo `index.html` en la carpeta de tu proyecto.
 
@@ -99,6 +114,11 @@ todas formas en los siguientes pasos.
 
 Abrí tu navegador y visita https://nodejs.org/es/ hace click en el botón de
 descarga y seguí las instrucciones del instalador.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/fxB6LTkKLwY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 una vez instalado crea un archivo llamado `miserver.js` en el directorio del
 proyecto con el siguiente contenido:
